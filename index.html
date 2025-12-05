@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
     <!-- Meta Tags -->
@@ -24,946 +24,7 @@
     <link href="agency-hotspot/css/line-awesome.min.css" rel="stylesheet">
     <link href="agency-hotspot/css/jquery.pagepiling.css" rel="stylesheet">
     <link href="agency-hotspot/css/style.css" rel="stylesheet">
-    <style>
-        /* Portfolio Image Size Control */
-        .portfolio-bg .single-work {
-            position: relative;
-            overflow: hidden;
-            width: 100%;
-            max-width: 400px;
-            height: 400px;
-            margin: 0 auto;
-        }
-        
-        .portfolio-bg .single-work img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            object-position: center;
-        }
-        
-        .portfolio-bg .team-data-img {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-        }
-        
-        /* Hide overlay text on portfolio images */
-        .portfolio-bg .overlay-text,
-        .portfolio-bg .cases-image-inner,
-        .portfolio-bg .image-overlay {
-            display: none !important;
-        }
-        
-        /* Product Card Styling */
-        .portfolio-grid {
-            margin-top: 20px;
-        }
-        
-        .product-card {
-            background: #ffffff;
-            border-radius: 12px;
-            padding: 0;
-            text-align: center;
-            box-shadow: 0 3px 15px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            height: 250px;
-            overflow: hidden;
-            display: flex;
-            flex-direction: column;
-        }
-        
-        .product-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
-        }
-        
-        .product-image {
-            width: 100%;
-            flex: 1;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background: #ffffff;
-            padding: 10px;
-            min-height: 200px;
-            max-height: 200px;
-        }
-        
-        .product-image img {
-            width: 100%;
-            height: 100%;
-            object-fit: contain;
-        }
-        
-        .product-info {
-            padding: 8px 12px;
-            background: #ffffff;
-        }
-        
-        .product-title {
-            font-size: 14px;
-            font-weight: 600;
-            color: #333333;
-            margin-bottom: 0;
-            font-family: 'Poppins', sans-serif;
-        }
-        
-        .product-desc {
-            font-size: 12px;
-            color: #666666;
-            margin-bottom: 0;
-        }
-        
-        .btn-white {
-            background-color: #ffffff;
-            color: #333333;
-            padding: 10px 35px;
-            border: 2px solid #ffffff;
-            font-weight: 500;
-            font-size: 14px;
-            transition: all 0.3s ease;
-        }
-        
-        .btn-white:hover {
-            background-color: transparent;
-            color: #ffffff;
-            border-color: #ffffff;
-        }
-        
-        /* Social Icons Positioning */
-        .side-nav-menu .social-icons {
-            margin-top: 90px;
-            margin-bottom: 20px;
-            display: flex;
-            gap: 12px;
-            justify-content: center;
-            align-items: center;
-        }
-        
-        .side-nav-menu .social-icons span {
-            margin: 0 !important;
-        }
-        
-        .side-nav-menu .social-icons span:last-child {
-            margin-right: 0 !important;
-        }
-        
-        .side-nav-menu .rites-res {
-            margin-top: 0px;
-        }
-        
-        /* Feature Box Consistent Spacing */
-        .section.slide2.about {
-            height: 100vh !important;
-            min-height: 100vh;
-            overflow: hidden;
-            display: flex;
-            align-items: center;
-        }
-        
-        .about .container.expand-container {
-            width: 100%;
-            padding-top: 20px;
-            padding-bottom: 20px;
-        }
-        
-        .feature-item {
-            margin-bottom: 15px;
-            background: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(10px);
-            -webkit-backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            border-radius: 18px;
-            padding: 22px 18px;
-            transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .feature-item::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 4px;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            opacity: 0;
-            transition: opacity 0.4s ease;
-        }
-        
-        .feature-item:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
-            background: rgba(255, 255, 255, 0.15);
-            border-color: rgba(255, 255, 255, 0.3);
-        }
-        
-        .feature-item:hover::before {
-            opacity: 1;
-        }
-        
-        .feature-item .f-icon {
-            font-size: 2.6rem;
-            margin-bottom: 12px;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            display: inline-block;
-            transition: all 0.4s ease;
-        }
-        
-        .feature-item:hover .f-icon {
-            transform: scale(1.1) rotate(5deg);
-        }
-        
-        .feature-item .title {
-            margin-top: 10px;
-            margin-bottom: 10px;
-            font-size: 1.15rem;
-            font-weight: 600;
-            letter-spacing: 0.5px;
-        }
-        
-        .feature-item p {
-            line-height: 1.55;
-            margin-top: 10px;
-            word-spacing: normal;
-            letter-spacing: 0.3px;
-            opacity: 0.95;
-            font-size: 15px;
-        }
-        
-        /* Section Heading */
-        .about .section-heading {
-            margin-bottom: 15px;
-        }
-        
-        .about .section-heading h2 {
-            font-size: 1.8rem;
-            margin-bottom: 12px;
-            line-height: 1.3;
-        }
-        
-        /* Row Padding */
-        .about .row.pb-5 {
-            padding-bottom: 15px;
-        }
-        
-        /* CTA Box Modern Styling */
-        .about .box {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%) !important;
-            border-radius: 22px;
-            padding: 22px 28px;
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-            margin-top: 12px;
-            margin-bottom: 0;
-        }
-        
-        .about .box:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
-        }
-        
-        .about .box-overlay {
-            display: none;
-        }
-        
-        .about .box h2 {
-            font-size: 1.45rem;
-            font-weight: 700;
-            margin-bottom: 6px;
-            line-height: 1.2;
-        }
-        
-        .about .box p {
-            opacity: 0.95;
-            font-size: 0.95rem;
-            margin-bottom: 0;
-            line-height: 1.45;
-        }
-        
-        .about .box .row {
-            align-items: center;
-        }
-        
-        .about .box .btn {
-            padding: 11px 30px !important;
-            font-size: 13px !important;
-            white-space: nowrap;
-        }
-        
-        /* Mobile Responsive Fixes */
-        @media (max-width: 767px) {
-            .section.slide2.about {
-                height: auto !important;
-                min-height: 100vh;
-                padding-top: 60px;
-                padding-bottom: 60px;
-            }
-            
-            .about .container.expand-container {
-                padding-top: 30px;
-                padding-bottom: 30px;
-            }
-            
-            .about .section-heading h2 {
-                font-size: 1.4rem;
-                margin-bottom: 20px;
-            }
-            
-            .feature-item {
-                margin-bottom: 20px;
-                padding: 20px 15px;
-            }
-            
-            .feature-item .f-icon {
-                font-size: 2.2rem;
-                margin-bottom: 10px;
-            }
-            
-            .feature-item .title {
-                font-size: 1rem;
-                margin-top: 8px;
-                margin-bottom: 8px;
-            }
-            
-            .feature-item p {
-                font-size: 14px;
-                line-height: 1.6;
-                margin-top: 8px;
-            }
-            
-            .about .box {
-                margin-top: 20px;
-                padding: 20px;
-            }
-            
-            .about .box h2 {
-                font-size: 1.25rem;
-            }
-            
-            .about .box p {
-                font-size: 0.85rem;
-            }
-        }
-        
-        /* Hero Section Mobile Styles */
-        @media (max-width: 767px) {
-            .slider-area h1 {
-                font-size: 1.8rem !important;
-                line-height: 1.3;
-                margin-bottom: 15px;
-            }
-            
-            .slider-area p {
-                font-size: 0.95rem !important;
-                line-height: 1.6;
-            }
-            
-            .slider-area .btn-trans {
-                padding: 12px 30px !important;
-                font-size: 14px !important;
-            }
-            
-            .slider-area .section1left {
-                text-align: center;
-                padding: 20px 15px;
-            }
-            
-            .slider-area .section1right {
-                display: none;
-            }
-            
-            .slider-area .container {
-                padding-top: 80px;
-            }
-        }
-        
-        /* Modern Button Styling */
-        .btn-trans {
-            background: transparent !important;
-            border: 2px solid #ffffff !important;
-            color: #ffffff !important;
-            border-radius: 50px !important;
-            padding: 14px 40px !important;
-            font-weight: 600 !important;
-            text-transform: uppercase !important;
-            letter-spacing: 1px !important;
-            transition: all 0.3s ease !important;
-        }
-        
-        .btn-trans:hover {
-            background: #ffffff !important;
-            color: #667eea !important;
-            transform: translateY(-3px);
-            box-shadow: 0 10px 25px rgba(255, 255, 255, 0.3);
-        }
-        
-        @media (max-width: 767px) {
-            .about .container.expand-container {
-                padding-top: 20px;
-                padding-bottom: 20px;
-            }
-            
-            .feature-item {
-                padding: 20px 15px;
-                margin-bottom: 15px;
-                text-align: center !important;
-            }
-            
-            .about .section-heading h2 {
-                font-size: 1.4rem;
-                text-align: center;
-                line-height: 1.4;
-            }
-            
-            .about .box {
-                padding: 20px 20px;
-                margin-top: 15px;
-                text-align: center;
-            }
-            
-            .about .box h2 {
-                font-size: 1.2rem;
-            }
-            
-            .about .box p {
-                font-size: 0.85rem;
-            }
-            
-            .about .box .btn {
-                margin-top: 10px;
-                width: 100%;
-                max-width: 300px;
-            }
-            
-            /* Team Section Mobile */
-            .team-sec .section-heading h2 {
-                font-size: 1.6rem;
-                text-align: center;
-            }
-            
-            .team-box {
-                margin: 0 auto 20px;
-                max-width: 280px;
-            }
-            
-            .team-image img {
-                width: 100%;
-                max-width: 250px;
-                margin: 0 auto;
-            }
-        }
-        
-        @media (min-width: 768px) and (max-width: 1024px) {
-            .feature-item {
-                padding: 22px 18px;
-            }
-            
-            .about .section-heading h2 {
-                font-size: 1.5rem;
-            }
-        }
-        
-        @media (min-width: 768px) {
-            .feature-item {
-                padding: 25px 20px;
-            }
-            
-            .about .row.pb-5 {
-                justify-content: space-between;
-            }
-            
-            .about .col-md-3 {
-                flex: 0 0 24%;
-                max-width: 24%;
-            }
-        }
-        
-        /* Glassmorphism Contact Buttons */
-        .contact-sec {
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .contact-sec .bg-overlay {
-            background: linear-gradient(135deg, rgba(231, 76, 60, 0.85) 0%, rgba(192, 57, 43, 0.9) 100%);
-            mix-blend-mode: multiply;
-        }
-        
-        .contact-sec .heading {
-            font-size: 2.2rem;
-            font-weight: 700;
-            margin-bottom: 25px;
-            line-height: 1.3;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
-        }
-        
-        .contact-sec .text {
-            font-size: 1rem;
-            line-height: 1.7;
-            opacity: 0.95;
-            margin-bottom: 20px;
-        }
-        
-        /* Form Styling */
-        .contact-form .form-control {
-            background: transparent;
-            border: 2px solid rgba(255, 255, 255, 0.4);
-            border-bottom: 3px solid rgba(255, 255, 255, 0.6);
-            color: #ffffff;
-            padding: 16px 20px;
-            font-size: 15px;
-            border-radius: 8px;
-            margin-bottom: 20px;
-            transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
-            font-weight: 500;
-        }
-        
-        .contact-form .form-control:focus {
-            background: rgba(255, 255, 255, 0.08);
-            border-color: rgba(255, 255, 255, 0.8);
-            border-bottom-color: #ffffff;
-            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
-            outline: none;
-            transform: translateY(-2px);
-        }
-        
-        .contact-form .form-control::placeholder {
-            color: rgba(255, 255, 255, 0.65);
-            font-weight: 400;
-        }
-        
-        .contact-form textarea.form-control {
-            resize: none;
-            min-height: 150px;
-        }
-        
-        .contact-form .contact_btn {
-            margin-top: 10px;
-            padding: 16px 35px !important;
-            font-size: 16px !important;
-            font-weight: 700 !important;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            background: #ffffff !important;
-            color: #e74c3c !important;
-            border: 2px solid #ffffff !important;
-            transition: all 0.4s ease;
-            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
-        }
-        
-        .contact-form .contact_btn:hover {
-            background: transparent !important;
-            color: #ffffff !important;
-            transform: translateY(-3px);
-            box-shadow: 0 12px 35px rgba(0, 0, 0, 0.3);
-        }
-        
-        .btn-glass-contact {
-            background: rgba(255, 255, 255, 0.15);
-            backdrop-filter: blur(10px);
-            -webkit-backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.3);
-            color: #ffffff;
-            padding: 16px 35px;
-            font-weight: 600;
-            font-size: 15px;
-            border-radius: 50px;
-            transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
-            display: inline-block;
-            text-decoration: none;
-            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .btn-glass-contact::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
-            transition: left 0.6s ease;
-        }
-        
-        .btn-glass-contact:hover::before {
-            left: 100%;
-        }
-        
-        .btn-glass-contact:hover {
-            background: rgba(255, 255, 255, 0.3);
-            border: 1px solid rgba(255, 255, 255, 0.6);
-            transform: translateY(-5px);
-            box-shadow: 0 15px 50px rgba(0, 0, 0, 0.25);
-            color: #ffffff;
-        }
-        
-        .btn-glass-contact i {
-            margin-right: 12px;
-            font-size: 18px;
-            transition: transform 0.3s ease;
-        }
-        
-        .btn-glass-contact:hover i {
-            transform: scale(1.2);
-        }
-        
-        .contact-buttons {
-            display: flex;
-            flex-direction: column;
-            gap: 15px;
-            align-items: flex-start;
-        }
-        
-        /* Mobile Menu Spacing */
-        @media (max-width: 767px) {
-            .broad .side-nav-menu .nav-menu {
-                padding-top: 80px;
-            }
-            
-            .broad .side-nav-menu .nav-item {
-                margin-bottom: 25px;
-            }
-            
-            .broad .side-nav-menu .nav-link {
-                font-size: 18px;
-                padding: 10px 0;
-            }
-            
-            /* Enhanced Mobile Contact Section */
-            .contact-sec {
-                padding: 40px 0 !important;
-            }
-            
-            .contact-sec .container {
-                padding: 0 20px;
-            }
-            
-            .contact-sec .heading {
-                font-size: 1.75rem;
-                margin-bottom: 15px;
-                text-align: center !important;
-                line-height: 1.3;
-            }
-            
-            .contact-sec .text {
-                font-size: 0.95rem;
-                line-height: 1.7;
-                text-align: center;
-                margin-bottom: 25px;
-            }
-            
-            .contact-sec .section6left {
-                margin-bottom: 30px;
-            }
-            
-            .contact-form {
-                margin-bottom: 40px;
-            }
-            
-            .contact-form .form-control {
-                padding: 14px 18px;
-                font-size: 15px;
-                margin-bottom: 16px;
-                border-width: 2px;
-            }
-            
-            .contact-form textarea.form-control {
-                min-height: 130px;
-            }
-            
-            .contact-form .contact_btn {
-                padding: 14px 30px !important;
-                font-size: 15px !important;
-                margin-top: 5px;
-            }
-            
-            .contact-buttons {
-                align-items: center;
-                margin-top: 0;
-                gap: 12px;
-            }
-            
-            .btn-glass-contact {
-                width: auto;
-                min-width: 200px;
-                text-align: center;
-                padding: 15px 35px;
-                font-size: 15px;
-            }
-            
-            .btn-glass-contact i {
-                font-size: 17px;
-            }
-            
-            .contact-details {
-                text-align: center;
-            }
-            
-            .contact-details h4 {
-                margin-bottom: 15px;
-            }
-        }
-        
-        /* Shuffle Animation - Slide and Fade */
-        @keyframes slideOut {
-            0% {
-                transform: translateY(0) scale(1);
-                opacity: 1;
-            }
-            100% {
-                transform: translateY(-50px) scale(0.8);
-                opacity: 0;
-            }
-        }
-        
-        @keyframes slideIn {
-            0% {
-                transform: translateY(50px) scale(0.8);
-                opacity: 0;
-            }
-            100% {
-                transform: translateY(0) scale(1);
-                opacity: 1;
-            }
-        }
-        
-        .product-card.slide-out {
-            animation: slideOut 0.35s ease-in forwards;
-        }
-        
-        .product-card.slide-in {
-            animation: slideIn 0.35s ease-out forwards;
-        }
-        
-        /* Responsive adjustments */
-        @media (max-width: 767px) {
-            .portfolio-bg .single-work {
-                max-width: 100%;
-                height: 300px;
-            }
-            
-            .portfolio-bg .section-heading h2 {
-                font-size: 1.6rem !important;
-            }
-            
-            .portfolio-bg .section-heading p {
-                font-size: 0.9rem !important;
-            }
-            
-            .product-card {
-                padding: 20px;
-                margin-bottom: 20px;
-                max-width: 320px;
-                margin-left: auto;
-                margin-right: auto;
-            }
-            
-            .product-image {
-                display: flex;
-                justify-content: center;
-                align-items: center;
-            }
-            
-            .product-image img {
-                max-width: 220px;
-                height: auto;
-            }
-            
-            .product-title {
-                font-size: 1.1rem;
-                text-align: center;
-            }
-            
-            /* Mobile Carousel */
-            .portfolio-grid .col-lg-4 {
-                display: none;
-            }
-            
-            .portfolio-grid .col-lg-4.active-mobile {
-                display: block;
-            }
-            
-            .portfolio-grid {
-                position: relative;
-                padding: 0 15px;
-            }
-            
-            .mobile-carousel-indicators {
-                display: flex;
-                justify-content: center;
-                gap: 10px;
-                margin-top: 20px;
-                padding: 10px 0;
-            }
-            
-            .mobile-carousel-indicators .dot {
-                width: 12px;
-                height: 12px;
-                border-radius: 50%;
-                background: rgba(255, 255, 255, 0.4);
-                cursor: pointer;
-                transition: all 0.3s ease;
-            }
-            
-            .mobile-carousel-indicators .dot.active {
-                background: #ffffff;
-                width: 14px;
-                height: 14px;
-            }
-            
-            .btn-white {
-                padding: 12px 30px !important;
-                font-size: 14px !important;
-            }
-        }
-        
-        @media (min-width: 768px) and (max-width: 1024px) {
-            .portfolio-bg .single-work {
-                max-width: 400px;
-                height: 400px;
-            }
-            
-            .product-image img {
-                max-width: 220px;
-            }
-        }
-    </style>
-    <script>
-        // Portfolio Image Shuffle Script
-        document.addEventListener('DOMContentLoaded', function() {
-            const portfolioImages = [
-                { src: 'agency-hotspot/images/CCTV SYSTEM.png', alt: 'Smart Camera', title: 'Smart Camera' },
-                { src: 'agency-hotspot/images/Smart Lock.png', alt: 'Smart Lock', title: 'Smart Lock' },
-                { src: 'agency-hotspot/images/Video-Doorbell.jpg', alt: 'Video Doorbell', title: 'Video Doorbell' },
-                { src: 'agency-hotspot/images/Alexa.png', alt: 'Voice Assistant', title: 'Voice Assistant' },
-                { src: 'agency-hotspot/images/smart light.jpg', alt: 'Smart Lights', title: 'Smart Lights' },
-                { src: 'agency-hotspot/images/smart light.jpg', alt: 'Smart Plug', title: 'Smart Plug' }
-            ];
-            
-            let currentMobileIndex = 0;
-            let isMobile = window.innerWidth < 768;
-            
-            // Check if mobile view
-            function checkMobile() {
-                isMobile = window.innerWidth < 768;
-            }
-            
-            // Mobile carousel functionality
-            function updateMobileCarousel() {
-                if (!isMobile) return;
-                
-                const productCards = document.querySelectorAll('.portfolio-grid .col-lg-4');
-                const dots = document.querySelectorAll('.mobile-carousel-indicators .dot');
-                
-                // Remove active class from all cards and dots
-                productCards.forEach(card => card.classList.remove('active-mobile'));
-                dots.forEach(dot => dot.classList.remove('active'));
-                
-                // Add active class to current card and dot
-                if (productCards[currentMobileIndex]) {
-                    productCards[currentMobileIndex].classList.add('active-mobile');
-                }
-                if (dots[currentMobileIndex]) {
-                    dots[currentMobileIndex].classList.add('active');
-                }
-                
-                // Move to next card
-                currentMobileIndex = (currentMobileIndex + 1) % productCards.length;
-            }
-            
-            // Desktop shuffle functionality
-            function shuffleArray(array) {
-                const newArray = [...array];
-                for (let i = newArray.length - 1; i > 0; i--) {
-                    const j = Math.floor(Math.random() * (i + 1));
-                    [newArray[i], newArray[j]] = [newArray[j], newArray[i]];
-                }
-                return newArray;
-            }
-            
-            function updatePortfolioImages() {
-                if (isMobile) return; // Don't shuffle on mobile
-                
-                const shuffled = shuffleArray(portfolioImages);
-                const productCards = document.querySelectorAll('.portfolio-grid .product-card');
-                
-                // Add slide-out animation
-                productCards.forEach(card => {
-                    card.classList.add('slide-out');
-                });
-                
-                // Wait for slide-out animation to complete, then update content and slide-in
-                setTimeout(() => {
-                    productCards.forEach((card, index) => {
-                        if (shuffled[index]) {
-                            const img = card.querySelector('.product-image img');
-                            const title = card.querySelector('.product-title');
-                            
-                            if (img && title) {
-                                img.src = shuffled[index].src;
-                                img.alt = shuffled[index].alt;
-                                title.textContent = shuffled[index].title;
-                            }
-                        }
-                        
-                        // Remove slide-out and add slide-in
-                        card.classList.remove('slide-out');
-                        card.classList.add('slide-in');
-                    });
-                    
-                    // Remove slide-in class after animation completes
-                    setTimeout(() => {
-                        productCards.forEach(card => {
-                            card.classList.remove('slide-in');
-                        });
-                    }, 350);
-                }, 350);
-            }
-            
-            // Initialize mobile carousel
-            if (isMobile) {
-                updateMobileCarousel();
-            }
-            
-            // Mobile carousel auto-advance every 3 seconds
-            setInterval(() => {
-                if (isMobile) {
-                    updateMobileCarousel();
-                }
-            }, 3000);
-            
-            // Desktop shuffle every 5 seconds
-            setInterval(() => {
-                if (!isMobile) {
-                    updatePortfolioImages();
-                }
-            }, 5000);
-            
-            // Handle window resize
-            window.addEventListener('resize', checkMobile);
-            
-            // Dot click handlers
-            const dots = document.querySelectorAll('.mobile-carousel-indicators .dot');
-            dots.forEach(dot => {
-                dot.addEventListener('click', function() {
-                    if (isMobile) {
-                        currentMobileIndex = parseInt(this.getAttribute('data-index'));
-                        updateMobileCarousel();
-                    }
-                });
-            });
-        });
-    </script>
+    <link href="agency-hotspot/css/custom.css" rel="stylesheet">
 </head>
 
 <body data-spy="scroll" data-target=".navbar" data-offset="90">
@@ -1158,7 +219,7 @@
                 <div class="box-overlay"></div>
                 <div class="row align-items-center">
                     <div class="col-12 col-md-7 col-lg-9">
-                        <h2 class="main-font">Let’s Get Started</h2>
+                        <h2 class="main-font">Letâ€™s Get Started</h2>
                         <p class="py-4 py-md-0">We are a family-owned technology company dedicated to revolutionizing the way people interact with their homes and workplaces. </p>
                     </div>
                     <div class="col-12 col-md-5 col-lg-3 text-center">
@@ -1281,100 +342,614 @@
         <div class="container">
             <div class="row section-heading mb-3 text-center">
                 <div class="col-12">
-                    <h2 class="main-font text-white mb-1" style="font-size: 2rem; font-weight: 600;">COLLECTION</h2>
-                    <p class="text-white" style="font-size: 1rem; margin-bottom: 0;">Smart Home Devices</p>
+                    <h2 class="main-font text-white mb-1" style="font-size: 2rem; font-weight: 600;">OUR WORKS</h2>
+                    <p class="text-white" style="font-size: 1rem; margin-bottom: 0;">Recent Projects</p>
                 </div>
             </div>
             
             <!-- Portfolio Grid -->
-            <div class="row portfolio-grid wow" data-wow-delay=".5s">
-                <!-- Portfolio Item 1 -->
+            <div class="row portfolio-grid wow" data-wow-delay=".5s" id="imageCarousel">
                 <div class="col-lg-4 col-md-6 mb-2">
                     <div class="product-card">
                         <div class="product-image">
-                            <img src="agency-hotspot/images/CCTV SYSTEM.png" alt="Smart Camera">
-                        </div>
-                        <div class="product-info">
-                            <h5 class="product-title">Smart Camera</h5>
+                            <img src="pic/WhatsApp Image 2025-12-04 at 16.02.55_6a8fd886.jpg" alt="Image 1">
                         </div>
                     </div>
                 </div>
-                        
-                <!-- Portfolio Item 2 -->
                 <div class="col-lg-4 col-md-6 mb-2">
                     <div class="product-card">
                         <div class="product-image">
-                            <img src="agency-hotspot/images/Smart Lock.png" alt="Smart Lock">
-                        </div>
-                        <div class="product-info">
-                            <h5 class="product-title">Smart Lock</h5>
+                            <img src="pic/WhatsApp Image 2025-12-04 at 16.02.55_71d2e8b8.jpg" alt="Image 2">
                         </div>
                     </div>
                 </div>
-                        
-                <!-- Portfolio Item 3 -->
                 <div class="col-lg-4 col-md-6 mb-2">
                     <div class="product-card">
                         <div class="product-image">
-                            <img src="agency-hotspot/images/Video-Doorbell.jpg" alt="Video Doorbell">
-                        </div>
-                        <div class="product-info">
-                            <h5 class="product-title">Video Doorbell</h5>
+                            <img src="pic/WhatsApp Image 2025-12-04 at 16.02.55_edeff3ea.jpg" alt="Image 3">
                         </div>
                     </div>
                 </div>
-                        
-                <!-- Portfolio Item 4 -->
                 <div class="col-lg-4 col-md-6 mb-2">
                     <div class="product-card">
                         <div class="product-image">
-                            <img src="agency-hotspot/images/Alexa.png" alt="Voice Assistant">
-                        </div>
-                        <div class="product-info">
-                            <h5 class="product-title">Voice Assistant</h5>
+                            <img src="pic/WhatsApp Image 2025-12-04 at 16.02.56_9dd72b14.jpg" alt="Image 4">
                         </div>
                     </div>
                 </div>
-                        
-                <!-- Portfolio Item 5 -->
                 <div class="col-lg-4 col-md-6 mb-2">
                     <div class="product-card">
                         <div class="product-image">
-                            <img src="agency-hotspot/images/smart light.jpg" alt="Smart Lights">
-                        </div>
-                        <div class="product-info">
-                            <h5 class="product-title">Smart Lights</h5>
+                            <img src="pic/WhatsApp Image 2025-12-04 at 16.02.56_a6002117.jpg" alt="Image 5">
                         </div>
                     </div>
                 </div>
-                        
-                <!-- Portfolio Item 6 -->
                 <div class="col-lg-4 col-md-6 mb-2">
                     <div class="product-card">
                         <div class="product-image">
-                            <img src="agency-hotspot/images/smart light.jpg" alt="Smart Plug">
-                        </div>
-                        <div class="product-info">
-                            <h5 class="product-title">Smart Plug</h5>
+                            <img src="pic/WhatsApp Image 2025-12-04 at 16.02.56_c5228169.jpg" alt="Image 6">
                         </div>
                     </div>
                 </div>
             </div>
             
-            <!-- Mobile Carousel Indicators -->
-            <div class="mobile-carousel-indicators d-md-none">
-                <span class="dot active" data-index="0"></span>
-                <span class="dot" data-index="1"></span>
-                <span class="dot" data-index="2"></span>
-                <span class="dot" data-index="3"></span>
-                <span class="dot" data-index="4"></span>
-                <span class="dot" data-index="5"></span>
-            </div>
+
             
-            <!-- View All Button (Mobile Only) -->
-            <div class="row mt-2 d-md-none">
+            <style>
+            /* Optimized Our Works Section */
+            .portfolio-bg {
+                padding: 40px 0 30px 0;
+                height: 100vh;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+            }
+            
+            .section-heading {
+                margin-bottom: 20px;
+            }
+            
+            .section-heading h2 {
+                font-size: 2.5rem;
+                font-weight: 700;
+                text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+                margin-bottom: 8px;
+            }
+            
+            .section-heading p {
+                font-size: 1.1rem;
+                opacity: 0.9;
+                margin-bottom: 25px;
+            }
+            
+            .product-card {
+                overflow: hidden;
+                border-radius: 12px;
+                padding: 0;
+                margin: 0;
+                border: none;
+                background: none;
+                box-shadow: none;
+                transition: none;
+                position: relative;
+            }
+            
+            .product-card:hover {
+                transform: none;
+                box-shadow: none;
+            }
+            
+            .product-image {
+                width: 100%;
+                height: 200px;
+                overflow: hidden;
+                padding: 0;
+                margin: 0;
+                border: none;
+                position: relative;
+            }
+            
+
+            
+            .product-image img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                border: none;
+                margin: 0;
+                padding: 0;
+                display: block;
+                transition: transform 0.3s ease;
+                border-radius: 12px;
+            }
+            
+
+            
+            #imageCarousel {
+                flex: 1;
+                display: flex;
+                align-items: center;
+            }
+            
+            #imageCarousel .col-lg-4,
+            #imageCarousel .col-md-6 {
+                padding: 8px;
+                margin-bottom: 0;
+            }
+            
+            #imageCarousel .col-lg-4:nth-child(n+4),
+            #imageCarousel .col-md-6:nth-child(n+4) {
+                margin-top: -20px;
+            }
+            
+            /* Mobile Optimizations */
+            @media (max-width: 768px) {
+                .portfolio-bg {
+                    padding: 30px 0 20px 0;
+                }
+                
+                .section-heading h2 {
+                    font-size: 2rem;
+                }
+                
+                .section-heading p {
+                    font-size: 1rem;
+                    margin-bottom: 20px;
+                }
+                
+                .product-image {
+                    height: 160px;
+                }
+                
+                #imageCarousel .col-md-6 {
+                    padding: 6px;
+                }
+            }
+            
+            @media (max-width: 576px) {
+                .section-heading h2 {
+                    font-size: 1.7rem;
+                }
+                
+                .product-image {
+                    height: 140px;
+                }
+                
+                .section-heading {
+                    margin-bottom: 15px;
+                }
+                
+                #imageCarousel .col-lg-4:nth-child(n+4),
+                #imageCarousel .col-md-6:nth-child(n+4) {
+                    margin-top: -10px;
+                }
+            }
+            
+            /* Global Responsive Fixes */
+            @media (max-width: 1200px) {
+                .container {
+                    max-width: 100%;
+                    padding: 0 15px;
+                }
+            }
+            
+            @media (max-width: 992px) {
+                .main-font {
+                    font-size: 1.8rem !important;
+                }
+                
+                .alt-font {
+                    font-size: 0.95rem !important;
+                }
+                
+                .feature-item {
+                    margin-bottom: 30px;
+                }
+            }
+            
+            @media (max-width: 768px) {
+                .section {
+                    padding: 60px 0 !important;
+                }
+                
+                .main-font {
+                    font-size: 1.5rem !important;
+                }
+                
+                .heading {
+                    font-size: 1.8rem !important;
+                }
+                
+                .btn {
+                    padding: 10px 20px !important;
+                    font-size: 0.9rem !important;
+                }
+                
+                .team-box {
+                    margin-bottom: 20px;
+                }
+                
+                .contact-form input,
+                .contact-form textarea {
+                    margin-bottom: 15px;
+                }
+            }
+            
+            @media (max-width: 576px) {
+                .section {
+                    padding: 40px 0 !important;
+                }
+                
+                .main-font {
+                    font-size: 1.3rem !important;
+                }
+                
+                .heading {
+                    font-size: 1.5rem !important;
+                }
+                
+                .feature-item {
+                    text-align: center !important;
+                    margin-bottom: 25px;
+                }
+                
+                .team-text h5 {
+                    font-size: 1.1rem;
+                }
+                
+                .contact-buttons a {
+                    display: block;
+                    width: 100%;
+                    margin-bottom: 10px;
+                }
+            }
+            
+            @media (max-width: 480px) {
+                .container {
+                    padding: 0 10px;
+                }
+                
+                .main-font {
+                    font-size: 1.2rem !important;
+                }
+                
+                .section-heading h2 {
+                    font-size: 1.5rem !important;
+                }
+                
+                .btn-compact {
+                    padding: 8px 20px;
+                    font-size: 0.8rem;
+                }
+            }
+            
+            .gallery-modal {
+                display: none;
+                position: fixed;
+                z-index: 9999;
+                left: 0;
+                top: 0;
+                width: 100%;
+                height: 100%;
+                background-color: rgba(0,0,0,0.9);
+            }
+            
+            .modal-content {
+                position: relative;
+                margin: 2% auto;
+                padding: 20px;
+                width: 90%;
+                max-width: 1200px;
+                height: 90%;
+                background-color: #fff;
+                border-radius: 12px;
+                overflow-y: auto;
+            }
+            
+            .close-btn {
+                position: absolute;
+                top: 15px;
+                right: 25px;
+                font-size: 35px;
+                font-weight: bold;
+                cursor: pointer;
+                color: #333;
+            }
+            
+            .modal-title {
+                text-align: center;
+                margin-bottom: 30px;
+                font-size: 2rem;
+                color: #333;
+            }
+            
+            /* Enhanced Gallery Modal */
+            .gallery-grid {
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+                gap: 20px;
+                padding: 0 15px;
+            }
+            
+            .gallery-item {
+                border-radius: 0;
+                overflow: hidden;
+                box-shadow: none;
+                padding: 0;
+                margin: 0;
+                border: none;
+                background: none;
+                transition: none;
+                aspect-ratio: 364/250;
+            }
+            
+            .gallery-item:hover {
+                transform: none;
+                box-shadow: none;
+            }
+            
+            .gallery-item img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                cursor: pointer;
+                transition: transform 0.3s ease;
+                display: block;
+                border: none;
+                margin: 0;
+                padding: 0;
+            }
+            
+
+            
+            .modal-content {
+                position: relative;
+                margin: 2% auto;
+                padding: 30px;
+                width: 95%;
+                max-width: 1400px;
+                height: 90%;
+                background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+                border-radius: 20px;
+                overflow-y: auto;
+                box-shadow: 0 25px 50px rgba(0,0,0,0.3);
+            }
+            
+            .modal-title {
+                text-align: center;
+                margin-bottom: 40px;
+                font-size: 2.5rem;
+                color: #333;
+                font-weight: 700;
+                text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+            }
+            
+            .close-btn {
+                position: absolute;
+                top: 20px;
+                right: 30px;
+                font-size: 40px;
+                font-weight: bold;
+                cursor: pointer;
+                color: #333;
+                transition: color 0.3s ease;
+            }
+            
+            .close-btn:hover {
+                color: #ff4757;
+            }
+            
+            /* Modal Responsive Fixes */
+            @media (max-width: 768px) {
+                .gallery-grid {
+                    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+                    gap: 15px;
+                }
+                
+                .modal-content {
+                    width: 98%;
+                    padding: 20px;
+                    margin: 5% auto;
+                }
+                
+                .modal-title {
+                    font-size: 2rem;
+                    margin-bottom: 30px;
+                }
+                
+                .close-btn {
+                    font-size: 30px;
+                    top: 15px;
+                    right: 20px;
+                }
+            }
+            
+            @media (max-width: 576px) {
+                .gallery-grid {
+                    grid-template-columns: 1fr;
+                    gap: 10px;
+                }
+                
+                .modal-content {
+                    width: 95%;
+                    padding: 15px;
+                    margin: 10% auto;
+                }
+                
+                .modal-title {
+                    font-size: 1.5rem;
+                    margin-bottom: 20px;
+                }
+            }
+            
+            /* Navigation Responsive Fixes */
+            @media (max-width: 768px) {
+                .side_nav {
+                    width: 100%;
+                }
+                
+                .nav-menu {
+                    text-align: center;
+                }
+                
+                .nav-link {
+                    font-size: 1rem;
+                    padding: 10px 0;
+                }
+            }
+            
+            /* Image Responsive Fixes */
+            img {
+                max-width: 100%;
+                height: auto;
+            }
+            
+            /* Text Responsive Fixes */
+            @media (max-width: 576px) {
+                p {
+                    font-size: 0.9rem;
+                    line-height: 1.5;
+                }
+                
+                h1, h2, h3, h4, h5, h6 {
+                    line-height: 1.3;
+                }
+            };
+                z-index: 10;
+            }
+            
+            .close-btn:hover {
+                color: #ff4757;
+            }
+            
+            @media (max-width: 768px) {
+                .gallery-grid {
+                    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+                    gap: 15px;
+                }
+                
+                .modal-content {
+                    width: 98%;
+                    padding: 20px;
+                }
+                
+                .modal-title {
+                    font-size: 2rem;
+                    margin-bottom: 30px;
+                }
+            }
+            </style>
+            
+            <script>
+            function openGalleryModal() {
+                document.getElementById('galleryModal').style.display = 'block';
+                document.body.style.overflow = 'hidden';
+            }
+            
+            function closeGalleryModal() {
+                document.getElementById('galleryModal').style.display = 'none';
+                document.body.style.overflow = 'auto';
+            }
+            
+            window.onclick = function(event) {
+                const modal = document.getElementById('galleryModal');
+                if (event.target == modal) {
+                    closeGalleryModal();
+                }
+            }
+            </script>
+            
+
+            
+            <!-- Compact View All Button -->
+            <div class="row mt-1">
                 <div class="col-12 text-center">
-                    <a href="#contact" class="btn btn-medium btn-rounded btn-white">View All Products</a>
+                    <button onclick="openGalleryModal()" class="btn btn-compact btn-white">
+                        <i class="fas fa-images mr-2"></i>View All
+                        <span class="btn-shine"></span>
+                    </button>
+                </div>
+            </div>
+            
+            <style>
+            .btn-compact {
+                padding: 12px 30px;
+                font-size: 1rem;
+                font-weight: 600;
+                border-radius: 25px;
+                border: 2px solid #fff;
+                background: rgba(255,255,255,0.1);
+                color: #fff;
+                text-transform: uppercase;
+                letter-spacing: 0.5px;
+                position: relative;
+                overflow: hidden;
+                transition: all 0.3s ease;
+                backdrop-filter: blur(10px);
+            }
+            
+            .btn-compact:hover {
+                background: #fff;
+                color: #333;
+                transform: translateY(-1px);
+                box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+            }
+            
+            .btn-shine {
+                position: absolute;
+                top: 0;
+                left: -100%;
+                width: 100%;
+                height: 100%;
+                background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+                transition: left 0.5s ease;
+            }
+            
+            .btn-compact:hover .btn-shine {
+                left: 100%;
+            }
+            
+            @media (max-width: 768px) {
+                .btn-compact {
+                    padding: 10px 25px;
+                    font-size: 0.9rem;
+                }
+            }
+            
+            @media (max-width: 576px) {
+                .btn-compact {
+                    padding: 8px 20px;
+                    font-size: 0.8rem;
+                }
+            }
+            </style>
+            
+            <!-- Gallery Modal -->
+            <div id="galleryModal" class="gallery-modal">
+                <div class="modal-content">
+                    <span class="close-btn" onclick="closeGalleryModal()">&times;</span>
+                    <h3 class="modal-title">All Works</h3>
+                    <div class="gallery-grid">
+                        <div class="gallery-item"><img src="pic/WhatsApp Image 2025-12-04 at 16.02.55_6a8fd886.jpg" alt="Work 1"></div>
+                        <div class="gallery-item"><img src="pic/WhatsApp Image 2025-12-04 at 16.02.55_71d2e8b8.jpg" alt="Work 2"></div>
+                        <div class="gallery-item"><img src="pic/WhatsApp Image 2025-12-04 at 16.02.55_edeff3ea.jpg" alt="Work 3"></div>
+                        <div class="gallery-item"><img src="pic/WhatsApp Image 2025-12-04 at 16.02.56_9dd72b14.jpg" alt="Work 4"></div>
+                        <div class="gallery-item"><img src="pic/WhatsApp Image 2025-12-04 at 16.02.56_a6002117.jpg" alt="Work 5"></div>
+                        <div class="gallery-item"><img src="pic/WhatsApp Image 2025-12-04 at 16.02.56_c5228169.jpg" alt="Work 6"></div>
+                        <div class="gallery-item"><img src="pic/WhatsApp Image 2025-12-04 at 16.02.56_dd5c7784.jpg" alt="Work 7"></div>
+                        <div class="gallery-item"><img src="pic/WhatsApp Image 2025-12-04 at 16.02.57_025d889b.jpg" alt="Work 8"></div>
+                        <div class="gallery-item"><img src="pic/WhatsApp Image 2025-12-04 at 16.02.57_93860897.jpg" alt="Work 9"></div>
+                        <div class="gallery-item"><img src="pic/WhatsApp Image 2025-12-04 at 16.02.57_b03c82a8.jpg" alt="Work 10"></div>
+                        <div class="gallery-item"><img src="pic/WhatsApp Image 2025-12-04 at 16.02.58_acf4746b.jpg" alt="Work 11"></div>
+                        <div class="gallery-item"><img src="pic/WhatsApp Image 2025-12-04 at 16.02.58_e48fa53c.jpg" alt="Work 12"></div>
+                        <div class="gallery-item"><img src="pic/WhatsApp Image 2025-12-04 at 16.02.59_32145b42.jpg" alt="Work 13"></div>
+                        <div class="gallery-item"><img src="pic/WhatsApp Image 2025-12-04 at 16.02.59_3e626aeb.jpg" alt="Work 14"></div>
+                        <div class="gallery-item"><img src="pic/WhatsApp Image 2025-12-04 at 16.02.59_e466da37.jpg" alt="Work 15"></div>
+                        <div class="gallery-item"><img src="pic/WhatsApp Image 2025-12-04 at 16.03.00_81520611.jpg" alt="Work 16"></div>
+                        <div class="gallery-item"><img src="pic/WhatsApp Image 2025-12-04 at 16.03.01_c4fd2ceb.jpg" alt="Work 17"></div>
+                        <div class="gallery-item"><img src="pic/WhatsApp Image 2025-12-04 at 16.03.01_d60ef33a.jpg" alt="Work 18"></div>
+                        <div class="gallery-item"><img src="pic/WhatsApp Image 2025-12-04 at 16.03.01_e3285780.jpg" alt="Work 19"></div>
+                    </div>
                 </div>
             </div>
 
@@ -1453,3 +1028,5 @@
 <script src="agency-hotspot/js/TweenMax.min.js"></script>
 <script src="vendor/js/contact_us.js"></script>
 <script src="agency-hotspot/js/script.js"></script>
+<script src="agency-hotspot/js/custom.js"></script>
+
