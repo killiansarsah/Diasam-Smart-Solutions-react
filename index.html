@@ -175,8 +175,8 @@
 <!-- END BANNER -->
 
 <!-- START ABOUT -->
-    <section class="section slide2 about" id="about">
-        <div class="bg-overlay bg-pink opacity-8"></div>
+    <section class="section slide2 about" id="about" style="background-image: url('https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1920&q=80'); background-size: cover; background-position: center; background-attachment: fixed;">
+        <div class="bg-overlay bg-blue opacity-7"></div>
         <div class="container expand-container">
             <div class="col-12 px-0 section-heading about-fadeIn wow" data-wow-delay=".5s">
                 <h2 class="main-font">Diasam - Smart Solutions <span class="d-block grey-color">Security Agency located in</span> <span class="d-block grey-color">Texas, USA</span></h2>
@@ -232,8 +232,8 @@
 <!-- END ABOUT -->
 
 <!-- START TEAM -->
-    <section class="section slide3 team" id="team">
-        <div class="bg-overlay bg-yellow opacity-8"></div>
+    <section class="section slide3 team" id="team" style="background-image: url('https://images.unsplash.com/photo-1586953208448-b95a79798f07?w=1920&q=80'); background-size: cover; background-position: center; background-attachment: fixed;">
+        <div class="bg-overlay bg-brown opacity-8"></div>
         <div class="container expand-container">
             <!-- Section Heading -->
             <div class="row mb-4 section-heading text-center">
@@ -337,8 +337,9 @@
 <!-- END TEAM -->
 
 <!-- START PORTFOLIO -->
-    <section class="section slide4 portfolio-bg" id="portfolio">
-        <div class="container">
+    <section class="section slide4 portfolio-bg" id="portfolio" style="background-image: url('pic/our work.jpg') !important; background-size: cover !important; background-position: center !important; background-attachment: fixed !important; background-color: transparent !important;">
+        <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0, 123, 255, 0.4); z-index: 1;"></div>
+        <div class="container" style="position: relative; z-index: 2;">
             <div class="row section-heading mb-3 text-center">
                 <div class="col-12">
                     <h2 class="main-font text-white mb-1" style="font-size: 2rem; font-weight: 600;">OUR WORKS</h2>
@@ -346,14 +347,31 @@
                 </div>
             </div>
             
-            <!-- 3x2 Grid Layout -->
-            <div class="works-grid wow" data-wow-delay=".5s">
-                <div class="grid-item"><img src="pic/Daytime.jpg" alt="Daytime Work 1"></div>
-                <div class="grid-item"><img src="pic/Daytime (2).jpg" alt="Daytime Work 2"></div>
-                <div class="grid-item"><img src="pic/Daytime (3).jpg" alt="Daytime Work 3"></div>
-                <div class="grid-item"><img src="pic/Daytime (4).jpg" alt="Daytime Work 4"></div>
-                <div class="grid-item"><img src="pic/Daytime (5).jpg" alt="Daytime Work 5"></div>
-                <div class="grid-item"><img src="pic/Daytime (6).jpg" alt="Daytime Work 6"></div>
+            <!-- 3x2 Grid Layout with Navigation -->
+            <div class="works-container">
+                <button class="nav-btn prev-btn" onclick="changeImageSet(-1)">
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+                
+                <div class="works-grid wow" data-wow-delay=".5s" id="worksGrid">
+                    <div class="grid-item"><img src="pic/Daytime.jpg" alt="Daytime Work 1"></div>
+                    <div class="grid-item"><img src="pic/Daytime (2).jpg" alt="Daytime Work 2"></div>
+                    <div class="grid-item"><img src="pic/Daytime (3).jpg" alt="Daytime Work 3"></div>
+                    <div class="grid-item"><img src="pic/Daytime (4).jpg" alt="Daytime Work 4"></div>
+                    <div class="grid-item"><img src="pic/Daytime (5).jpg" alt="Daytime Work 5"></div>
+                    <div class="grid-item"><img src="pic/Daytime (6).jpg" alt="Daytime Work 6"></div>
+                </div>
+                
+                <button class="nav-btn next-btn" onclick="changeImageSet(1)">
+                    <i class="fas fa-chevron-right"></i>
+                </button>
+            </div>
+            
+            <!-- Navigation Dots -->
+            <div class="nav-dots">
+                <span class="dot active" onclick="goToSet(0)"></span>
+                <span class="dot" onclick="goToSet(1)"></span>
+                <span class="dot" onclick="goToSet(2)"></span>
             </div>
             
 
@@ -385,16 +403,81 @@
                 margin-bottom: 25px;
             }
             
+            /* Works Container */
+            .works-container {
+                position: relative;
+                max-width: 1000px;
+                margin: 0 auto;
+                flex: 1;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+            
             /* 3x2 Grid */
             .works-grid {
                 display: grid;
                 grid-template-columns: repeat(3, 1fr);
                 grid-template-rows: repeat(2, 1fr);
                 gap: 15px;
-                max-width: 1000px;
-                margin: 0 auto;
-                flex: 1;
+                width: 100%;
                 align-content: center;
+                transition: all 0.5s ease;
+            }
+            
+            /* Navigation Buttons */
+            .nav-btn {
+                position: absolute;
+                top: 50%;
+                transform: translateY(-50%);
+                background: rgba(255,255,255,0.1);
+                border: 2px solid rgba(255,255,255,0.3);
+                color: #fff;
+                width: 50px;
+                height: 50px;
+                border-radius: 50%;
+                cursor: pointer;
+                font-size: 18px;
+                transition: all 0.3s ease;
+                backdrop-filter: blur(10px);
+                z-index: 10;
+            }
+            
+            .nav-btn:hover {
+                background: rgba(255,255,255,0.2);
+                border-color: rgba(255,255,255,0.5);
+                transform: translateY(-50%) scale(1.1);
+            }
+            
+            .prev-btn {
+                left: -70px;
+            }
+            
+            .next-btn {
+                right: -70px;
+            }
+            
+            /* Navigation Dots */
+            .nav-dots {
+                text-align: center;
+                margin-top: 20px;
+            }
+            
+            .dot {
+                height: 12px;
+                width: 12px;
+                margin: 0 5px;
+                background-color: rgba(255,255,255,0.3);
+                border-radius: 50%;
+                display: inline-block;
+                cursor: pointer;
+                transition: all 0.3s ease;
+            }
+            
+            .dot.active,
+            .dot:hover {
+                background-color: #fff;
+                transform: scale(1.2);
             }
             
             .grid-item {
@@ -449,7 +532,20 @@
                 
                 .works-grid {
                     gap: 10px;
-                    max-width: 100%;
+                }
+                
+                .prev-btn {
+                    left: -60px;
+                }
+                
+                .next-btn {
+                    right: -60px;
+                }
+                
+                .nav-btn {
+                    width: 45px;
+                    height: 45px;
+                    font-size: 16px;
                 }
             }
             
@@ -466,14 +562,26 @@
                     font-size: 0.95rem;
                 }
                 
-                #imageCarousel .col-md-6 {
-                    padding: 3px;
+                .prev-btn {
+                    left: -50px;
                 }
                 
-                .product-card {
-                    height: 140px;
-                    border-radius: 10px;
+                .next-btn {
+                    right: -50px;
                 }
+                
+                .nav-btn {
+                    width: 40px;
+                    height: 40px;
+                    font-size: 14px;
+                }
+                
+                .dot {
+                    width: 10px;
+                    height: 10px;
+                    margin: 0 4px;
+                }
+                
             }
             
             /* Global Responsive Fixes */
@@ -792,134 +900,108 @@
             </style>
             
             <script>
-            function openGalleryModal() {
-                document.getElementById('galleryModal').style.display = 'block';
-                document.body.style.overflow = 'hidden';
+
+            
+            // Image sets for navigation
+            const imageSets = [
+                [
+                    'pic/Daytime.jpg',
+                    'pic/Daytime (2).jpg',
+                    'pic/Daytime (3).jpg',
+                    'pic/Daytime (4).jpg',
+                    'pic/Daytime (5).jpg',
+                    'pic/Daytime (6).jpg'
+                ],
+                [
+                    'pic/Daytime (7).jpg',
+                    'pic/Daytime (8).jpg',
+                    'pic/Daytime (9).jpg',
+                    'pic/Daytime (10).jpg',
+                    'pic/Night1.jpg',
+                    'pic/Night2.jpg'
+                ],
+                [
+                    'pic/Night3.jpg',
+                    'pic/Night4.jpg',
+                    'pic/Night5.jpg',
+                    'pic/Night6.jpg',
+                    'pic/Night7.jpg',
+                    'pic/Night8.jpg'
+                ]
+            ];
+            
+            let currentSet = 0;
+            
+            function changeImageSet(direction) {
+                const grid = document.getElementById('worksGrid');
+                const dots = document.querySelectorAll('.dot');
+                
+                // Add fade out effect
+                grid.style.opacity = '0';
+                grid.style.transform = 'translateX(' + (direction * 30) + 'px)';
+                
+                setTimeout(() => {
+                    currentSet += direction;
+                    
+                    if (currentSet >= imageSets.length) currentSet = 0;
+                    if (currentSet < 0) currentSet = imageSets.length - 1;
+                    
+                    // Update images
+                    const images = grid.querySelectorAll('img');
+                    images.forEach((img, index) => {
+                        img.src = imageSets[currentSet][index];
+                        img.alt = `Work ${index + 1} - Set ${currentSet + 1}`;
+                    });
+                    
+                    // Update dots
+                    dots.forEach(dot => dot.classList.remove('active'));
+                    dots[currentSet].classList.add('active');
+                    
+                    // Fade in with opposite direction
+                    grid.style.transform = 'translateX(' + (-direction * 30) + 'px)';
+                    
+                    setTimeout(() => {
+                        grid.style.opacity = '1';
+                        grid.style.transform = 'translateX(0)';
+                    }, 50);
+                }, 250);
             }
             
-            function closeGalleryModal() {
-                document.getElementById('galleryModal').style.display = 'none';
-                document.body.style.overflow = 'auto';
+            function goToSet(setIndex) {
+                if (setIndex === currentSet) return;
+                
+                const direction = setIndex > currentSet ? 1 : -1;
+                const grid = document.getElementById('worksGrid');
+                const dots = document.querySelectorAll('.dot');
+                
+                grid.style.opacity = '0';
+                
+                setTimeout(() => {
+                    currentSet = setIndex;
+                    
+                    const images = grid.querySelectorAll('img');
+                    images.forEach((img, index) => {
+                        img.src = imageSets[currentSet][index];
+                        img.alt = `Work ${index + 1} - Set ${currentSet + 1}`;
+                    });
+                    
+                    dots.forEach(dot => dot.classList.remove('active'));
+                    dots[currentSet].classList.add('active');
+                    
+                    grid.style.opacity = '1';
+                }, 250);
             }
             
-            window.onclick = function(event) {
-                const modal = document.getElementById('galleryModal');
-                if (event.target == modal) {
-                    closeGalleryModal();
-                }
-            }
+
             </script>
             
 
             
-            <!-- Compact View All Button -->
-            <div class="row mt-1">
-                <div class="col-12 text-center">
-                    <button onclick="openGalleryModal()" class="btn btn-compact btn-white">
-                        <i class="fas fa-images mr-2"></i>View All
-                        <span class="btn-shine"></span>
-                    </button>
-                </div>
-            </div>
+
             
-            <style>
-            .btn-compact {
-                padding: 12px 30px;
-                font-size: 1rem;
-                font-weight: 600;
-                border-radius: 25px;
-                border: 2px solid #fff;
-                background: rgba(255,255,255,0.1);
-                color: #fff;
-                text-transform: uppercase;
-                letter-spacing: 0.5px;
-                position: relative;
-                overflow: hidden;
-                transition: all 0.3s ease;
-                backdrop-filter: blur(10px);
-            }
+
             
-            .btn-compact:hover {
-                background: #fff;
-                color: #333;
-                transform: translateY(-1px);
-                box-shadow: 0 8px 20px rgba(0,0,0,0.2);
-            }
-            
-            .btn-shine {
-                position: absolute;
-                top: 0;
-                left: -100%;
-                width: 100%;
-                height: 100%;
-                background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
-                transition: left 0.5s ease;
-            }
-            
-            .btn-compact:hover .btn-shine {
-                left: 100%;
-            }
-            
-            /* Enhanced Mobile Button */
-            @media (max-width: 768px) {
-                .btn-compact {
-                    padding: 12px 30px;
-                    font-size: 1rem;
-                    border-radius: 30px;
-                    box-shadow: 0 6px 20px rgba(255,255,255,0.2);
-                    backdrop-filter: blur(15px);
-                }
-                
-                .btn-compact:hover {
-                    transform: translateY(-2px);
-                    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
-                }
-            }
-            
-            @media (max-width: 576px) {
-                .btn-compact {
-                    padding: 10px 25px;
-                    font-size: 0.9rem;
-                    border-radius: 25px;
-                }
-            }
-            
-            @media (max-width: 480px) {
-                .btn-compact {
-                    padding: 8px 20px;
-                    font-size: 0.85rem;
-                }
-            }
-            </style>
-            
-            <!-- Gallery Modal -->
-            <div id="galleryModal" class="gallery-modal">
-                <div class="modal-content">
-                    <span class="close-btn" onclick="closeGalleryModal()">&times;</span>
-                    <h3 class="modal-title">All Works</h3>
-                    <div class="gallery-grid">
-                        <div class="gallery-item"><img src="pic/Daytime.jpg" alt="Daytime Work 1"></div>
-                        <div class="gallery-item"><img src="pic/Daytime (2).jpg" alt="Daytime Work 2"></div>
-                        <div class="gallery-item"><img src="pic/Daytime (3).jpg" alt="Daytime Work 3"></div>
-                        <div class="gallery-item"><img src="pic/Daytime (4).jpg" alt="Daytime Work 4"></div>
-                        <div class="gallery-item"><img src="pic/Daytime (5).jpg" alt="Daytime Work 5"></div>
-                        <div class="gallery-item"><img src="pic/Daytime (6).jpg" alt="Daytime Work 6"></div>
-                        <div class="gallery-item"><img src="pic/Daytime (7).jpg" alt="Daytime Work 7"></div>
-                        <div class="gallery-item"><img src="pic/Daytime (8).jpg" alt="Daytime Work 8"></div>
-                        <div class="gallery-item"><img src="pic/Daytime (9).jpg" alt="Daytime Work 9"></div>
-                        <div class="gallery-item"><img src="pic/Daytime (10).jpg" alt="Daytime Work 10"></div>
-                        <div class="gallery-item"><img src="pic/Night1.jpg" alt="Night Work 1"></div>
-                        <div class="gallery-item"><img src="pic/Night2.jpg" alt="Night Work 2"></div>
-                        <div class="gallery-item"><img src="pic/Night3.jpg" alt="Night Work 3"></div>
-                        <div class="gallery-item"><img src="pic/Night4.jpg" alt="Night Work 4"></div>
-                        <div class="gallery-item"><img src="pic/Night5.jpg" alt="Night Work 5"></div>
-                        <div class="gallery-item"><img src="pic/Night6.jpg" alt="Night Work 6"></div>
-                        <div class="gallery-item"><img src="pic/Night7.jpg" alt="Night Work 7"></div>
-                        <div class="gallery-item"><img src="pic/Night8.jpg" alt="Night Work 8"></div>
-                        <div class="gallery-item"><img src="pic/Night9.jpg" alt="Night Work 9"></div>
-                    </div>
-                </div>
-            </div>
+
 
         </div>
     </section>
@@ -931,8 +1013,8 @@
 
 <!-- START CONTACT -->
     <section class="section slide5 contact-sec" id="contact" style="background-image: url('https://images.unsplash.com/photo-1423666639041-f56000c27a9a?w=1920&q=80'); background-size: cover; background-position: center; background-attachment: fixed;">
-        <div class="bg-overlay bg-red opacity-9"></div>
-        <div class="container expand-container">
+        <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(34, 139, 34, 0.8); z-index: 1;"></div>
+        <div class="container expand-container" style="position: relative; z-index: 2;">
             <div class="row">
                 <div class="col-12 col-lg-7 section6left wow" data-wow-delay=".8s">
                     <h4 class="heading text-center text-md-left main-font">Questions?<span class="d-block">Let's Get In Touch</span></h4>
