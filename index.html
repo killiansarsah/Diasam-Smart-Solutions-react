@@ -219,7 +219,7 @@
                 <div class="box-overlay"></div>
                 <div class="row align-items-center">
                     <div class="col-12 col-md-7 col-lg-9">
-                        <h2 class="main-font">Letâ€™s Get Started</h2>
+                        <h2 class="main-font">Let's Get Started</h2>
                         <p class="py-4 py-md-0">We are a family-owned technology company dedicated to revolutionizing the way people interact with their homes and workplaces. </p>
                     </div>
                     <div class="col-12 col-md-5 col-lg-3 text-center">
@@ -338,7 +338,6 @@
 
 <!-- START PORTFOLIO -->
     <section class="section slide4 portfolio-bg" id="portfolio">
-        <div class="bg-overlay text-light-black opacity-8"></div>
         <div class="container">
             <div class="row section-heading mb-3 text-center">
                 <div class="col-12">
@@ -347,58 +346,22 @@
                 </div>
             </div>
             
-            <!-- Portfolio Grid -->
-            <div class="row portfolio-grid wow" data-wow-delay=".5s" id="imageCarousel">
-                <div class="col-lg-4 col-md-6 mb-2">
-                    <div class="product-card">
-                        <div class="product-image">
-                            <img src="pic/WhatsApp Image 2025-12-04 at 16.02.55_6a8fd886.jpg" alt="Image 1">
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 mb-2">
-                    <div class="product-card">
-                        <div class="product-image">
-                            <img src="pic/WhatsApp Image 2025-12-04 at 16.02.55_71d2e8b8.jpg" alt="Image 2">
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 mb-2">
-                    <div class="product-card">
-                        <div class="product-image">
-                            <img src="pic/WhatsApp Image 2025-12-04 at 16.02.55_edeff3ea.jpg" alt="Image 3">
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 mb-2">
-                    <div class="product-card">
-                        <div class="product-image">
-                            <img src="pic/WhatsApp Image 2025-12-04 at 16.02.56_9dd72b14.jpg" alt="Image 4">
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 mb-2">
-                    <div class="product-card">
-                        <div class="product-image">
-                            <img src="pic/WhatsApp Image 2025-12-04 at 16.02.56_a6002117.jpg" alt="Image 5">
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 mb-2">
-                    <div class="product-card">
-                        <div class="product-image">
-                            <img src="pic/WhatsApp Image 2025-12-04 at 16.02.56_c5228169.jpg" alt="Image 6">
-                        </div>
-                    </div>
-                </div>
+            <!-- 3x2 Grid Layout -->
+            <div class="works-grid wow" data-wow-delay=".5s">
+                <div class="grid-item"><img src="pic/Daytime.jpg" alt="Daytime Work 1"></div>
+                <div class="grid-item"><img src="pic/Daytime (2).jpg" alt="Daytime Work 2"></div>
+                <div class="grid-item"><img src="pic/Daytime (3).jpg" alt="Daytime Work 3"></div>
+                <div class="grid-item"><img src="pic/Daytime (4).jpg" alt="Daytime Work 4"></div>
+                <div class="grid-item"><img src="pic/Daytime (5).jpg" alt="Daytime Work 5"></div>
+                <div class="grid-item"><img src="pic/Daytime (6).jpg" alt="Daytime Work 6"></div>
             </div>
             
 
             
             <style>
-            /* Optimized Our Works Section */
+            /* Portfolio Section */
             .portfolio-bg {
-                padding: 40px 0 30px 0;
+                padding: 30px 0 20px 0;
                 height: 100vh;
                 display: flex;
                 flex-direction: column;
@@ -406,7 +369,7 @@
             }
             
             .section-heading {
-                margin-bottom: 20px;
+                margin-bottom: 25px;
             }
             
             .section-heading h2 {
@@ -422,67 +385,44 @@
                 margin-bottom: 25px;
             }
             
-            .product-card {
+            /* 3x2 Grid */
+            .works-grid {
+                display: grid;
+                grid-template-columns: repeat(3, 1fr);
+                grid-template-rows: repeat(2, 1fr);
+                gap: 15px;
+                max-width: 1000px;
+                margin: 0 auto;
+                flex: 1;
+                align-content: center;
+            }
+            
+            .grid-item {
+                aspect-ratio: 1.5;
+                border-radius: 15px;
                 overflow: hidden;
-                border-radius: 12px;
-                padding: 0;
-                margin: 0;
-                border: none;
-                background: none;
-                box-shadow: none;
-                transition: none;
-                position: relative;
-                height: 200px;
+                box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+                transition: transform 0.3s ease, box-shadow 0.3s ease;
             }
             
-            .product-card:hover {
-                transform: none;
-                box-shadow: none;
+            .grid-item:hover {
+                transform: translateY(-5px);
+                box-shadow: 0 15px 35px rgba(0,0,0,0.4);
             }
             
-            .product-image {
-                width: 100%;
-                height: 100%;
-                overflow: hidden;
-                padding: 0;
-                margin: 0;
-                border: none;
-                position: absolute;
-                top: 0;
-                left: 0;
-            }
-            
-            .product-image img {
+            .grid-item img {
                 width: 100%;
                 height: 100%;
                 object-fit: cover;
-                border: none;
-                margin: 0;
-                padding: 0;
                 display: block;
                 transition: transform 0.3s ease;
             }
             
-
-            
-            #imageCarousel {
-                flex: 1;
-                display: flex;
-                align-items: center;
+            .grid-item:hover img {
+                transform: scale(1.05);
             }
             
-            #imageCarousel .col-lg-4,
-            #imageCarousel .col-md-6 {
-                padding: 8px;
-                margin-bottom: 0;
-            }
-            
-            #imageCarousel .col-lg-4:nth-child(n+4),
-            #imageCarousel .col-md-6:nth-child(n+4) {
-                margin-top: -20px;
-            }
-            
-            /* Enhanced Mobile Our Works Section */
+            /* Mobile Responsive */
             @media (max-width: 768px) {
                 .portfolio-bg {
                     padding: 25px 0 15px 0;
@@ -491,7 +431,7 @@
                 }
                 
                 .section-heading {
-                    margin-bottom: 25px;
+                    margin-bottom: 30px;
                     padding: 0 10px;
                 }
                 
@@ -507,68 +447,9 @@
                     opacity: 0.95;
                 }
                 
-                #imageCarousel {
-                    margin-bottom: 20px;
-                }
-                
-                #imageCarousel .col-md-6 {
-                    padding: 5px;
-                    margin-bottom: 10px;
-                }
-                
-                .product-card {
-                    border-radius: 15px;
-                    box-shadow: 0 6px 20px rgba(0,0,0,0.15);
-                    transition: all 0.3s ease;
-                }
-                
-                .product-card:hover {
-                    transform: translateY(-5px);
-                    box-shadow: 0 10px 30px rgba(0,0,0,0.25);
-                }
-                
-                .product-card {
-                    height: 180px;
-                }
-                
-                .product-card:hover .product-image img {
-                    transform: scale(1.03);
-                }
-            }
-            
-            @media (max-width: 576px) {
-                .portfolio-bg {
-                    padding: 20px 0 10px 0;
-                }
-                
-                .section-heading {
-                    margin-bottom: 20px;
-                    padding: 0 5px;
-                }
-                
-                .section-heading h2 {
-                    font-size: 1.9rem;
-                    margin-bottom: 8px;
-                }
-                
-                .section-heading p {
-                    font-size: 1rem;
-                    margin-bottom: 20px;
-                }
-                
-                #imageCarousel .col-md-6 {
-                    padding: 4px;
-                    margin-bottom: 8px;
-                }
-                
-                .product-card {
-                    height: 160px;
-                    border-radius: 12px;
-                }
-                
-                #imageCarousel .col-lg-4:nth-child(n+4),
-                #imageCarousel .col-md-6:nth-child(n+4) {
-                    margin-top: -8px;
+                .works-grid {
+                    gap: 10px;
+                    max-width: 100%;
                 }
             }
             
@@ -1017,25 +898,25 @@
                     <span class="close-btn" onclick="closeGalleryModal()">&times;</span>
                     <h3 class="modal-title">All Works</h3>
                     <div class="gallery-grid">
-                        <div class="gallery-item"><img src="pic/WhatsApp Image 2025-12-04 at 16.02.55_6a8fd886.jpg" alt="Work 1"></div>
-                        <div class="gallery-item"><img src="pic/WhatsApp Image 2025-12-04 at 16.02.55_71d2e8b8.jpg" alt="Work 2"></div>
-                        <div class="gallery-item"><img src="pic/WhatsApp Image 2025-12-04 at 16.02.55_edeff3ea.jpg" alt="Work 3"></div>
-                        <div class="gallery-item"><img src="pic/WhatsApp Image 2025-12-04 at 16.02.56_9dd72b14.jpg" alt="Work 4"></div>
-                        <div class="gallery-item"><img src="pic/WhatsApp Image 2025-12-04 at 16.02.56_a6002117.jpg" alt="Work 5"></div>
-                        <div class="gallery-item"><img src="pic/WhatsApp Image 2025-12-04 at 16.02.56_c5228169.jpg" alt="Work 6"></div>
-                        <div class="gallery-item"><img src="pic/WhatsApp Image 2025-12-04 at 16.02.56_dd5c7784.jpg" alt="Work 7"></div>
-                        <div class="gallery-item"><img src="pic/WhatsApp Image 2025-12-04 at 16.02.57_025d889b.jpg" alt="Work 8"></div>
-                        <div class="gallery-item"><img src="pic/WhatsApp Image 2025-12-04 at 16.02.57_93860897.jpg" alt="Work 9"></div>
-                        <div class="gallery-item"><img src="pic/WhatsApp Image 2025-12-04 at 16.02.57_b03c82a8.jpg" alt="Work 10"></div>
-                        <div class="gallery-item"><img src="pic/WhatsApp Image 2025-12-04 at 16.02.58_acf4746b.jpg" alt="Work 11"></div>
-                        <div class="gallery-item"><img src="pic/WhatsApp Image 2025-12-04 at 16.02.58_e48fa53c.jpg" alt="Work 12"></div>
-                        <div class="gallery-item"><img src="pic/WhatsApp Image 2025-12-04 at 16.02.59_32145b42.jpg" alt="Work 13"></div>
-                        <div class="gallery-item"><img src="pic/WhatsApp Image 2025-12-04 at 16.02.59_3e626aeb.jpg" alt="Work 14"></div>
-                        <div class="gallery-item"><img src="pic/WhatsApp Image 2025-12-04 at 16.02.59_e466da37.jpg" alt="Work 15"></div>
-                        <div class="gallery-item"><img src="pic/WhatsApp Image 2025-12-04 at 16.03.00_81520611.jpg" alt="Work 16"></div>
-                        <div class="gallery-item"><img src="pic/WhatsApp Image 2025-12-04 at 16.03.01_c4fd2ceb.jpg" alt="Work 17"></div>
-                        <div class="gallery-item"><img src="pic/WhatsApp Image 2025-12-04 at 16.03.01_d60ef33a.jpg" alt="Work 18"></div>
-                        <div class="gallery-item"><img src="pic/WhatsApp Image 2025-12-04 at 16.03.01_e3285780.jpg" alt="Work 19"></div>
+                        <div class="gallery-item"><img src="pic/Daytime.jpg" alt="Daytime Work 1"></div>
+                        <div class="gallery-item"><img src="pic/Daytime (2).jpg" alt="Daytime Work 2"></div>
+                        <div class="gallery-item"><img src="pic/Daytime (3).jpg" alt="Daytime Work 3"></div>
+                        <div class="gallery-item"><img src="pic/Daytime (4).jpg" alt="Daytime Work 4"></div>
+                        <div class="gallery-item"><img src="pic/Daytime (5).jpg" alt="Daytime Work 5"></div>
+                        <div class="gallery-item"><img src="pic/Daytime (6).jpg" alt="Daytime Work 6"></div>
+                        <div class="gallery-item"><img src="pic/Daytime (7).jpg" alt="Daytime Work 7"></div>
+                        <div class="gallery-item"><img src="pic/Daytime (8).jpg" alt="Daytime Work 8"></div>
+                        <div class="gallery-item"><img src="pic/Daytime (9).jpg" alt="Daytime Work 9"></div>
+                        <div class="gallery-item"><img src="pic/Daytime (10).jpg" alt="Daytime Work 10"></div>
+                        <div class="gallery-item"><img src="pic/Night1.jpg" alt="Night Work 1"></div>
+                        <div class="gallery-item"><img src="pic/Night2.jpg" alt="Night Work 2"></div>
+                        <div class="gallery-item"><img src="pic/Night3.jpg" alt="Night Work 3"></div>
+                        <div class="gallery-item"><img src="pic/Night4.jpg" alt="Night Work 4"></div>
+                        <div class="gallery-item"><img src="pic/Night5.jpg" alt="Night Work 5"></div>
+                        <div class="gallery-item"><img src="pic/Night6.jpg" alt="Night Work 6"></div>
+                        <div class="gallery-item"><img src="pic/Night7.jpg" alt="Night Work 7"></div>
+                        <div class="gallery-item"><img src="pic/Night8.jpg" alt="Night Work 8"></div>
+                        <div class="gallery-item"><img src="pic/Night9.jpg" alt="Night Work 9"></div>
                     </div>
                 </div>
             </div>
