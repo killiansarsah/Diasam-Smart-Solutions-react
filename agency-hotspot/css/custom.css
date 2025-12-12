@@ -1001,14 +1001,14 @@
     }
 }
 
-/* Fancybox Gallery Links */
-.grid-item a {
-    display: block;
-    width: 100%;
-    height: 100%;
-    cursor: zoom-in;
+/* Image Gallery */
+.grid-item {
+    cursor: pointer;
 }
 
-.grid-item a img {
-    pointer-events: none;
+.grid-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
 }

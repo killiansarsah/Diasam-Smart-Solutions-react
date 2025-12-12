@@ -176,7 +176,7 @@
 
 <!-- START ABOUT -->
     <section class="section slide2 about" id="about" style="background-image: url('https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1920&q=80'); background-size: cover; background-position: center; background-attachment: fixed;">
-        <div class="bg-overlay bg-blue opacity-7"></div>
+        <div class="bg-overlay" style="background: linear-gradient(135deg, rgba(99, 102, 241, 0.85) 0%, rgba(168, 85, 247, 0.85) 100%);"></div>
         <div class="container expand-container">
             <div class="col-12 px-0 section-heading about-fadeIn wow" data-wow-delay=".5s">
                 <h2 class="main-font">Diasam - Smart Solutions <span class="d-block grey-color">Security Agency located in</span> <span class="d-block grey-color">Texas, USA</span></h2>
@@ -354,12 +354,12 @@
                 </button>
                 
                 <div class="works-grid wow" data-wow-delay=".5s" id="worksGrid">
-                    <div class="grid-item"><a href="pic/Daytime.jpg" data-fancybox="gallery" data-caption="Daytime Work 1"><img src="pic/Daytime.jpg" alt="Daytime Work 1"></a></div>
-                    <div class="grid-item"><a href="pic/Daytime (2).jpg" data-fancybox="gallery" data-caption="Daytime Work 2"><img src="pic/Daytime (2).jpg" alt="Daytime Work 2"></a></div>
-                    <div class="grid-item"><a href="pic/Daytime (3).jpg" data-fancybox="gallery" data-caption="Daytime Work 3"><img src="pic/Daytime (3).jpg" alt="Daytime Work 3"></a></div>
-                    <div class="grid-item"><a href="pic/Daytime (4).jpg" data-fancybox="gallery" data-caption="Daytime Work 4"><img src="pic/Daytime (4).jpg" alt="Daytime Work 4"></a></div>
-                    <div class="grid-item"><a href="pic/Daytime (5).jpg" data-fancybox="gallery" data-caption="Daytime Work 5"><img src="pic/Daytime (5).jpg" alt="Daytime Work 5"></a></div>
-                    <div class="grid-item"><a href="pic/Daytime (6).jpg" data-fancybox="gallery" data-caption="Daytime Work 6"><img src="pic/Daytime (6).jpg" alt="Daytime Work 6"></a></div>
+                    <div class="grid-item" data-index="0" data-src="pic/Daytime.jpg"><img src="pic/Daytime.jpg" alt=""></div>
+                    <div class="grid-item" data-index="1" data-src="pic/Daytime (2).jpg"><img src="pic/Daytime (2).jpg" alt=""></div>
+                    <div class="grid-item" data-index="2" data-src="pic/Daytime (3).jpg"><img src="pic/Daytime (3).jpg" alt=""></div>
+                    <div class="grid-item" data-index="3" data-src="pic/Daytime (4).jpg"><img src="pic/Daytime (4).jpg" alt=""></div>
+                    <div class="grid-item" data-index="4" data-src="pic/Daytime (5).jpg"><img src="pic/Daytime (5).jpg" alt=""></div>
+                    <div class="grid-item" data-index="5" data-src="pic/Daytime (6).jpg"><img src="pic/Daytime (6).jpg" alt=""></div>
                 </div>
                 
                 <button class="nav-btn next-btn" onclick="changeImageSet(1)">
@@ -372,6 +372,7 @@
                 <span class="dot active" onclick="goToSet(0)"></span>
                 <span class="dot" onclick="goToSet(1)"></span>
                 <span class="dot" onclick="goToSet(2)"></span>
+                <span class="dot" onclick="goToSet(3)"></span>
             </div>
             
 
@@ -486,6 +487,8 @@
                 overflow: hidden;
                 box-shadow: 0 8px 25px rgba(0,0,0,0.3);
                 transition: transform 0.3s ease, box-shadow 0.3s ease;
+                cursor: pointer;
+                position: relative;
             }
             
             .grid-item:hover {
@@ -499,6 +502,7 @@
                 object-fit: cover;
                 display: block;
                 transition: transform 0.3s ease;
+                pointer-events: none;
             }
             
             .grid-item:hover img {
@@ -1070,12 +1074,358 @@
     </div>
 </div>
 
+<!-- Custom Image Modal -->
+<div id="imageModal" class="image-modal">
+    <span class="modal-close">&times;</span>
+    <img class="modal-image" id="modalImage" src="" alt="">
+    <div class="modal-nav">
+        <button class="modal-prev">&lt;</button>
+        <button class="modal-next">&gt;</button>
+    </div>
+</div>
+
+<style>
+.image-modal {
+    display: none;
+    position: fixed;
+    z-index: 99999;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.95);
+    backdrop-filter: blur(10px);
+}
+
+.image-modal.active {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal-image {
+    max-width: 90%;
+    max-height: 90vh;
+    object-fit: contain;
+    animation: zoomIn 0.3s ease;
+}
+
+@keyframes zoomIn {
+    from {
+        transform: scale(0.8);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+.modal-close {
+    position: absolute;
+    top: 20px;
+    right: 35px;
+    color: #fff;
+    font-size: 50px;
+    font-weight: 300;
+    cursor: pointer;
+    transition: all 0.3s;
+    z-index: 100000;
+}
+
+.modal-close:hover {
+    color: #ddd;
+    transform: scale(1.1);
+}
+
+.modal-nav button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(255, 255, 255, 0.1);
+    color: white;
+    border: none;
+    padding: 15px 20px;
+    font-size: 24px;
+    cursor: pointer;
+    backdrop-filter: blur(10px);
+    transition: all 0.3s;
+    border-radius: 5px;
+}
+
+.modal-nav button:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    transform: translateY(-50%) scale(1.1);
+}
+
+.modal-prev {
+    left: 20px;
+}
+
+.modal-next {
+    right: 20px;
+}
+
+/* Mobile adjustments */
+@media (max-width: 767px) {
+    .modal-image {
+        max-width: 95%;
+        max-height: 80vh;
+    }
+    
+    .modal-close {
+        top: 10px;
+        right: 15px;
+        font-size: 40px;
+    }
+    
+    .modal-nav button {
+        padding: 10px 15px;
+        font-size: 20px;
+    }
+    
+    .modal-prev {
+        left: 10px;
+    }
+    
+    .modal-next {
+        right: 10px;
+    }
+}
+
+.grid-item {
+    cursor: pointer;
+}
+</style>
+
+<script>
+// Wait for DOM to be fully loaded
+document.addEventListener('DOMContentLoaded', function() {
+    console.log('DOM loaded, initializing modal...');
+    
+const images = [
+    'pic/Daytime.jpg',
+    'pic/Daytime (2).jpg',
+    'pic/Daytime (3).jpg',
+    'pic/Daytime (4).jpg',
+    'pic/Daytime (5).jpg',
+    'pic/Daytime (6).jpg',
+    'pic/Daytime (7).jpg',
+    'pic/Daytime (8).jpg',
+    'pic/Daytime (9).jpg',
+    'pic/Daytime (10).jpg',
+    'pic/Night1.jpg',
+    'pic/Night2.jpg',
+    'pic/Night3.jpg',
+    'pic/Night4.jpg',
+    'pic/Night5.jpg',
+    'pic/Night6.jpg',
+    'pic/Night7.jpg',
+    'pic/Night8.jpg',
+    'pic/Night9.jpg'
+];
+
+// All image sets (6 images per set)
+const imageSets = [
+    [
+        'pic/Daytime.jpg',
+        'pic/Daytime (2).jpg',
+        'pic/Daytime (3).jpg',
+        'pic/Daytime (4).jpg',
+        'pic/Daytime (5).jpg',
+        'pic/Daytime (6).jpg'
+    ],
+    [
+        'pic/Daytime (7).jpg',
+        'pic/Daytime (8).jpg',
+        'pic/Daytime (9).jpg',
+        'pic/Daytime (10).jpg',
+        'pic/Night1.jpg',
+        'pic/Night2.jpg'
+    ],
+    [
+        'pic/Night3.jpg',
+        'pic/Night4.jpg',
+        'pic/Night5.jpg',
+        'pic/Night6.jpg',
+        'pic/Night7.jpg',
+        'pic/Night8.jpg'
+    ],
+    [
+        'pic/Night9.jpg'
+    ]
+];
+
+let currentImageIndex = 0;
+let currentSet = 0;
+
+// Load a specific set of images into the grid
+function loadImageSet(setIndex) {
+    currentSet = setIndex;
+    const grid = document.getElementById('worksGrid');
+    grid.innerHTML = '';
+    
+    const imageSet = imageSets[setIndex];
+    const startIndex = setIndex * 6;
+    
+    imageSet.forEach((imageSrc, i) => {
+        const gridItem = document.createElement('div');
+        gridItem.className = 'grid-item';
+        const globalIndex = startIndex + i;
+        gridItem.setAttribute('data-index', globalIndex);
+        gridItem.setAttribute('data-src', imageSrc);
+        
+        const img = document.createElement('img');
+        img.src = imageSrc;
+        img.alt = '';
+        
+        gridItem.appendChild(img);
+        grid.appendChild(gridItem);
+    });
+    
+    updateDots();
+}
+
+// Change image set (navigation buttons)
+function changeImageSet(direction) {
+    let newSet = currentSet + direction;
+    
+    if (newSet < 0) {
+        newSet = imageSets.length - 1;
+    } else if (newSet >= imageSets.length) {
+        newSet = 0;
+    }
+    
+    loadImageSet(newSet);
+}
+
+// Go to specific set (dots)
+function goToSet(setIndex) {
+    loadImageSet(setIndex);
+}
+
+// Update navigation dots
+function updateDots() {
+    const dots = document.querySelectorAll('.dot');
+    dots.forEach((dot, index) => {
+        if (index === currentSet) {
+            dot.classList.add('active');
+        } else {
+            dot.classList.remove('active');
+        }
+    });
+}
+
+function openImageModal(imageSrc, index) {
+    currentImageIndex = index;
+    const modal = document.getElementById('imageModal');
+    const modalImg = document.getElementById('modalImage');
+    
+    if (!modal || !modalImg) {
+        console.error('Modal elements not found');
+        return;
+    }
+    
+    modal.classList.add('active');
+    modal.style.display = 'flex';
+    modalImg.src = imageSrc;
+    document.body.style.overflow = 'hidden';
+}
+
+function closeImageModal(event) {
+    const modal = document.getElementById('imageModal');
+    
+    if (!event || event.target === modal || event.target.classList.contains('modal-close')) {
+        modal.classList.remove('active');
+        modal.style.display = 'none';
+        document.body.style.overflow = '';
+    }
+}
+
+function navigateImage(direction) {
+    currentImageIndex += direction;
+    
+    // Loop around
+    if (currentImageIndex < 0) {
+        currentImageIndex = images.length - 1;
+    } else if (currentImageIndex >= images.length) {
+        currentImageIndex = 0;
+    }
+    
+    const modalImg = document.getElementById('modalImage');
+    modalImg.src = images[currentImageIndex];
+}
+
+// Event delegation for grid items
+document.addEventListener('click', function(e) {
+    const gridItem = e.target.closest('.grid-item');
+    if (gridItem) {
+        const index = parseInt(gridItem.getAttribute('data-index'));
+        const src = gridItem.getAttribute('data-src');
+        console.log('Grid item clicked:', index, src);
+        openImageModal(src, index);
+    }
+});
+
+// Modal close button
+const closeBtn = document.querySelector('.modal-close');
+if (closeBtn) {
+    closeBtn.addEventListener('click', function(e) {
+        e.stopPropagation();
+        closeImageModal();
+    });
+}
+
+// Modal background click
+const modal = document.getElementById('imageModal');
+if (modal) {
+    modal.addEventListener('click', function(e) {
+        if (e.target === modal) {
+            closeImageModal();
+        }
+    });
+}
+
+// Navigation buttons
+const prevBtn = document.querySelector('.modal-prev');
+const nextBtn = document.querySelector('.modal-next');
+if (prevBtn) {
+    prevBtn.addEventListener('click', function(e) {
+        e.stopPropagation();
+        navigateImage(-1);
+    });
+}
+if (nextBtn) {
+    nextBtn.addEventListener('click', function(e) {
+        e.stopPropagation();
+        navigateImage(1);
+    });
+}
+
+// Keyboard navigation
+document.addEventListener('keydown', function(event) {
+    const modal = document.getElementById('imageModal');
+    if (modal && modal.classList.contains('active')) {
+        if (event.key === 'Escape') {
+            closeImageModal();
+        } else if (event.key === 'ArrowLeft') {
+            navigateImage(-1);
+        } else if (event.key === 'ArrowRight') {
+            navigateImage(1);
+        }
+    }
+});
+
+console.log('Modal initialized successfully');
+
+}); // End DOMContentLoaded
+</script>
+
 <!-- JavaScript -->
 <script src="vendor/js/bundle.min.js"></script>
 <script src="vendor/js/wow.min.js"></script>
 <!-- Plugin Js -->
 <script src="vendor/js/jquery.appear.js"></script>
-<script src="vendor/js/jquery.fancybox.min.js"></script>
 <script src="vendor/js/owl.carousel.min.js"></script>
 <!-- CUSTOM JS -->
 <script src="agency-hotspot/js/jquery.pagepiling.min.js"></script>
