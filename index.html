@@ -263,72 +263,165 @@
                 <!-- Right Column: Team Carousel -->
                 <div class="col-12 col-lg-5">
                     <div class="team-fade h-100 d-flex flex-column justify-content-center">
-                        <div class="text-center mb-4">
-                            <h3 class="main-font text-white mb-2" style="font-size: 1.8rem; font-weight: 700; letter-spacing: 0.5px;">Meet Our Team</h3>
-                            <div style="width: 60px; height: 3px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); margin: 0 auto; border-radius: 2px;"></div>
+                        <!-- Elegant Section Header -->
+                        <div class="text-center mb-5">
+                            <div style="display: inline-block; position: relative;">
+                                <h3 class="main-font text-white mb-3" style="font-size: 2rem; font-weight: 600; letter-spacing: 1px; text-shadow: 2px 2px 4px rgba(0,0,0,0.3);">Meet Our Team</h3>
+                                <div style="width: 80px; height: 2px; background: linear-gradient(135deg, #ffffff 0%, rgba(255,255,255,0.6) 100%); margin: 0 auto; position: relative;">
+                                    <div style="position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); width: 8px; height: 8px; background: #ffffff; border-radius: 50%; box-shadow: 0 0 10px rgba(255,255,255,0.5);"></div>
+                                </div>
+                            </div>
+                            <p class="alt-font text-white mt-2" style="font-size: 0.95rem; opacity: 0.8; font-style: italic;">Leadership & Innovation</p>
                         </div>
-                        <div id="team-slider" class="owl-carousel owl-theme wow fadeInUp">
-                        <!--Team Item-->
-                        <div class="team-box item">
-                            <!--Team Image-->
-                            <div class="team-image">
-                                <img src="agency-hotspot/images/killian.jpg" alt="Killian" style="max-width: 300px; width: 100%; height: auto;">
+                        
+                        <!-- Professional Team Cards -->
+                        <div id="team-slider" class="owl-carousel owl-theme wow fadeInUp" style="--team-text-opacity: 1;">
+                            <!-- Team Member 1: Sam G -->
+                            <div class="team-card-professional" style="background: #ffffff; border-radius: 15px; overflow: hidden; box-shadow: 0 20px 45px rgba(0,0,0,0.18), 0 8px 25px rgba(0,0,0,0.15); transition: all 0.4s ease; position: relative; height: 350px; display: flex; flex-direction: column; margin: 0 15px;">
+                                <!-- Profile Image -->
+                                <div style="flex: 1; overflow: hidden; position: relative;">
+                                    <img src="agency-hotspot/images/Fafa.jpeg" alt="Sam G" style="width: 100%; height: 100%; object-fit: cover; object-position: 30% center; transition: transform 0.3s ease;">
+                                    <div style="position: absolute; inset: 0; background: linear-gradient(135deg, rgba(102, 126, 234, 0.1) 0%, transparent 50%); opacity: 0; transition: opacity 0.3s ease;"></div>
+                                </div>
+                                
+                                <!-- Member Info -->
+                                <div style="padding: 20px; text-align: center; background: #ffffff;">
+                                    <h4 class="main-font" style="color: #2c3e50; font-size: 1.3rem; font-weight: 600; margin-bottom: 8px; letter-spacing: 0.5px;">Sam G</h4>
+                                    <div style="display: inline-block; background: linear-gradient(135deg, #34495e 0%, #2c3e50 100%); color: #ffffff; padding: 5px 15px; border-radius: 20px; font-size: 0.8rem; font-weight: 500; letter-spacing: 0.5px; text-transform: uppercase;">CEO</div>
+                                </div>
                             </div>
-                            <!--Team Text-->
-                            <div class="team-text">
-                                <h5 class="main-font">Killian Sarsah</h5> 
-                                <span class="alt-font">Team Member</span>
-                            </div>
-                        </div>
-                        <!--Team Item-->
-                        <div class="team-box item">
-                            <!--Team Image-->
-                            <div class="team-image">
-                                <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=300&h=300&fit=crop" alt="Chris Jerico" style="max-width: 300px; width: 100%; height: auto;">
-                            </div>
-                            <!--Team Text-->
-                            <div class="team-text">
-                                <h5 class="main-font">Chris Jerico</h5>
-                                <span class="alt-font">Content Writer</span>
-                            </div>
-                        </div>
-                        <!--Team Item-->
-                        <div class="team-box item">
-                            <!--Team Image-->
-                            <div class="team-image">
-                                <img src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=300&h=300&fit=crop" alt="James Clark" style="max-width: 300px; width: 100%; height: auto;">
-                            </div>
-                            <!--Team Text-->
-                            <div class="team-text">
-                                <h5 class="main-font">James Clark</h5>
-                                <span class="alt-font">Marketing Head</span>
-                            </div>
-                        </div>
-                        <!--Team Item-->
-                        <div class="team-box item">
-                            <!--Team Image-->
-                            <div class="team-image">
-                                <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=300&h=300&fit=crop" alt="William Smith" style="max-width: 300px; width: 100%; height: auto;">
-                            </div>
-                            <!--Team Text-->
-                            <div class="team-text">
-                                <h5 class="main-font">William Smith</h5>
-                                <span class="alt-font">HR Manager</span>
+                            
+                            <!-- Team Member 2: Killian S -->
+                            <div class="team-card-professional" style="background: #ffffff; border-radius: 15px; overflow: hidden; box-shadow: 0 20px 45px rgba(0,0,0,0.18), 0 8px 25px rgba(0,0,0,0.15); transition: all 0.4s ease; position: relative; height: 350px; display: flex; flex-direction: column; margin: 0 15px;">
+                                <!-- Profile Image -->
+                                <div style="flex: 1; overflow: hidden; position: relative;">
+                                    <img src="agency-hotspot/images/killian.jpeg" alt="Killian S" style="width: 100%; height: 100%; object-fit: cover; object-position: center 90%; transition: transform 0.3s ease;">
+                                    <div style="position: absolute; inset: 0; background: linear-gradient(135deg, rgba(52, 73, 94, 0.1) 0%, transparent 50%); opacity: 0; transition: opacity 0.3s ease;"></div>
+                                </div>
+                                
+                                <!-- Member Info -->
+                                <div style="padding: 20px; text-align: center; background: #ffffff;">
+                                    <h4 class="main-font" style="color: #2c3e50; font-size: 1.3rem; font-weight: 600; margin-bottom: 8px; letter-spacing: 0.5px;">Killian S</h4>
+                                    <div style="display: inline-block; background: linear-gradient(135deg, #34495e 0%, #2c3e50 100%); color: #ffffff; padding: 5px 15px; border-radius: 20px; font-size: 0.8rem; font-weight: 500; letter-spacing: 0.5px; text-transform: uppercase;">Team Member</div>
+                                </div>
                             </div>
                         </div>
-                        <!--Team Item-->
-                        <div class="team-box item">
-                            <!--Team Image-->
-                            <div class="team-image">
-                                <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?w=300&h=300&fit=crop" alt="Ella Anderson" style="max-width: 300px; width: 100%; height: auto;">
-                            </div>
-                            <!--Team Text-->
-                            <div class="team-text">
-                                <h5 class="main-font">Ella Anderson</h5>
-                                <span class="alt-font">Sales Executive</span>
-                            </div>
-                        </div>
-                    </div>
+                        
+                        <!-- Team Card Hover Effects -->
+                        <style>
+                        .team-card-professional:hover {
+                            transform: translateY(-8px) !important;
+                            box-shadow: 0 25px 50px rgba(0,0,0,0.15), 0 10px 25px rgba(0,0,0,0.1) !important;
+                        }
+                        
+                        .team-card-professional:hover img {
+                            transform: scale(1.05) !important;
+                        }
+                        
+                        /* Large tablets and small desktops */
+                        @media (max-width: 992px) and (min-width: 769px) {
+                            .team-card-professional {
+                                max-width: 300px;
+                                margin-left: auto !important;
+                                margin-right: auto !important;
+                            }
+                        }
+                        
+                        /* Tablets */
+                        @media (max-width: 768px) {
+                            .team-card-professional {
+                                height: 450px !important;
+                                max-width: 320px;
+                                width: 90%;
+                                margin: 0 auto !important;
+                                box-shadow: 0 25px 55px rgba(0,0,0,0.22), 0 12px 30px rgba(0,0,0,0.18) !important;
+                            }
+                            
+                            #team-slider .owl-item {
+                                display: flex !important;
+                                justify-content: center !important;
+                            }
+                            
+                            .team-card-professional > div:first-child {
+                                flex: 1.2 !important;
+                            }
+                            
+                            .team-card-professional img {
+                                object-fit: cover !important;
+                                object-position: center top !important;
+                                width: 100% !important;
+                                height: 100% !important;
+                            }
+                            
+                            .team-card-professional img[alt="Sam G"] {
+                                object-position: 30% top !important;
+                            }
+                            
+                            .team-card-professional img[alt="Killian S"] {
+                                object-position: center 75% !important;
+                            }
+                            
+                            .team-card-professional > div:last-child {
+                                padding: 15px !important;
+                                flex-shrink: 0;
+                            }
+                            
+                            .team-card-professional h4 {
+                                font-size: 1.1rem !important;
+                                margin-bottom: 6px !important;
+                            }
+                            
+                            .team-card-professional > div:last-child > div {
+                                font-size: 0.75rem !important;
+                                padding: 4px 12px !important;
+                            }
+                            
+                            #team-slider .owl-stage-outer {
+                                padding: 0 20px;
+                            }
+                        }
+                        
+                        /* Small mobile devices */
+                        @media (max-width: 480px) {
+                            .team-card-professional {
+                                height: 400px !important;
+                                max-width: 280px !important;
+                                width: 85% !important;
+                                margin: 0 auto !important;
+                            }
+                            
+                            .team-card-professional > div:last-child {
+                                padding: 12px !important;
+                            }
+                            
+                            .team-card-professional h4 {
+                                font-size: 1rem !important;
+                            }
+                            
+                            .team-card-professional > div:last-child > div {
+                                font-size: 0.7rem !important;
+                                padding: 3px 10px !important;
+                            }
+                            
+                            #team-slider .owl-stage-outer {
+                                padding: 0 15px;
+                            }
+                        }
+                        
+                        /* Extra small devices */
+                        @media (max-width: 360px) {
+                            .team-card-professional {
+                                height: 380px !important;
+                                max-width: 260px !important;
+                                width: 90% !important;
+                                margin: 0 auto !important;
+                            }
+                            
+                            #team-slider .owl-stage-outer {
+                                padding: 0 10px;
+                            }
+                        }
+                        </style>
                     </div>
                 </div>
             </div>

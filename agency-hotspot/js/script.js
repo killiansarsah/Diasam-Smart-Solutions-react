@@ -407,22 +407,23 @@ $(".broad .nav-menu .nav-link").on("click", function (event) {
 ====================================== */
 
 $("#team-slider").owlCarousel({
-    items: 5,
+    items: 2,
     dots: false,
     nav: false,
-    loop: true,
-    center:true,
+    loop: false,
+    center: false,
     autoplay: true,
-    autoplayHoverPause:true,
+    autoplayHoverPause: true,
     slideSpeed: 3000,
     paginationSpeed: 5000,
-    smartSpeed:1000,
+    smartSpeed: 1000,
+    rewind: true,
     responsive: {
         992: {
-            items: 3
+            items: 2
         },
         600: {
-            items: 3
+            items: 2
         },
         320: {
             items: 1
