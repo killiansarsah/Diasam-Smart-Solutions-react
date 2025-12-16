@@ -442,10 +442,6 @@
             
             <!-- 3x2 Grid Layout with Navigation -->
             <div class="works-container">
-                <button class="nav-btn prev-btn" onclick="changeImageSet(-1)">
-                    <i class="fas fa-chevron-left"></i>
-                </button>
-                
                 <div class="works-grid wow" data-wow-delay=".5s" id="worksGrid">
                     <div class="grid-item" data-index="0" data-src="pic/Daytime.jpg"><img src="pic/Daytime.jpg" alt=""></div>
                     <div class="grid-item" data-index="1" data-src="pic/Daytime (2).jpg"><img src="pic/Daytime (2).jpg" alt=""></div>
@@ -454,18 +450,24 @@
                     <div class="grid-item" data-index="4" data-src="pic/Daytime (5).jpg"><img src="pic/Daytime (5).jpg" alt=""></div>
                     <div class="grid-item" data-index="5" data-src="pic/Daytime (6).jpg"><img src="pic/Daytime (6).jpg" alt=""></div>
                 </div>
-                
-                <button class="nav-btn next-btn" onclick="changeImageSet(1)">
-                    <i class="fas fa-chevron-right"></i>
-                </button>
             </div>
             
-            <!-- Navigation Dots -->
-            <div class="nav-dots">
-                <span class="dot active" onclick="goToSet(0)"></span>
-                <span class="dot" onclick="goToSet(1)"></span>
-                <span class="dot" onclick="goToSet(2)"></span>
-                <span class="dot" onclick="goToSet(3)"></span>
+            <!-- Navigation Dots with Buttons -->
+            <div class="nav-controls">
+                <button class="nav-btn-bottom prev-btn-bottom" onclick="changeImageSet(-1)">
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+                
+                <div class="nav-dots">
+                    <span class="dot active" onclick="goToSet(0)"></span>
+                    <span class="dot" onclick="goToSet(1)"></span>
+                    <span class="dot" onclick="goToSet(2)"></span>
+                    <span class="dot" onclick="goToSet(3)"></span>
+                </div>
+                
+                <button class="nav-btn-bottom next-btn-bottom" onclick="changeImageSet(1)">
+                    <i class="fas fa-chevron-right"></i>
+                </button>
             </div>
             
 
@@ -551,10 +553,43 @@
                 right: -70px;
             }
             
+            /* Navigation Controls Container */
+            .nav-controls {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                margin-top: 20px;
+                gap: 20px;
+            }
+            
+            /* Bottom Navigation Buttons */
+            .nav-btn-bottom {
+                background: rgba(255,255,255,0.2);
+                border: 2px solid rgba(255,255,255,0.4);
+                color: #fff;
+                width: 40px;
+                height: 40px;
+                border-radius: 50%;
+                cursor: pointer;
+                font-size: 16px;
+                transition: all 0.3s ease;
+                backdrop-filter: blur(10px);
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+            
+            .nav-btn-bottom:hover {
+                background: rgba(255,255,255,0.3);
+                border-color: rgba(255,255,255,0.6);
+                transform: scale(1.1);
+            }
+            
             /* Navigation Dots */
             .nav-dots {
-                text-align: center;
-                margin-top: 20px;
+                display: flex;
+                align-items: center;
+                gap: 10px;
             }
             
             .dot {
@@ -1028,6 +1063,14 @@
                     'pic/Night6.jpg',
                     'pic/Night7.jpg',
                     'pic/Night8.jpg'
+                ],
+                [
+                    'pic/Night9.jpg',
+                    'pic/Daytime.jpg',
+                    'pic/Daytime (2).jpg',
+                    'pic/Night1.jpg',
+                    'pic/Night2.jpg',
+                    'pic/Daytime (3).jpg'
                 ]
             ];
             
@@ -1037,9 +1080,7 @@
                 const grid = document.getElementById('worksGrid');
                 const dots = document.querySelectorAll('.dot');
                 
-                // Add fade out effect
-                grid.style.opacity = '0';
-                grid.style.transform = 'translateX(' + (direction * 30) + 'px)';
+                grid.style.opacity = '0.5';
                 
                 setTimeout(() => {
                     currentSet += direction;
@@ -1047,50 +1088,51 @@
                     if (currentSet >= imageSets.length) currentSet = 0;
                     if (currentSet < 0) currentSet = imageSets.length - 1;
                     
-                    // Update images
                     const images = grid.querySelectorAll('img');
+                    const gridItems = grid.querySelectorAll('.grid-item');
+                    
                     images.forEach((img, index) => {
-                        img.src = imageSets[currentSet][index];
-                        img.alt = `Work ${index + 1} - Set ${currentSet + 1}`;
+                        if (imageSets[currentSet][index]) {
+                            img.src = imageSets[currentSet][index];
+                            gridItems[index].setAttribute('data-src', imageSets[currentSet][index]);
+                            gridItems[index].setAttribute('data-index', currentSet * 6 + index);
+                        }
                     });
                     
-                    // Update dots
                     dots.forEach(dot => dot.classList.remove('active'));
-                    dots[currentSet].classList.add('active');
+                    if (dots[currentSet]) dots[currentSet].classList.add('active');
                     
-                    // Fade in with opposite direction
-                    grid.style.transform = 'translateX(' + (-direction * 30) + 'px)';
-                    
-                    setTimeout(() => {
-                        grid.style.opacity = '1';
-                        grid.style.transform = 'translateX(0)';
-                    }, 50);
-                }, 250);
+                    grid.style.opacity = '1';
+                }, 200);
             }
             
             function goToSet(setIndex) {
-                if (setIndex === currentSet) return;
+                if (setIndex === currentSet || setIndex >= imageSets.length) return;
                 
-                const direction = setIndex > currentSet ? 1 : -1;
                 const grid = document.getElementById('worksGrid');
                 const dots = document.querySelectorAll('.dot');
                 
-                grid.style.opacity = '0';
+                grid.style.opacity = '0.5';
                 
                 setTimeout(() => {
                     currentSet = setIndex;
                     
                     const images = grid.querySelectorAll('img');
+                    const gridItems = grid.querySelectorAll('.grid-item');
+                    
                     images.forEach((img, index) => {
-                        img.src = imageSets[currentSet][index];
-                        img.alt = `Work ${index + 1} - Set ${currentSet + 1}`;
+                        if (imageSets[currentSet][index]) {
+                            img.src = imageSets[currentSet][index];
+                            gridItems[index].setAttribute('data-src', imageSets[currentSet][index]);
+                            gridItems[index].setAttribute('data-index', currentSet * 6 + index);
+                        }
                     });
                     
                     dots.forEach(dot => dot.classList.remove('active'));
-                    dots[currentSet].classList.add('active');
+                    if (dots[currentSet]) dots[currentSet].classList.add('active');
                     
                     grid.style.opacity = '1';
-                }, 250);
+                }, 200);
             }
             
 
