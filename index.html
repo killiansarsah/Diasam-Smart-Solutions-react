@@ -179,7 +179,7 @@
         <div class="bg-overlay" style="background: linear-gradient(135deg, rgba(4, 36, 63, 0.85) 0%, rgba(1, 46, 87, 0.85) 100%);"></div>
         <div class="container expand-container">
             <div class="col-12 px-0 section-heading about-fadeIn wow" data-wow-delay=".5s">
-                <h2 class="main-font">Diasam - Smart Solutions <span class="d-block grey-color">Security Agency located in</span> <span class="d-block grey-color">Texas, USA</span></h2>
+                <h2 class="main-font">DiaSam Smart Solution <span class="d-block grey-color">Service Locations: San Antonio, Austin, Corpus Christi</span> <span class="d-block grey-color">and surrounding areas</span></h2>
             </div>
             <div class="row pb-5">
                 <!-- Feature Box -->
@@ -249,14 +249,14 @@
                 <div class="col-12 col-lg-7 mb-4 mb-lg-0">
                     <div class="text-white h-100 d-flex flex-column justify-content-center">
                         <h3 class="main-font mb-3" style="font-size: 1.8rem; font-weight: 600;">Who We Are</h3>
-                        
-                        <p class="alt-font" style="font-size: 1.15rem; line-height: 1.8; text-align: justify; margin-bottom: 20px;">We are a family-owned technology company dedicated to revolutionizing the way people interact with their homes and workplaces. With a specialization in automation and smart home solutions, we combine cutting-edge technology with personalized service to deliver innovative, efficient, and user-friendly systems.</p>
+
+                        <p class="alt-font" style="font-size: 1.15rem; line-height: 1.8; text-align: justify; margin-bottom: 20px;">We are a family-owned technology company dedicated to revolutionizing the way people interact with their homes and workplaces. With a specialization in automation and smart home solutions, we combine cutting-edge technology with personalized service to deliver innovative, efficient, and user-friendly systems that is affordable. </p>
                         
                         <h3 class="main-font mb-3 mt-2" style="font-size: 1.8rem; font-weight: 600;">Our Mission</h3>
                         
-                        <p class="alt-font" style="font-size: 1.15rem; line-height: 1.8; text-align: justify; margin-bottom: 20px;">To enhance everyday living by creating environments that are more secure, comfortable, and energy-efficient. Backed by years of experience and a commitment to excellence, we pride ourselves on building lasting relationships with our clients through tailored solutions that meet their unique needs.</p>
+                        <p class="alt-font" style="font-size: 1.15rem; line-height: 1.8; text-align: justify; margin-bottom: 20px;">To make home security and smart living affordable by delivering reliable security and modern technology without the inflated prices of big-name companies. Our goal is to save you money while giving you dependable, energy-efficient solutions tailored to your needs—proving that top-tier technology doesn’t have to come with a premium price tag.</p>
                         
-                        <p class="alt-font" style="font-size: 1.15rem; line-height: 1.8; margin-bottom: 0;">At the heart of our company is a passion for innovation and a commitment to making modern technology accessible to everyone.</p>
+                        
                     </div>
                 </div>
                 
@@ -1148,52 +1148,34 @@
             
             let currentSet = 0;
             
-            // Preload all images for instant transitions
-            const preloadedImages = [];
-            console.log('Starting image preload...');
-            
-            imageSets.forEach((set, setIndex) => {
-                set.forEach((imageSrc, imgIndex) => {
-                    const img = new Image();
-                    img.src = imageSrc;
-                    preloadedImages.push(img);
-                    
-                    // Log when each image loads
-                    img.onload = () => {
-                        console.log(`Preloaded: Set ${setIndex + 1}, Image ${imgIndex + 1} - ${imageSrc}`);
-                    };
-                    
-                    img.onerror = () => {
-                        console.error(`Failed to preload: ${imageSrc}`);
-                    };
-                });
-            });
-            
-            console.log(`Preloading ${preloadedImages.length} images for instant transitions...`);
-            
             function changeImageSet(direction) {
                 const grid = document.getElementById('worksGrid');
                 const dots = document.querySelectorAll('.dot');
                 
-                currentSet += direction;
+                grid.style.opacity = '0.5';
                 
-                if (currentSet >= imageSets.length) currentSet = 0;
-                if (currentSet < 0) currentSet = imageSets.length - 1;
-                
-                const images = grid.querySelectorAll('img');
-                const gridItems = grid.querySelectorAll('.grid-item');
-                
-                // Images are preloaded, so this is instant
-                images.forEach((img, index) => {
-                    if (imageSets[currentSet][index]) {
-                        img.src = imageSets[currentSet][index];
-                        gridItems[index].setAttribute('data-src', imageSets[currentSet][index]);
-                        gridItems[index].setAttribute('data-index', currentSet * 6 + index);
-                    }
-                });
-                
-                dots.forEach(dot => dot.classList.remove('active'));
-                if (dots[currentSet]) dots[currentSet].classList.add('active');
+                setTimeout(() => {
+                    currentSet += direction;
+                    
+                    if (currentSet >= imageSets.length) currentSet = 0;
+                    if (currentSet < 0) currentSet = imageSets.length - 1;
+                    
+                    const images = grid.querySelectorAll('img');
+                    const gridItems = grid.querySelectorAll('.grid-item');
+                    
+                    images.forEach((img, index) => {
+                        if (imageSets[currentSet][index]) {
+                            img.src = imageSets[currentSet][index];
+                            gridItems[index].setAttribute('data-src', imageSets[currentSet][index]);
+                            gridItems[index].setAttribute('data-index', currentSet * 6 + index);
+                        }
+                    });
+                    
+                    dots.forEach(dot => dot.classList.remove('active'));
+                    if (dots[currentSet]) dots[currentSet].classList.add('active');
+                    
+                    grid.style.opacity = '1';
+                }, 100);
             }
             
             function goToSet(setIndex) {
@@ -1202,22 +1184,27 @@
                 const grid = document.getElementById('worksGrid');
                 const dots = document.querySelectorAll('.dot');
                 
-                currentSet = setIndex;
+                grid.style.opacity = '0.5';
                 
-                const images = grid.querySelectorAll('img');
-                const gridItems = grid.querySelectorAll('.grid-item');
-                
-                // Images are preloaded, so this is instant
-                images.forEach((img, index) => {
-                    if (imageSets[currentSet][index]) {
-                        img.src = imageSets[currentSet][index];
-                        gridItems[index].setAttribute('data-src', imageSets[currentSet][index]);
-                        gridItems[index].setAttribute('data-index', currentSet * 6 + index);
-                    }
-                });
-                
-                dots.forEach(dot => dot.classList.remove('active'));
-                if (dots[currentSet]) dots[currentSet].classList.add('active');
+                setTimeout(() => {
+                    currentSet = setIndex;
+                    
+                    const images = grid.querySelectorAll('img');
+                    const gridItems = grid.querySelectorAll('.grid-item');
+                    
+                    images.forEach((img, index) => {
+                        if (imageSets[currentSet][index]) {
+                            img.src = imageSets[currentSet][index];
+                            gridItems[index].setAttribute('data-src', imageSets[currentSet][index]);
+                            gridItems[index].setAttribute('data-index', currentSet * 6 + index);
+                        }
+                    });
+                    
+                    dots.forEach(dot => dot.classList.remove('active'));
+                    if (dots[currentSet]) dots[currentSet].classList.add('active');
+                    
+                    grid.style.opacity = '1';
+                }, 100);
             }
             
             
@@ -1324,7 +1311,7 @@
         <div class="container expand-container" style="position: relative; z-index: 2;">
             <div class="row">
                 <div class="col-12 col-lg-7 section6left wow" data-wow-delay=".8s">
-                    <h4 class="heading text-center text-md-left main-font">Questions?<span class="d-block">Let's Get In Touch</span></h4>
+                    <h4 class="heading text-center text-md-left main-font">Questions?<span class="d-block">How Can we help?</span></h4>
                     <form class="row contact-form wow fadeInLeft" id="contact-form-data">
                         <div class="col-12 col-lg-8" id="result"></div>
                         <div class="col-12 col-lg-8">
