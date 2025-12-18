@@ -184,34 +184,34 @@
             <div class="row pb-5">
                 <!-- Feature Box -->
                 <div class="col-12 col-md-3 about-zoom1In wow" data-wow-delay=".2s">
-                    <div class="feature-item text-center text-md-left">
-                        <i class="las la-shield-alt f-icon"></i>
-                        <h5 class="title main-font mt-1">Home Security</h5>
-                        <p class="alt-font mt-3",>Integrates advanced cameras with motion detection, live monitoring, and automated alerts to safeguard your property and loved ones.</p>
+                    <div class="feature-item text-center text-md-left" data-service="smart-home" style="cursor: pointer;">
+                        <i class="las la-home f-icon"></i>
+                        <h5 class="title main-font mt-1">Smart Home</h5>
+                        <p class="alt-font mt-3">We offer a unified smart home experience that puts control, protection, convenience and affordability in the palm of your hands.</p>
                     </div>
                 </div>
                 <!-- Feature Box -->
                 <div class="col-12 col-md-3 about-zoom2In wow" data-wow-delay=".4s">
-                    <div class="feature-item text-center text-md-left">
-                        <i class="las la-user-shield f-icon"></i>
-                        <h5 class="title main-font mt-1">Protection</h5>
-                        <p class="alt-font mt-3">Camera systems with features like real-time surveillance, facial recognition, and restricted access zones to ensure personalized security for high-profile individuals.</p>
+                    <div class="feature-item text-center text-md-left" data-service="home-security" style="cursor: pointer;">
+                        <i class="las la-shield-alt f-icon"></i>
+                        <h5 class="title main-font mt-1">Home Security</h5>
+                        <p class="alt-font mt-3">We offer an advanced complete home security solution, combining AI-enabled cameras, intelligent motion detection, and 24/7 professional monitoring.</p>
                     </div>
                 </div>
                 <!-- Feature Box -->
                 <div class="col-12 col-md-3 about-zoom3In wow" data-wow-delay=".6s">
-                    <div class="feature-item text-center text-md-left">
-                        <i class="las la-clock f-icon"></i>
-                        <h5 class="title main-font mt-1">24/7 Alerts</h5>
-                        <p class="alt-font mt-3">Uninterrupted monitoring and immediate notifications for potential security threats, leveraging smart systems to provide constant protection day and night.</p>
+                    <div class="feature-item text-center text-md-left" data-service="surveillance" style="cursor: pointer;">
+                        <i class="las la-video f-icon"></i>
+                        <h5 class="title main-font mt-1">Surveillance</h5>
+                        <p class="alt-font mt-3">Our retinal 4K cameras are built with advanced technology to capture critical details with exceptional clarity—even from a distance.</p>
                     </div>
                 </div>
                 <!-- Feature Box -->
                 <div class="col-12 col-md-3 about-zoom4In wow" data-wow-delay=".8s">
-                    <div class="feature-item text-center text-md-left">
-                        <i class="las la-mobile f-icon"></i>
-                        <h5 class="title main-font mt-1">Compatibility</h5>
-                        <p class="alt-font mt-3">Seamless access to your security system through smartphones and tablets, allowing real-time monitoring, control, and alerts from anywhere in the world.</p>
+                    <div class="feature-item text-center text-md-left" data-service="protection" style="cursor: pointer;">
+                        <i class="las la-user-shield f-icon"></i>
+                        <h5 class="title main-font mt-1">24/7 Protection</h5>
+                        <p class="alt-font mt-3">A security system designed to fit your lifestyle—whether you’re protecting an apartment, condo, small home, or business.</p>
                     </div>
                 </div>
             </div>
@@ -518,7 +518,7 @@
                 gap: 15px;
                 width: 100%;
                 align-content: center;
-                transition: all 0.5s ease;
+                transition: opacity 0.15s ease;
             }
             
             /* Navigation Buttons */
@@ -858,6 +858,66 @@
                 color: #333;
             }
             
+            /* Swipe/Touch Enhancements for Works Grid */
+            .works-grid {
+                touch-action: pan-y pinch-zoom;
+                cursor: grab;
+                user-select: none;
+                -webkit-user-select: none;
+                -moz-user-select: none;
+                -ms-user-select: none;
+                position: relative;
+            }
+            
+            .works-grid:active {
+                cursor: grabbing;
+            }
+            
+            @media (max-width: 767px) {
+                .works-grid {
+                    cursor: default;
+                    touch-action: manipulation;
+                }
+                
+                .grid-item {
+                    -webkit-tap-highlight-color: rgba(255, 255, 255, 0.1);
+                }
+                
+                .works-container::after {
+                    content: 'Swipe to see more';
+                    position: absolute;
+                    bottom: -35px;
+                    left: 50%;
+                    transform: translateX(-50%);
+                    color: rgba(255, 255, 255, 0.6);
+                    font-size: 12px;
+                    font-style: italic;
+                    pointer-events: none;
+                    animation: fadeInOut 3s ease-in-out infinite;
+                }
+                
+                @keyframes fadeInOut {
+                    0%, 100% { opacity: 0.4; }
+                    50% { opacity: 0.8; }
+                }
+            }
+            
+            @media (min-width: 768px) {
+                .works-grid::before {
+                    content: '';
+                    position: absolute;
+                    inset: 0;
+                    pointer-events: none;
+                    opacity: 0;
+                    transition: opacity 0.3s ease;
+                }
+                
+                .works-grid:hover::before {
+                    opacity: 0.05;
+                    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.1), transparent);
+                }
+            }
+            
             /* Enhanced Gallery Modal */
             .gallery-grid {
                 display: grid;
@@ -1009,8 +1069,20 @@
                 h1, h2, h3, h4, h5, h6 {
                     line-height: 1.3;
                 }
-            };
-                z-index: 10;
+            }
+            
+            .service-modal-img {
+                max-height: 400px;
+                overflow: hidden;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+            
+            .service-modal-img img {
+                object-fit: cover;
+                width: 100%;
+                height: 100%;
             }
             
             .close-btn:hover {
@@ -1076,34 +1148,52 @@
             
             let currentSet = 0;
             
+            // Preload all images for instant transitions
+            const preloadedImages = [];
+            console.log('Starting image preload...');
+            
+            imageSets.forEach((set, setIndex) => {
+                set.forEach((imageSrc, imgIndex) => {
+                    const img = new Image();
+                    img.src = imageSrc;
+                    preloadedImages.push(img);
+                    
+                    // Log when each image loads
+                    img.onload = () => {
+                        console.log(`Preloaded: Set ${setIndex + 1}, Image ${imgIndex + 1} - ${imageSrc}`);
+                    };
+                    
+                    img.onerror = () => {
+                        console.error(`Failed to preload: ${imageSrc}`);
+                    };
+                });
+            });
+            
+            console.log(`Preloading ${preloadedImages.length} images for instant transitions...`);
+            
             function changeImageSet(direction) {
                 const grid = document.getElementById('worksGrid');
                 const dots = document.querySelectorAll('.dot');
                 
-                grid.style.opacity = '0.5';
+                currentSet += direction;
                 
-                setTimeout(() => {
-                    currentSet += direction;
-                    
-                    if (currentSet >= imageSets.length) currentSet = 0;
-                    if (currentSet < 0) currentSet = imageSets.length - 1;
-                    
-                    const images = grid.querySelectorAll('img');
-                    const gridItems = grid.querySelectorAll('.grid-item');
-                    
-                    images.forEach((img, index) => {
-                        if (imageSets[currentSet][index]) {
-                            img.src = imageSets[currentSet][index];
-                            gridItems[index].setAttribute('data-src', imageSets[currentSet][index]);
-                            gridItems[index].setAttribute('data-index', currentSet * 6 + index);
-                        }
-                    });
-                    
-                    dots.forEach(dot => dot.classList.remove('active'));
-                    if (dots[currentSet]) dots[currentSet].classList.add('active');
-                    
-                    grid.style.opacity = '1';
-                }, 200);
+                if (currentSet >= imageSets.length) currentSet = 0;
+                if (currentSet < 0) currentSet = imageSets.length - 1;
+                
+                const images = grid.querySelectorAll('img');
+                const gridItems = grid.querySelectorAll('.grid-item');
+                
+                // Images are preloaded, so this is instant
+                images.forEach((img, index) => {
+                    if (imageSets[currentSet][index]) {
+                        img.src = imageSets[currentSet][index];
+                        gridItems[index].setAttribute('data-src', imageSets[currentSet][index]);
+                        gridItems[index].setAttribute('data-index', currentSet * 6 + index);
+                    }
+                });
+                
+                dots.forEach(dot => dot.classList.remove('active'));
+                if (dots[currentSet]) dots[currentSet].classList.add('active');
             }
             
             function goToSet(setIndex) {
@@ -1112,29 +1202,103 @@
                 const grid = document.getElementById('worksGrid');
                 const dots = document.querySelectorAll('.dot');
                 
-                grid.style.opacity = '0.5';
+                currentSet = setIndex;
                 
-                setTimeout(() => {
-                    currentSet = setIndex;
-                    
-                    const images = grid.querySelectorAll('img');
-                    const gridItems = grid.querySelectorAll('.grid-item');
-                    
-                    images.forEach((img, index) => {
-                        if (imageSets[currentSet][index]) {
-                            img.src = imageSets[currentSet][index];
-                            gridItems[index].setAttribute('data-src', imageSets[currentSet][index]);
-                            gridItems[index].setAttribute('data-index', currentSet * 6 + index);
-                        }
-                    });
-                    
-                    dots.forEach(dot => dot.classList.remove('active'));
-                    if (dots[currentSet]) dots[currentSet].classList.add('active');
-                    
-                    grid.style.opacity = '1';
-                }, 200);
+                const images = grid.querySelectorAll('img');
+                const gridItems = grid.querySelectorAll('.grid-item');
+                
+                // Images are preloaded, so this is instant
+                images.forEach((img, index) => {
+                    if (imageSets[currentSet][index]) {
+                        img.src = imageSets[currentSet][index];
+                        gridItems[index].setAttribute('data-src', imageSets[currentSet][index]);
+                        gridItems[index].setAttribute('data-index', currentSet * 6 + index);
+                    }
+                });
+                
+                dots.forEach(dot => dot.classList.remove('active'));
+                if (dots[currentSet]) dots[currentSet].classList.add('active');
             }
             
+            
+            // Touch/Swipe functionality for mobile
+            let touchStartX = 0;
+            let touchEndX = 0;
+            let touchStartY = 0;
+            let touchEndY = 0;
+            const swipeThreshold = 30; // Reduced from 50px for easier mobile swiping
+            const verticalThreshold = 50; // Increased to allow more vertical tolerance
+            
+            const worksGrid = document.getElementById('worksGrid');
+            
+            if (worksGrid) {
+                console.log('Swipe functionality initialized for worksGrid');
+                
+                // Touch start - use clientX for viewport-relative coordinates
+                worksGrid.addEventListener('touchstart', function(e) {
+                    touchStartX = e.changedTouches[0].clientX;
+                    touchStartY = e.changedTouches[0].clientY;
+                    console.log('Touch start:', touchStartX, touchStartY);
+                }, { passive: true });
+                
+                // Touch end
+                worksGrid.addEventListener('touchend', function(e) {
+                    touchEndX = e.changedTouches[0].clientX;
+                    touchEndY = e.changedTouches[0].clientY;
+                    console.log('Touch end:', touchEndX, touchEndY);
+                    handleSwipe();
+                }, { passive: true });
+                
+                // Mouse events for desktop testing
+                let mouseDown = false;
+                worksGrid.addEventListener('mousedown', function(e) {
+                    mouseDown = true;
+                    touchStartX = e.clientX;
+                    touchStartY = e.clientY;
+                    console.log('Mouse down:', touchStartX, touchStartY);
+                });
+                
+                worksGrid.addEventListener('mouseup', function(e) {
+                    if (mouseDown) {
+                        touchEndX = e.clientX;
+                        touchEndY = e.clientY;
+                        console.log('Mouse up:', touchEndX, touchEndY);
+                        handleSwipe();
+                        mouseDown = false;
+                    }
+                });
+                
+                worksGrid.addEventListener('mouseleave', function() {
+                    mouseDown = false;
+                });
+            } else {
+                console.error('worksGrid element not found!');
+            }
+            
+            function handleSwipe() {
+                const horizontalDistance = touchEndX - touchStartX;
+                const verticalDistance = Math.abs(touchEndY - touchStartY);
+                
+                console.log('Swipe detected - Horizontal:', horizontalDistance, 'Vertical:', verticalDistance);
+                
+                // Check if it's a horizontal swipe (not vertical scroll)
+                if (verticalDistance < verticalThreshold) {
+                    // Swipe left (next)
+                    if (horizontalDistance < -swipeThreshold) {
+                        console.log('Swipe LEFT detected - Going to NEXT set');
+                        changeImageSet(1);
+                    }
+                    // Swipe right (previous)
+                    else if (horizontalDistance > swipeThreshold) {
+                        console.log('Swipe RIGHT detected - Going to PREVIOUS set');
+                        changeImageSet(-1);
+                    } else {
+                        console.log('Swipe too short:', horizontalDistance, 'px (threshold:', swipeThreshold, 'px)');
+                    }
+                } else {
+                    console.log('Vertical movement too large - treating as scroll');
+                }
+            }
 
             </script>
             
@@ -1549,12 +1713,100 @@ document.addEventListener('keydown', function(event) {
             navigateImage(1);
         }
     }
+    
+    const sModal = document.getElementById('serviceModal');
+    if (sModal && sModal.classList.contains('active')) {
+        if (event.key === 'Escape') {
+            closeServiceModal();
+        }
+    }
 });
+
+// Services Modal Logic
+const serviceData = {
+    'smart-home': {
+        title: 'Smart Home',
+        desc: 'We offer a unified smart home experience that puts control, protection, convenience and affordability in the palm of your hands. See, hear, and control everything from the palm of your hand while advanced automation and intelligent monitoring work quietly in the background. Designed to adapt to your space and lifestyle, this system combines reliable security, smart technology, and always-on connectivity to help you stay informed, in control, and confident—wherever you are.',
+        img: 'agency-hotspot/images/Alexa.png'
+    },
+    'home-security': {
+        title: 'Home Security',
+        desc: 'We offer an advanced complete home security solution, combining AI-enabled cameras, intelligent motion detection, and 24/7 professional monitoring to keep your property and loved ones safe. This fully integrated system gives you seamless access to your home security, smart locks, smart lighting, thermostats, and all other connected devices—right from your smartphone, anytime and anywhere in the world.',
+        img: 'agency-hotspot/images/Smart Lock.png'
+    },
+    'surveillance': {
+        title: 'Surveillance',
+        desc: 'Our retinal 4K cameras are built with advanced technology to capture critical details with exceptional clarity—even from a distance. Radar-powered 3D Motion Detection allows you to customize motion zones to your property for highly accurate alerts, while super-bright floodlights illuminate wide areas to deter unwanted activity before it gets close.',
+        img: 'agency-hotspot/images/CCTV SYSTEM.png'
+    },
+    'protection': {
+        title: '24/7 Protection',
+        desc: 'A security system designed to fit your lifestyle—whether you’re protecting an apartment, condo, small home, or business. Enjoy premium protection with door and window sensors, motion detectors, glass-break sensors, continuous professional monitoring, and a powerful base station with cellular backup, ensuring you’re always protected.',
+        img: 'agency-hotspot/images/Video-Doorbell.jpg'
+    }
+};
+
+function openServiceModal(serviceKey) {
+    const data = serviceData[serviceKey];
+    if (!data) return;
+
+    document.getElementById('serviceModalTitle').textContent = data.title;
+    document.getElementById('serviceModalDesc').textContent = data.desc;
+    document.getElementById('serviceModalImg').src = data.img;
+    
+    const modal = document.getElementById('serviceModal');
+    modal.classList.add('active');
+    document.body.style.overflow = 'hidden'; // Prevent scrolling
+}
+
+function closeServiceModal() {
+    const modal = document.getElementById('serviceModal');
+    modal.classList.remove('active');
+    document.body.style.overflow = ''; // Restore scrolling
+}
+
+// Event Listeners for Services
+document.querySelectorAll('.feature-item[data-service]').forEach(item => {
+    item.addEventListener('click', function() {
+        const serviceKey = this.getAttribute('data-service');
+        openServiceModal(serviceKey);
+    });
+});
+
+const serviceModal = document.getElementById('serviceModal');
+if (serviceModal) {
+    serviceModal.querySelector('.modal-close').addEventListener('click', closeServiceModal);
+    serviceModal.addEventListener('click', function(e) {
+        if (e.target === serviceModal) {
+            closeServiceModal();
+        }
+    });
+}
 
 console.log('Modal initialized successfully');
 
 }); // End DOMContentLoaded
 </script>
+
+<!-- Service Modal -->
+<div id="serviceModal" class="image-modal">
+    <div class="modal-content">
+        <span class="modal-close">&times;</span>
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-12 col-md-6 order-2 order-md-1">
+                    <h2 id="serviceModalTitle" class="main-font text-white mb-4"></h2>
+                    <p id="serviceModalDesc" class="alt-font text-white"></p>
+                </div>
+                <div class="col-12 col-md-6 order-1 order-md-2 mb-4 mb-md-0">
+                    <div id="serviceModalImageContainer" class="service-modal-img">
+                        <img id="serviceModalImg" src="" alt="Service Image" class="img-fluid rounded">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 
 <!-- JavaScript -->
 <script src="vendor/js/bundle.min.js"></script>
