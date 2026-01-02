@@ -13,7 +13,12 @@ $(window).on("load", function () {
     /* ===================================
         Page Piling
     ====================================== */
-    if($(window).width() < 1280) {
+    // Debug: Check window width
+    console.log('Window width:', $(window).width());
+    console.log('PagePiling element exists:', $('#pagepiling').length > 0);
+    
+    if($(window).width() < 768) { // Only disable on mobile (below 768px)
+        console.log('Screen too small for pagepiling - using normal scroll');
         $('.pagedata').removeAttr('id');
         $('html, body').css('overflow-y', 'scroll');
         //Team Counter
@@ -46,6 +51,14 @@ $(window).on("load", function () {
         });
     }
     else{
+        console.log('Initializing pagepiling...');
+        
+        // Make sure the element exists before initializing
+        if($('#pagepiling').length === 0) {
+            console.error('ERROR: #pagepiling element not found!');
+            return;
+        }
+        
         $('#pagepiling').pagepiling({
             direction: 'vertical',
             sectionsColor: ['#171717', '#171717', '#171717', '#171717', '#171717'],
@@ -198,6 +211,8 @@ $(window).on("load", function () {
                 }
             },
         });
+        
+        console.log('PagePiling initialized successfully!');
     }
 
 /* ===================================
