@@ -558,18 +558,23 @@ section{padding: 0;}
 
 .side-nav-menu .social-icons {
     position: absolute;
-    left: 30px;
-    bottom: 40px;
+    left: 10px;
+    bottom: 60px;
+    right: 10px;
     width: auto;
     z-index: 1000;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
 }
 
-@media (max-width: 991px) {
+@media (max-width: 767px) {
   .side-nav-menu .social-icons {
     position: static;
     margin: 20px 0 0 0;
     left: unset;
     bottom: unset;
+    right: unset;
     width: 100%;
     text-align: center;
   }
@@ -2221,68 +2226,153 @@ svg.slider-shape{
 
 @media screen and (max-width: 991px) and (min-width: 768px){
 
-    .h1, h1 {font-size: 58px;}
-    .h3, h3 {font-size: 32px;}
-    section {padding: 7.5rem 0;}
-    p {font-size: 14px;}
+    .h1, h1 {font-size: 48px;}
+    .h3, h3 {font-size: 28px;}
+    section {padding: 60px 0;}
+    p {font-size: 15px; line-height: 1.6;}
     html {scroll-behavior: smooth;}
-    .about, .team, .portfolio-bg, .blog-bg, .contact-sec {height: auto;}
-    .section-heading {margin-bottom: 3rem;}
+    .about, .team, .portfolio-bg, .blog-bg, .contact-sec {height: auto; min-height: 100vh;}
+    .section-heading {margin-bottom: 2.5rem;}
 
-    /* Side Nav */
-    .my_tog {
-        padding: 20px 0;
-        margin-right: 8px;
+    /* Side Nav - Critical Fix */
+    .side_nav {
+        width: 15%;
+        height: 100vh;
+        overflow: hidden;
     }
+    
+    .my_tog {
+        padding: 18px 0;
+        margin-right: 8px;
+        display: none !important;
+    }
+    
     .sticky-logo {
         display: none !important;
     }
+    
+    /* Navigation menu with proper spacing */
     .side-nav-menu .nav-menu {
-        padding-left: 35px;
-        padding-top: 220px;
+        padding-left: 20px;
+        padding-top: 100px;
+        padding-bottom: 150px;
+    }
+    
+    .side-nav-menu .nav-item {
+        margin-bottom: 15px;
+    }
+    
+    .side-nav-menu .nav-link {
+        font-size: 13px;
+        display: block;
+    }
+    
+    /* Social icons positioned at bottom */
+    .side-nav-menu .social-icons {
+        position: fixed !important;
+        bottom: 60px !important;
+        left: 10px !important;
+        width: calc(15% - 20px) !important;
+        z-index: 999 !important;
+    }
+    
+    /* Copyright at very bottom */
+    .side-nav-menu .rites-res {
+        position: fixed !important;
+        bottom: 15px !important;
+        left: 5px !important;
+        width: calc(15% - 10px) !important;
+        font-size: 9px !important;
+        text-align: center !important;
     }
 
     /* Banner */
-    .slider-area h1 {
-        font-size: 42px;
+    .slider-area {
+        width: 85%;
+        margin-left: 15%;
+        display: flex;
+        align-items: center;
+        position: relative;
     }
+    
+    .slider-area .container {
+        position: relative;
+        z-index: 2;
+    }
+    
+    .slider-area h1 {
+        font-size: 38px;
+        color: #ffffff;
+    }
+    
     .slider-area p {
         font-size: 16px;
+        color: #ffffff;
+    }
+    
+    .slider-area .section1left,
+    .slider-area .section1right {
+        position: relative;
+        z-index: 3;
     }
 
     /* About */
-    .about h2 {
-        font-size: 36px;
+    .about {
+        width: 85%;
+        margin-left: 15%;
     }
+    
+    .about h2 {
+        font-size: 32px;
+    }
+    
     .feature-item p {
         font-size: 14px;
     }
 
     /* Team */
-    .team h2 {
-        font-size: 36px;
+    .team {
+        width: 85%;
+        margin-left: 15%;
     }
+    
+    .team h2 {
+        font-size: 32px;
+    }
+    
     .team-box {
-        height: 290px;
+        height: auto;
     }
 
     /* Portfolio */
+    .portfolio-bg {
+        width: 85%;
+        margin-left: 15%;
+    }
+    
     .main-heading h2 {
-        font-size: 36px;
+        font-size: 32px;
     }
 
     /* Blog */
     .news-item .news-title {
-        font-size: 22px;
+        font-size: 20px;
     }
+    
     .para {
-        font-size: 16px;
+        font-size: 15px;
     }
 
     /* Contact */
-    .contact-sec .heading {
-        font-size: 42px;
+    .contact-sec {
+        width: 85%;
+        margin-left: 15%;
     }
+    
+    .contact-sec .heading {
+        font-size: 36px;
+    }
+    
     .contact-sec .contact-details .text {
         text-align: left;
     }

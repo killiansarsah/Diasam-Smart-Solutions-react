@@ -107,12 +107,15 @@
 
 /* Social Icons Positioning */
 .side-nav-menu .social-icons {
-  margin-top: 90px;
-  margin-bottom: 20px;
+  position: absolute;
+  bottom: 60px;
+  left: 10px;
+  right: 10px;
   display: flex;
   gap: 12px;
   justify-content: center;
   align-items: center;
+  z-index: 999;
 }
 
 .side-nav-menu .social-icons span {
@@ -124,7 +127,19 @@
 }
 
 .side-nav-menu .rites-res {
-  margin-top: 0px;
+  position: absolute;
+  bottom: 15px;
+  left: 10px;
+  right: 10px;
+  text-align: center;
+  z-index: 998;
+}
+
+/* Ensure nav menu doesn't overlap with social icons on desktop */
+@media (min-width: 992px) {
+  .side-nav-menu .nav-menu {
+    padding-bottom: 140px;
+  }
 }
 
 /* Feature Box Consistent Spacing */
@@ -274,7 +289,7 @@
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1),
     inset 0 1px 0 rgba(255, 255, 255, 0.2);
   margin-top: 10px;
-  margin-bottom: 0;
+  margin-bottom: 1.5rem;
   position: relative;
   overflow: hidden;
 }
@@ -546,7 +561,8 @@
 
 @media (min-width: 768px) and (max-width: 1024px) {
   .feature-item {
-    padding: 24px 20px;
+    padding: 20px 16px;
+    margin-bottom: 20px;
   }
 
   .about .section-heading h2 {
@@ -556,11 +572,44 @@
   /* Show 2 cards per row on tablets */
   .about .row.pb-5 {
     flex-wrap: wrap;
+    justify-content: space-between;
   }
 
   .about .row.pb-5 > div[class*="col-"] {
     flex: 0 0 48%;
     max-width: 48%;
+    margin-bottom: 20px;
+  }
+  
+  /* Adjust feature items for better layout */
+  .feature-item {
+    height: auto;
+    min-height: 200px;
+  }
+  
+  .feature-item .f-icon {
+    font-size: 2.2rem !important;
+  }
+  
+  .feature-item .title {
+    font-size: 1.2rem !important;
+  }
+  
+  .feature-item p {
+    font-size: 0.9rem !important;
+  }
+  
+  /* Box adjustments */
+  .about .box {
+    padding: 25px 20px;
+  }
+  
+  .about .box h2 {
+    font-size: 1.5rem !important;
+  }
+  
+  .about .box p {
+    font-size: 0.95rem;
   }
 }
 
@@ -576,6 +625,69 @@
   .about .col-md-3 {
     flex: 0 0 24%;
     max-width: 24%;
+  }
+}
+
+/* Tablet Team Section Improvements */
+@media (min-width: 768px) and (max-width: 1024px) {
+  
+  /* Team Section Layout */
+  .team .row.align-items-stretch {
+    flex-wrap: wrap;
+  }
+  
+  .team .row.align-items-stretch > .col-lg-7 {
+    flex: 0 0 100%;
+    max-width: 100%;
+    margin-bottom: 30px;
+  }
+  
+  .team .row.align-items-stretch > .col-lg-5 {
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
+  
+  /* Team text content */
+  .team h3 {
+    font-size: 1.5rem !important;
+    margin-bottom: 12px;
+  }
+  
+  .team .alt-font {
+    font-size: 0.95rem !important;
+    line-height: 1.7;
+  }
+  
+  /* Team carousel */
+  #team-slider .team-card-professional {
+    height: 300px;
+    margin: 0 8px;
+  }
+  
+  #team-slider h4 {
+    font-size: 1.15rem !important;
+  }
+  
+  #team-slider .owl-stage-outer {
+    padding: 15px 0;
+  }
+  
+  /* Owl carousel navigation */
+  .owl-nav button {
+    width: 40px !important;
+    height: 40px !important;
+  }
+}
+
+/* Tablet-specific heading sizes */
+@media (min-width: 768px) and (max-width: 1024px) {
+  
+  .section-heading h2 {
+    font-size: 1.8rem !important;
+  }
+  
+  .section-heading p {
+    font-size: 0.95rem !important;
   }
 }
 
@@ -1009,12 +1121,48 @@
 
 @media (min-width: 768px) and (max-width: 1024px) {
   .portfolio-bg .single-work {
-    max-width: 400px;
-    height: 400px;
+    max-width: 350px;
+    height: 350px;
   }
 
   .product-image img {
-    max-width: 220px;
+    max-width: 200px;
+  }
+  
+  /* Portfolio grid - 2 columns on tablet */
+  .portfolio-grid .col-lg-4 {
+    flex: 0 0 50%;
+    max-width: 50%;
+  }
+  
+  .product-card {
+    height: 230px;
+    margin-bottom: 20px;
+  }
+  
+  .product-image {
+    min-height: 180px;
+    max-height: 180px;
+  }
+  
+  .product-title {
+    font-size: 13px;
+  }
+  
+  .product-desc {
+    font-size: 11px;
+  }
+  
+  /* Works grid adjustments */
+  .works-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 15px !important;
+  }
+  
+  .nav-btn {
+    width: 45px !important;
+    height: 45px !important;
+    font-size: 18px !important;
   }
 }
 
