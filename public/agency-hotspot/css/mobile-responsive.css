@@ -658,7 +658,7 @@
   }
 
   .broad .nav-item {
-    margin-bottom: 20px;
+    margin-bottom: 15px;
   }
 
   .broad .nav-link {
@@ -677,9 +677,12 @@
   }
 
   .broad .social-icons {
-    margin-top: 30px;
+    margin-top: 40px;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
     display: flex;
     gap: 15px;
+    justify-content: flex-start;
   }
 
   .broad .social-icons a {
@@ -693,18 +696,22 @@
   }
 
   .broad .rites-res {
-    margin-top: 30px;
+    margin-top: 25px;
+    padding-top: 15px;
     color: rgba(255, 255, 255, 0.6);
     font-size: 12px;
+    line-height: 1.5;
   }
 
   /* Ensure side-nav-menu content is visible in mobile menu */
   .broad .side-nav-menu {
-    display: block !important;
+    display: flex !important;
+    flex-direction: column;
     visibility: visible !important;
     opacity: 1 !important;
     position: relative;
     width: 100%;
+    height: 100%;
   }
 
   .broad .brand-logo {
@@ -718,6 +725,8 @@
     list-style: none;
     padding: 0;
     margin: 0;
+    flex-grow: 0;
+    flex-shrink: 0;
   }
 
   /* Touch-friendly elements */
