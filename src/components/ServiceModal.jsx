@@ -1,4 +1,5 @@
 import React from 'react';
+import { getAssetUrl } from '../utils/assetUrl';
 
 const serviceData = {
     'smart-home': {
@@ -103,7 +104,7 @@ const ServiceModal = ({ isOpen, onClose, serviceKey }) => {
                                     {data.images.map((img, i) => (
                                         <div key={i} className="service-image-card">
                                             <div className="service-image-card-inner">
-                                                <img src={img} alt={data.title} />
+                                                <img src={getAssetUrl(img)} alt={data.title} />
                                                 <div className="service-image-overlay"></div>
                                             </div>
                                         </div>

@@ -101,7 +101,7 @@ const Portfolio = () => {
     };
 
     return (
-        <section className="section pp-scrollable slide4 portfolio-bg" id="portfolio" data-anchor="portfolio" style={{ backgroundImage: "url('/agency-hotspot/images/portfolio-bg.jpg')", backgroundSize: 'cover', backgroundPosition: 'center', position: 'relative', height: '100vh', display: 'flex', flexDirection: 'column', justifyContent: 'center', overflow: 'hidden' }}>
+        <section className="section pp-scrollable slide4 portfolio-bg" id="portfolio" data-anchor="portfolio" style={{ backgroundImage: `url('${getAssetUrl('agency-hotspot/images/portfolio-bg.jpg')}')`, backgroundSize: 'cover', backgroundPosition: 'center', position: 'relative', height: '100vh', display: 'flex', flexDirection: 'column', justifyContent: 'center', overflow: 'hidden' }}>
             <style>
                 {`
                 .nav-controls {
