@@ -583,19 +583,31 @@
   }
 
   .my_nav_tog {
-    width: 35px;
-    height: 30px;
+    width: 45px;
+    height: 45px;
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
     cursor: pointer;
+    background: linear-gradient(135deg, #2196F3 0%, #1976D2 100%);
+    border-radius: 10px;
+    padding: 10px;
+    box-shadow: 0 2px 8px rgba(33, 150, 243, 0.3);
+    transition: all 0.3s ease;
+  }
+
+  .my_nav_tog:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 12px rgba(33, 150, 243, 0.4);
   }
 
   .my_nav_tog span {
     display: block;
-    width: 100%;
+    width: 22px;
     height: 3px;
-    background: #333;
+    background: #ffffff;
     border-radius: 2px;
     transition: all 0.3s ease;
   }
