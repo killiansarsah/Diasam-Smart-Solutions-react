@@ -17,8 +17,13 @@ $(window).on("load", function () {
     console.log('Window width:', $(window).width());
     console.log('PagePiling element exists:', $('#pagepiling').length > 0);
     
-    if($(window).width() < 768) { // Only disable on mobile (below 768px)
-        console.log('Screen too small for pagepiling - using normal scroll');
+    // Safari-specific mobile detection
+    var isSafariMobile = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
+    var isSmallScreen = $(window).width() < 768;
+    var isiPadPortrait = /iPad/.test(navigator.userAgent) && $(window).width() >= 768 && $(window).width() <= 1024 && $(window).height() > $(window).width();
+    
+    if($(window).width() < 1025) {
+        console.log('Tablet/Mobile device detected - using normal scroll');
         $('.pagedata').removeAttr('id');
         $('html, body').css('overflow-y', 'scroll');
         //Team Counter
@@ -227,7 +232,7 @@ $(window).on("load", function () {
             mobile: false,
             live: true
         });
-        new WOW().init();
+        wow.init();
     }
 
 /* ===================================
@@ -408,7 +413,7 @@ $(".broad .nav-menu .nav-link").on("click", function (event) {
     var target = $(this.hash);
     if(target.length) {
         var off_set = 65;
-        if(screen.width > 768){
+        if($(window).width() > 768){
             off_set = 140;
         }
         $("html,body").animate({

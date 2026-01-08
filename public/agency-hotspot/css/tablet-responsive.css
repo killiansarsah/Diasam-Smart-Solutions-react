@@ -1318,3 +1318,294 @@
     }
 }
 
+/* ===================================
+   iPad Pro 12.9" Specific (1024px - 1366px)
+   Both Portrait and Landscape
+====================================== */
+@media screen and (min-width: 1024px) and (max-width: 1366px) {
+    
+    /* Side Navigation */
+    .side_nav {
+        width: 14% !important;
+    }
+    
+    .slider-area,
+    .about,
+    .team,
+    .portfolio-bg,
+    .contact-sec {
+        width: 86% !important;
+        margin-left: 14% !important;
+    }
+    
+    /* Navigation menu */
+    .side-nav-menu .nav-menu {
+        padding-top: 120px !important;
+        padding-left: 20px !important;
+        padding-bottom: 160px !important;
+    }
+    
+    .side-nav-menu .nav-item {
+        margin-bottom: 18px !important;
+    }
+    
+    .side-nav-menu .nav-link {
+        font-size: 14px !important;
+        padding: 6px 0 !important;
+    }
+    
+    /* Social icons */
+    .side-nav-menu .social-icons {
+        position: fixed !important;
+        bottom: 70px !important;
+        left: 10px !important;
+        width: calc(14% - 20px) !important;
+        gap: 8px !important;
+    }
+    
+    .side-nav-menu .social-icons i {
+        font-size: 12px !important;
+        width: 28px !important;
+        height: 28px !important;
+    }
+    
+    /* Copyright */
+    .side-nav-menu .rites-res {
+        position: fixed !important;
+        bottom: 15px !important;
+        left: 8px !important;
+        width: calc(14% - 16px) !important;
+        font-size: 9px !important;
+    }
+    
+    /* Typography */
+    h1, .h1 {
+        font-size: 52px !important;
+    }
+    
+    h2, .h2 {
+        font-size: 44px !important;
+    }
+    
+    h3, .h3 {
+        font-size: 32px !important;
+    }
+    
+    /* Hero Section */
+    .slider-area h1 {
+        font-size: 48px !important;
+    }
+    
+    .slider-area p {
+        font-size: 17px !important;
+    }
+    
+    /* Services Section */
+    .feature-item {
+        padding: 28px 22px;
+    }
+    
+    .feature-item .f-icon {
+        font-size: 42px !important;
+    }
+    
+    .feature-item .title {
+        font-size: 22px !important;
+    }
+    
+    .feature-item p {
+        font-size: 16px !important;
+    }
+    
+    /* Team Section */
+    .team h3 {
+        font-size: 26px !important;
+    }
+    
+    .team .alt-font {
+        font-size: 16px !important;
+    }
+    
+    #team-slider .team-card-professional {
+        height: 380px;
+    }
+    
+    /* Portfolio Grid */
+    .works-grid {
+        gap: 18px;
+    }
+    
+    /* Contact Section */
+    .contact-sec .heading {
+        font-size: 40px !important;
+    }
+    
+    .contact-form .form-control {
+        padding: 16px 20px;
+        font-size: 16px;
+    }
+    
+    .btn-glass-contact {
+        padding: 16px 30px;
+        font-size: 15px;
+    }
+}
+
+/* ===================================
+   iPad Pro 12.9" Portrait (1024px width)
+====================================== */
+@media screen and (width: 1024px) and (orientation: portrait) {
+    
+    /* Slightly narrower side nav for portrait */
+    .side_nav {
+        width: 15% !important;
+    }
+    
+    .slider-area,
+    .about,
+    .team,
+    .portfolio-bg,
+    .contact-sec {
+        width: 85% !important;
+        margin-left: 15% !important;
+    }
+    
+    /* Feature items - 4 columns */
+    .about .row.pb-5 > div[class*="col-"] {
+        flex: 0 0 25% !important;
+        max-width: 25% !important;
+    }
+    
+    /* Portfolio - 3 columns */
+    .works-grid {
+        grid-template-columns: repeat(3, 1fr) !important;
+    }
+}
+
+/* ===================================
+   iPad Pro 12.9" Landscape (1366px width)
+====================================== */
+@media screen and (width: 1366px) and (orientation: landscape) {
+    
+    /* Desktop-like experience */
+    .side_nav {
+        width: 13% !important;
+    }
+    
+    .slider-area,
+    .about,
+    .team,
+    .portfolio-bg,
+    .contact-sec {
+        width: 87% !important;
+        margin-left: 13% !important;
+    }
+    
+    /* Feature items - 4 columns */
+    .about .row.pb-5 > div[class*="col-"] {
+        flex: 0 0 25% !important;
+        max-width: 25% !important;
+    }
+    
+    /* Team layout - side by side */
+    .team .row.align-items-stretch > .col-lg-7 {
+        flex: 0 0 58.333% !important;
+        max-width: 58.333% !important;
+    }
+    
+    .team .row.align-items-stretch > .col-lg-5 {
+        flex: 0 0 41.666% !important;
+        max-width: 41.666% !important;
+    }
+    
+    /* Portfolio - 3 columns */
+    .works-grid {
+        grid-template-columns: repeat(3, 1fr) !important;
+    }
+}
+
+/* ===================================
+   Samsung Galaxy Tab S7/S8 (800px - 1280px)
+====================================== */
+@media screen and (min-width: 800px) and (max-width: 1280px) {
+    
+    /* Similar to iPad styling */
+    .side_nav {
+        width: 15%;
+    }
+    
+    .slider-area,
+    .about,
+    .team,
+    .portfolio-bg,
+    .contact-sec {
+        width: 85%;
+        margin-left: 15%;
+    }
+    
+    /* Navigation */
+    .side-nav-menu .nav-menu {
+        padding-top: 100px;
+        padding-bottom: 140px;
+    }
+    
+    .side-nav-menu .nav-item {
+        margin-bottom: 14px;
+    }
+    
+    .side-nav-menu .nav-link {
+        font-size: 13px;
+    }
+    
+    /* Services - 4 columns on larger screens, 2 on smaller */
+    .about .row.pb-5 > div[class*="col-"] {
+        flex: 0 0 50%;
+        max-width: 50%;
+    }
+    
+    /* Portfolio - 2 columns */
+    .works-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+    }
+}
+
+/* Samsung Galaxy Tab Landscape */
+@media screen and (min-width: 800px) and (max-width: 1280px) and (orientation: landscape) {
+    
+    /* More desktop-like layout */
+    .side_nav {
+        width: 14%;
+    }
+    
+    .slider-area,
+    .about,
+    .team,
+    .portfolio-bg,
+    .contact-sec {
+        width: 86%;
+        margin-left: 14%;
+    }
+    
+    /* Services - 4 columns */
+    .about .row.pb-5 > div[class*="col-"] {
+        flex: 0 0 25% !important;
+        max-width: 25% !important;
+    }
+    
+    /* Portfolio - 3 columns */
+    .works-grid {
+        grid-template-columns: repeat(3, 1fr) !important;
+    }
+    
+    /* Team - side by side */
+    .team .row.align-items-stretch > .col-lg-7 {
+        flex: 0 0 60%;
+        max-width: 60%;
+    }
+    
+    .team .row.align-items-stretch > .col-lg-5 {
+        flex: 0 0 40%;
+        max-width: 40%;
+    }
+}

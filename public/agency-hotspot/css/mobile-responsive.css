@@ -1,0 +1,931 @@
+/* ===================================
+   Mobile Responsive CSS
+   Comprehensive breakpoints for all mobile phones
+   Optimized for devices under 768px
+====================================== */
+
+/* ===================================
+   Extra Small Phones (320px - 375px)
+   iPhone SE, older devices
+====================================== */
+@media screen and (max-width: 375px) {
+  /* Typography */
+  h1,
+  .h1 {
+    font-size: 24px !important;
+    line-height: 1.2;
+  }
+
+  h2,
+  .h2 {
+    font-size: 20px !important;
+    line-height: 1.25;
+  }
+
+  h3,
+  .h3 {
+    font-size: 18px !important;
+  }
+
+  h4,
+  .h4 {
+    font-size: 16px !important;
+  }
+
+  p {
+    font-size: 14px;
+    line-height: 1.5;
+  }
+
+  /* Container */
+  .container {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+
+  .expand-container {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+
+  /* Hero Section */
+  .slider-area h1 {
+    font-size: 22px !important;
+    margin-bottom: 12px;
+  }
+
+  .slider-area p {
+    font-size: 13px !important;
+    margin-bottom: 15px;
+  }
+
+  .slider-area .btn {
+    font-size: 12px;
+    padding: 10px 20px;
+  }
+
+  .banner-image svg {
+    max-width: 200px;
+  }
+
+  /* Services Section */
+  .feature-item {
+    padding: 18px 15px;
+  }
+
+  .feature-item .f-icon {
+    font-size: 28px !important;
+    height: 35px !important;
+    width: 35px !important;
+  }
+
+  .feature-item .title {
+    font-size: 16px !important;
+  }
+
+  .feature-item p {
+    font-size: 13px !important;
+  }
+
+  /* CTA Box */
+  .about .box {
+    padding: 18px 15px;
+  }
+
+  .about .box h2 {
+    font-size: 18px !important;
+  }
+
+  .about .box p {
+    font-size: 13px;
+  }
+
+  /* Team Section */
+  .team h3 {
+    font-size: 18px !important;
+  }
+
+  .team .alt-font {
+    font-size: 13px !important;
+  }
+
+  #team-slider .team-card-professional {
+    height: 280px;
+  }
+
+  /* Portfolio Grid */
+  .works-grid {
+    grid-template-columns: 1fr !important;
+    gap: 12px !important;
+  }
+
+  .grid-item {
+    aspect-ratio: 16/10;
+  }
+
+  /* Contact Section */
+  .contact-sec .heading {
+    font-size: 22px !important;
+  }
+
+  .contact-form .form-control {
+    padding: 12px 14px;
+    font-size: 14px;
+    margin-bottom: 12px;
+  }
+
+  .contact-form textarea.form-control {
+    min-height: 100px;
+  }
+
+  .btn-glass-contact {
+    padding: 12px 20px;
+    font-size: 13px;
+  }
+
+  /* Buttons */
+  .btn.btn-medium {
+    font-size: 13px;
+    padding: 10px 25px;
+  }
+}
+
+/* ===================================
+   Small Phones (376px - 414px)
+   iPhone 14, Pixel, Galaxy S
+====================================== */
+@media screen and (min-width: 376px) and (max-width: 414px) {
+  /* Typography */
+  h1,
+  .h1 {
+    font-size: 28px !important;
+    line-height: 1.25;
+  }
+
+  h2,
+  .h2 {
+    font-size: 22px !important;
+  }
+
+  h3,
+  .h3 {
+    font-size: 20px !important;
+  }
+
+  /* Hero Section */
+  .slider-area h1 {
+    font-size: 26px !important;
+    margin-bottom: 15px;
+  }
+
+  .slider-area p {
+    font-size: 14px !important;
+    margin-bottom: 18px;
+  }
+
+  .slider-area .btn {
+    font-size: 13px;
+    padding: 11px 24px;
+  }
+
+  .banner-image svg {
+    max-width: 250px;
+  }
+
+  /* Services Section */
+  .feature-item {
+    padding: 20px 18px;
+  }
+
+  .feature-item .f-icon {
+    font-size: 32px !important;
+    height: 40px !important;
+    width: 40px !important;
+  }
+
+  .feature-item .title {
+    font-size: 18px !important;
+  }
+
+  .feature-item p {
+    font-size: 14px !important;
+  }
+
+  /* Team Section */
+  .team h3 {
+    font-size: 20px !important;
+  }
+
+  #team-slider .team-card-professional {
+    height: 300px;
+  }
+
+  /* Portfolio Grid */
+  .works-grid {
+    grid-template-columns: 1fr !important;
+    gap: 15px !important;
+  }
+
+  /* Contact Section */
+  .contact-sec .heading {
+    font-size: 24px !important;
+  }
+
+  .contact-form .form-control {
+    padding: 13px 16px;
+    font-size: 15px;
+  }
+}
+
+/* ===================================
+   Medium Phones (415px - 576px)
+   Larger phones, small phablets
+====================================== */
+@media screen and (min-width: 415px) and (max-width: 576px) {
+  /* Typography */
+  h1,
+  .h1 {
+    font-size: 32px !important;
+    line-height: 1.25;
+  }
+
+  h2,
+  .h2 {
+    font-size: 26px !important;
+  }
+
+  h3,
+  .h3 {
+    font-size: 22px !important;
+  }
+
+  /* Hero Section */
+  .slider-area h1 {
+    font-size: 30px !important;
+    margin-bottom: 18px;
+  }
+
+  .slider-area p {
+    font-size: 15px !important;
+    margin-bottom: 20px;
+  }
+
+  .slider-area .btn {
+    font-size: 14px;
+    padding: 12px 28px;
+  }
+
+  .banner-image svg {
+    max-width: 300px;
+  }
+
+  /* Services Section */
+  .feature-item {
+    padding: 22px 20px;
+  }
+
+  .feature-item .f-icon {
+    font-size: 36px !important;
+    height: 45px !important;
+    width: 45px !important;
+  }
+
+  .feature-item .title {
+    font-size: 20px !important;
+  }
+
+  .feature-item p {
+    font-size: 15px !important;
+  }
+
+  /* Team Section */
+  .team h3 {
+    font-size: 22px !important;
+  }
+
+  #team-slider .team-card-professional {
+    height: 320px;
+  }
+
+  /* Portfolio Grid - 2 columns for larger phones */
+  .works-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 12px !important;
+  }
+
+  /* Contact Section */
+  .contact-sec .heading {
+    font-size: 28px !important;
+  }
+
+  .contact-form .form-control {
+    padding: 14px 18px;
+    font-size: 15px;
+  }
+
+  .btn-glass-contact {
+    padding: 14px 24px;
+    font-size: 14px;
+  }
+}
+
+/* ===================================
+   All Mobile Phones (max-width: 767px)
+   Common styles for all phones
+====================================== */
+@media screen and (max-width: 767px) {
+  /* Prevent horizontal scroll */
+  html,
+  body {
+    overflow-x: hidden !important;
+    width: 100%;
+  }
+
+  /* Hide side navigation on mobile */
+  .side_nav {
+    display: none !important;
+  }
+
+  /* Full width sections on mobile */
+  .slider-area,
+  .about,
+  .team,
+  .portfolio-bg,
+  .contact-sec {
+    width: 100% !important;
+    margin-left: 0 !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+
+  /* Section padding */
+  section,
+  .section {
+    padding: 50px 0 !important;
+  }
+
+  /* Hero section specific */
+  .slider-area {
+    min-height: 100vh;
+    min-height: -webkit-fill-available;
+    display: flex;
+    align-items: center;
+    padding: 60px 0 !important;
+  }
+
+  .slider-area .row {
+    flex-direction: column;
+  }
+
+  .slider-area .section1left {
+    text-align: center;
+    margin-bottom: 30px;
+  }
+
+  .slider-area .section1right {
+    text-align: center;
+  }
+
+  .banner-image {
+    margin: 0 auto;
+  }
+
+  /* Services Section */
+  .about .row.pb-5 {
+    flex-direction: column !important;
+  }
+
+  .about .row.pb-5 > div[class*="col-"] {
+    flex: 0 0 100% !important;
+    max-width: 100% !important;
+    margin-bottom: 20px !important;
+  }
+
+  .feature-item {
+    text-align: center;
+    margin-bottom: 0;
+  }
+
+  /* CTA Box */
+  .about .box .row {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .about .box .col-12.col-md-7.col-lg-9,
+  .about .box .col-12.col-md-5.col-lg-3 {
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
+
+  .about .box p {
+    margin-bottom: 20px !important;
+  }
+
+  /* Team Section */
+  .team .row.align-items-stretch {
+    flex-direction: column;
+  }
+
+  .team .row.align-items-stretch > .col-lg-7,
+  .team .row.align-items-stretch > .col-lg-5 {
+    flex: 0 0 100% !important;
+    max-width: 100% !important;
+  }
+
+  .team .row.align-items-stretch > .col-lg-7 {
+    margin-bottom: 30px;
+  }
+
+  .team .text-white.h-100 {
+    text-align: center;
+  }
+
+  .team .alt-font {
+    text-align: justify;
+  }
+
+  /* Team Slider */
+  #team-slider {
+    display: flex;
+    flex-direction: row;
+    gap: 15px;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    padding: 10px 0;
+  }
+
+  #team-slider .team-card-professional {
+    flex: 0 0 85%;
+    max-width: 85%;
+    scroll-snap-align: center;
+    margin: 0;
+  }
+
+  /* Portfolio Section */
+  .portfolio-bg .section-heading {
+    text-align: center;
+  }
+
+  .works-container {
+    padding: 0 15px;
+  }
+
+  /* Navigation controls */
+  .nav-controls {
+    margin-top: 25px !important;
+    gap: 20px !important;
+  }
+
+  .nav-btn-bottom {
+    width: 45px !important;
+    height: 45px !important;
+  }
+
+  .nav-btn-bottom i {
+    font-size: 1rem !important;
+  }
+
+  .nav-dots {
+    gap: 10px !important;
+    padding: 8px 15px !important;
+  }
+
+  .dot {
+    width: 10px !important;
+    height: 10px !important;
+  }
+
+  /* Contact Section */
+  .contact-sec .row {
+    flex-direction: column;
+  }
+
+  .contact-sec .col-lg-7,
+  .contact-sec .col-lg-5 {
+    flex: 0 0 100% !important;
+    max-width: 100% !important;
+  }
+
+  .contact-sec .col-lg-7 {
+    margin-bottom: 40px;
+  }
+
+  .contact-sec .heading {
+    text-align: center;
+  }
+
+  .contact-form .col-lg-8 {
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
+
+  .contact-details {
+    text-align: center;
+  }
+
+  .contact-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .btn-glass-contact {
+    width: 100%;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+  }
+
+  /* Mobile navigation */
+  .mobile-nav {
+    position: fixed !important;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 9999;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    padding: 10px 15px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  }
+
+  .mobile-logo {
+    max-height: 40px;
+    width: auto;
+  }
+
+  .my_nav_tog {
+    width: 35px;
+    height: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    cursor: pointer;
+  }
+
+  .my_nav_tog span {
+    display: block;
+    width: 100%;
+    height: 3px;
+    background: #333;
+    border-radius: 2px;
+    transition: all 0.3s ease;
+  }
+
+  /* Side nav when open on mobile */
+  .broad {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 80%;
+    max-width: 320px;
+    height: 100vh;
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+    z-index: 10000;
+    transition: right 0.3s ease;
+    padding: 60px 30px 30px;
+    overflow-y: auto;
+  }
+
+  .broad.side-nav-active {
+    right: 0;
+  }
+
+  .broad .btn-close {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+  }
+
+  .broad .btn-close i {
+    display: block;
+    width: 100%;
+    height: 2px;
+    background: #fff;
+    position: absolute;
+    top: 50%;
+  }
+
+  .broad .btn-close i:first-child {
+    transform: rotate(45deg);
+  }
+
+  .broad .btn-close i:last-child {
+    transform: rotate(-45deg);
+  }
+
+  .broad .brand-logo img {
+    max-width: 150px;
+    margin-bottom: 30px;
+  }
+
+  .broad .nav-menu {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .broad .nav-item {
+    margin-bottom: 20px;
+  }
+
+  .broad .nav-link {
+    color: #fff;
+    font-size: 18px;
+    text-decoration: none;
+    display: block;
+    padding: 10px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    transition: all 0.3s ease;
+  }
+
+  .broad .nav-link:hover {
+    color: #4a9eff;
+    padding-left: 10px;
+  }
+
+  .broad .social-icons {
+    margin-top: 30px;
+    display: flex;
+    gap: 15px;
+  }
+
+  .broad .social-icons a {
+    color: #fff;
+    font-size: 18px;
+    transition: color 0.3s ease;
+  }
+
+  .broad .social-icons a:hover {
+    color: #4a9eff;
+  }
+
+  .broad .rites-res {
+    margin-top: 30px;
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 12px;
+  }
+
+  /* Ensure side-nav-menu content is visible in mobile menu */
+  .broad .side-nav-menu {
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    position: relative;
+    width: 100%;
+  }
+
+  .broad .brand-logo {
+    display: block;
+    margin-bottom: 30px;
+  }
+
+  .broad .nav-menu.nav-fill {
+    display: block !important;
+    visibility: visible !important;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  /* Touch-friendly elements */
+  a,
+  button,
+  .btn,
+  input,
+  textarea,
+  select {
+    min-height: 44px;
+    min-width: 44px;
+  }
+
+  /* Form inputs - prevent zoom on iOS */
+  input[type="text"],
+  input[type="email"],
+  input[type="tel"],
+  input[type="password"],
+  textarea,
+  select {
+    font-size: 16px !important;
+  }
+
+  /* Image Modal on Mobile */
+  .image-modal-content {
+    width: 95%;
+    max-width: none;
+  }
+
+  .image-modal-content img {
+    max-height: 70vh;
+  }
+
+  .modal-nav {
+    width: 40px;
+    height: 40px;
+  }
+
+  /* Service Modal on Mobile */
+  .service-modal-container {
+    width: 95%;
+    max-height: 90vh;
+    margin: 5vh auto;
+  }
+
+  .service-modal-content {
+    padding: 20px;
+  }
+
+  .service-modal-header {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .service-modal-icon {
+    margin-bottom: 15px;
+  }
+
+  .service-images-grid {
+    grid-template-columns: 1fr !important;
+    gap: 15px;
+  }
+
+  .service-modal-features {
+    flex-direction: column;
+  }
+
+  .service-feature-item {
+    width: 100%;
+  }
+}
+
+/* ===================================
+   iOS Safari Specific Fixes
+====================================== */
+@supports (-webkit-touch-callout: none) {
+  /* Fix 100vh issues on iOS */
+  .slider-area,
+  .about,
+  .team,
+  .portfolio-bg,
+  .contact-sec {
+    min-height: -webkit-fill-available;
+  }
+
+  /* Smooth scrolling for touch */
+  .service-modal-container,
+  .broad,
+  #team-slider {
+    -webkit-overflow-scrolling: touch;
+  }
+}
+
+/* ===================================
+   High DPI / Retina Display Fixes
+====================================== */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  /* Ensure crisp text on retina displays */
+  body {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  /* Ensure images are sharp */
+  img {
+    image-rendering: -webkit-optimize-contrast;
+  }
+}
+
+/* ===================================
+   Landscape Orientation for Phones
+====================================== */
+@media screen and (max-width: 896px) and (orientation: landscape) {
+  /* Reduce section height in landscape */
+  section,
+  .section {
+    min-height: auto !important;
+    padding: 40px 0 !important;
+  }
+
+  .slider-area {
+    min-height: 100vh;
+    padding: 30px 0 !important;
+  }
+
+  /* Hero section in landscape */
+  .slider-area .row {
+    flex-direction: row !important;
+  }
+
+  .slider-area .section1left {
+    text-align: left;
+    margin-bottom: 0;
+  }
+
+  .slider-area h1 {
+    font-size: 24px !important;
+  }
+
+  .slider-area p {
+    font-size: 13px !important;
+    margin-bottom: 12px;
+  }
+
+  .banner-image svg {
+    max-width: 200px;
+  }
+
+  /* Services - 2 columns in landscape */
+  .about .row.pb-5 {
+    flex-direction: row !important;
+    flex-wrap: wrap !important;
+  }
+
+  .about .row.pb-5 > div[class*="col-"] {
+    flex: 0 0 50% !important;
+    max-width: 50% !important;
+    margin-bottom: 15px !important;
+  }
+
+  .feature-item {
+    padding: 15px 12px;
+  }
+
+  .feature-item .title {
+    font-size: 16px !important;
+  }
+
+  .feature-item p {
+    font-size: 12px !important;
+  }
+
+  /* Team - side by side in landscape */
+  .team .row.align-items-stretch {
+    flex-direction: row !important;
+  }
+
+  .team .row.align-items-stretch > .col-lg-7 {
+    flex: 0 0 60% !important;
+    max-width: 60% !important;
+    margin-bottom: 0;
+  }
+
+  .team .row.align-items-stretch > .col-lg-5 {
+    flex: 0 0 40% !important;
+    max-width: 40% !important;
+  }
+
+  .team h3 {
+    font-size: 16px !important;
+  }
+
+  .team .alt-font {
+    font-size: 12px !important;
+  }
+
+  #team-slider .team-card-professional {
+    height: 220px !important;
+  }
+
+  /* Portfolio - 3 columns in landscape */
+  .works-grid {
+    grid-template-columns: repeat(3, 1fr) !important;
+    gap: 8px !important;
+  }
+
+  /* Contact - side by side in landscape */
+  .contact-sec .row {
+    flex-direction: row !important;
+  }
+
+  .contact-sec .col-lg-7 {
+    flex: 0 0 55% !important;
+    max-width: 55% !important;
+    margin-bottom: 0;
+  }
+
+  .contact-sec .col-lg-5 {
+    flex: 0 0 45% !important;
+    max-width: 45% !important;
+  }
+
+  .contact-sec .heading {
+    font-size: 22px !important;
+  }
+
+  .contact-form .form-control {
+    padding: 10px 14px;
+    margin-bottom: 10px;
+  }
+
+  .contact-form textarea.form-control {
+    min-height: 80px;
+  }
+}

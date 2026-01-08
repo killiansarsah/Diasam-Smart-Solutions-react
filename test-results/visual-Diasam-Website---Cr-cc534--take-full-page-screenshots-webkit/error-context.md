@@ -1,0 +1,99 @@
+# Page snapshot
+
+```yaml
+- generic [active] [ref=e1]:
+  - generic:
+    - generic:
+      - generic [ref=e7]:
+        - link "logo" [ref=e8]:
+          - /url: "#home-banner"
+          - img "logo" [ref=e9]
+        - navigation [ref=e10]:
+          - list [ref=e11]:
+            - listitem [ref=e12]:
+              - link "Home" [ref=e13]:
+                - /url: "#home-banner"
+            - listitem [ref=e14]:
+              - link "Our Services" [ref=e15]:
+                - /url: "#about"
+            - listitem [ref=e16]:
+              - link "About Us" [ref=e17]:
+                - /url: "#team"
+            - listitem [ref=e18]:
+              - link "Our Works" [ref=e19]:
+                - /url: "#portfolio"
+            - listitem [ref=e20]:
+              - link "Contact" [ref=e21]:
+                - /url: "#contact"
+          - generic [ref=e22]:
+            - link "" [ref=e24]:
+              - /url: javascript:void(0);
+              - generic [ref=e25]: 
+            - link "" [ref=e27]:
+              - /url: javascript:void(0);
+              - generic [ref=e28]: 
+            - link "" [ref=e30]:
+              - /url: javascript:void(0);
+              - generic [ref=e31]: 
+          - paragraph [ref=e32]:
+            - generic [ref=e33]: © 2026 Diasam. All rights reserved.
+      - banner
+  - generic [ref=e34]:
+    - generic [ref=e41]:
+      - generic [ref=e42]:
+        - heading "Smart Solutions that fit your lifestyle." [level=1] [ref=e43]:
+          - text: Smart Solutions
+          - generic [ref=e44]: that fit your lifestyle.
+        - paragraph [ref=e45]: Experience the convenience of a connected home with our innovative smart devices.
+      - img [ref=e48]
+    - generic [ref=e59]:
+      - heading "DiaSam Smart Solution" [level=2] [ref=e61]
+      - generic [ref=e62]:
+        - generic [ref=e63]:
+          - generic [ref=e64] [cursor=pointer]: 
+          - heading "Smart Home" [level=5] [ref=e65] [cursor=pointer]
+        - generic [ref=e66]:
+          - generic [ref=e67] [cursor=pointer]: 
+          - heading "Home Security" [level=5] [ref=e68] [cursor=pointer]
+        - generic [ref=e69]:
+          - generic [ref=e70] [cursor=pointer]: 
+          - heading "Surveillance" [level=5] [ref=e71] [cursor=pointer]
+        - generic [ref=e72]:
+          - generic [ref=e73] [cursor=pointer]: 
+          - heading "24/7 Protection" [level=5] [ref=e74] [cursor=pointer]
+      - link "Contact Us" [ref=e75]:
+        - /url: "#contact"
+      - paragraph [ref=e77]:
+        - strong [ref=e78]: "Service Locations:"
+        - text: San Antonio, Austin, Corpus Christi and surrounding areas
+    - generic [ref=e82]:
+      - generic [ref=e84]:
+        - heading "About DiaSam" [level=2] [ref=e85]
+        - paragraph [ref=e86]: Smart Solutions for Modern Living
+      - generic [ref=e87]:
+        - generic [ref=e89]:
+          - heading "Who We Are" [level=3] [ref=e90]
+          - paragraph [ref=e91]: We are a family-owned technology company dedicated to revolutionizing the way people interact with their homes and workplaces. With a specialization in automation and smart home solutions, we combine cutting-edge technology with personalized service to deliver innovative, efficient, and user-friendly systems that is affordable.
+          - heading "Our Mission" [level=3] [ref=e92]
+          - paragraph [ref=e93]: To make home security and smart living affordable by delivering reliable security and modern technology without the inflated prices of big-name companies. Our goal is to save you money while giving you dependable, energy-efficient solutions tailored to your needs—proving that top-tier technology doesn’t have to come with a premium price tag.
+        - generic [ref=e96]:
+          - heading "Meet Our Team" [level=3] [ref=e98]
+          - paragraph [ref=e101]: Leadership & Innovation
+    - generic [ref=e110]:
+      - generic [ref=e112]:
+        - heading "OUR WORKS" [level=2] [ref=e113]
+        - paragraph [ref=e114]: Recent Projects
+      - generic [ref=e123]:
+        - button "" [ref=e124] [cursor=pointer]:
+          - generic [ref=e125]: 
+        - button "" [ref=e131] [cursor=pointer]:
+          - generic [ref=e132]: 
+    - generic [ref=e137]:
+      - heading "Questions? How Can we help?" [level=4] [ref=e139]:
+        - text: Questions?
+        - generic [ref=e140]: How Can we help?
+      - generic [ref=e144]:
+        - heading "Office Location" [level=4] [ref=e145]
+        - paragraph [ref=e146]: We are closer than you think, contact us at your convenience with any questions or enquiries. We look forward to serving you!
+  - text:   
+```

@@ -242,7 +242,8 @@
 
 /* Section Heading */
 .about .section-heading {
-  margin-bottom: 15px;
+  margin-bottom: 25px;
+  text-align: center;
 }
 
 .about .section-heading h2 {
@@ -264,17 +265,18 @@
 
 /* Row Padding */
 .about .row.pb-5 {
-  padding-bottom: 8px;
+  padding-bottom: 20px;
   display: flex;
-  flex-wrap: nowrap;
+  flex-wrap: wrap;
   gap: 15px;
+  justify-content: center;
 }
 
-/* Ensure all service cards stay in one line */
+/* Ensure all service cards stay properly sized */
 .about .row.pb-5 > div[class*="col-"] {
   flex: 1;
-  min-width: 0;
-  max-width: none;
+  min-width: 250px;
+  max-width: 300px;
 }
 
 /* CTA Box Modern Styling */
@@ -559,57 +561,81 @@
   }
 }
 
+/* iPad Pro Specific Fixes */
 @media (min-width: 768px) and (max-width: 1024px) {
-  .feature-item {
-    padding: 20px 16px;
-    margin-bottom: 20px;
-  }
-
-  .about .section-heading h2 {
-    font-size: 1.75rem;
-  }
-
-  /* Show 2 cards per row on tablets */
+  /* Portrait Mode */
   .about .row.pb-5 {
     flex-wrap: wrap;
-    justify-content: space-between;
+    gap: 20px;
+    justify-content: center;
   }
-
-  .about .row.pb-5 > div[class*="col-"] {
-    flex: 0 0 48%;
-    max-width: 48%;
+  
+  .about .col-md-3 {
+    flex: 0 0 45%;
+    max-width: 45%;
     margin-bottom: 20px;
   }
   
-  /* Adjust feature items for better layout */
   .feature-item {
+    padding: 20px 15px;
     height: auto;
-    min-height: 200px;
+    min-height: 220px;
   }
   
   .feature-item .f-icon {
-    font-size: 2.2rem !important;
+    font-size: 2.2rem;
   }
   
   .feature-item .title {
-    font-size: 1.2rem !important;
+    font-size: 1.1rem;
+    margin: 10px 0;
   }
   
   .feature-item p {
-    font-size: 0.9rem !important;
+    font-size: 0.9rem;
+    line-height: 1.5;
   }
   
-  /* Box adjustments */
+  .about .section-heading h2 {
+    font-size: 1.8rem;
+  }
+  
   .about .box {
-    padding: 25px 20px;
+    padding: 20px;
+    margin-top: 15px;
   }
   
   .about .box h2 {
-    font-size: 1.5rem !important;
+    font-size: 1.4rem;
   }
   
   .about .box p {
     font-size: 0.95rem;
+  }
+}
+
+/* iPad Pro Landscape Mode */
+@media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
+  .about .col-md-3 {
+    flex: 0 0 23%;
+    max-width: 23%;
+  }
+  
+  .feature-item {
+    min-height: 200px;
+    padding: 18px 12px;
+  }
+  
+  .feature-item .f-icon {
+    font-size: 2rem;
+  }
+  
+  .feature-item .title {
+    font-size: 1rem;
+  }
+  
+  .feature-item p {
+    font-size: 0.85rem;
   }
 }
 
@@ -1191,6 +1217,8 @@
   .portfolio-bg,
   section[style*="background-attachment: fixed"] {
     background-attachment: scroll !important;
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
   }
 
   /* Ensure backgrounds stay properly sized */
@@ -1224,6 +1252,14 @@
     -webkit-background-size: cover !important;
     -moz-background-size: cover !important;
     -o-background-size: cover !important;
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+  }
+  
+  /* Fix viewport height issues */
+  .section {
+    min-height: 100vh;
+    min-height: -webkit-fill-available;
   }
 }
 
@@ -1232,6 +1268,7 @@
   /* Ensure sections don't cause zoom */
   .section {
     min-height: 100vh;
+    min-height: -webkit-fill-available;
     position: relative;
     overflow: hidden;
   }
@@ -1244,6 +1281,16 @@
     background-position: center !important;
     -webkit-transform: translateZ(0);
     transform: translateZ(0);
+  }
+  
+  /* Fix input zoom on iOS Safari */
+  input, textarea, select {
+    font-size: 16px !important;
+  }
+  
+  /* Fix touch scrolling */
+  .service-modal-container {
+    -webkit-overflow-scrolling: touch;
   }
 }
 

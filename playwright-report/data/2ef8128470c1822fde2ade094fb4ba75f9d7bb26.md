@@ -1,0 +1,119 @@
+# Page snapshot
+
+```yaml
+- generic [active]:
+  - generic:
+    - generic:
+      - text:   
+      - banner:
+        - navigation [ref=e1]:
+          - link "Logo" [ref=e2]:
+            - /url: "#home-banner"
+            - img "Logo" [ref=e3]
+  - generic:
+    - generic [ref=e15]:
+      - heading "Smart Solutions that fit your lifestyle." [level=1] [ref=e16]:
+        - text: Smart Solutions
+        - generic [ref=e17]: that fit your lifestyle.
+      - paragraph [ref=e18]: Experience the convenience of a connected home with our innovative smart devices.
+      - link "Learn More" [ref=e19]:
+        - /url: "#about"
+    - generic [ref=e20]:
+      - generic:
+        - heading "DiaSam Smart Solution" [level=2]
+      - generic [ref=e21]:
+        - generic [ref=e23] [cursor=pointer]:
+          - generic [ref=e24]: 
+          - heading "Smart Home" [level=5]
+          - paragraph: We offer a unified smart home experience that puts control, protection, convenience and affordability in the palm of your hands.
+          - text: →
+        - generic [ref=e26] [cursor=pointer]:
+          - generic [ref=e27]: 
+          - heading "Home Security" [level=5]
+          - paragraph: We offer an advanced complete home security solution, combining AI-enabled cameras, intelligent motion detection, and 24/7 professional monitoring.
+          - text: →
+        - generic [ref=e29] [cursor=pointer]:
+          - generic [ref=e30]: 
+          - heading "Surveillance" [level=5]
+          - paragraph: Our retinal 4K cameras are built with advanced technology to capture critical details with exceptional clarity—even from a distance.
+          - text: →
+        - generic [ref=e32] [cursor=pointer]:
+          - generic [ref=e33]: 
+          - heading "24/7 Protection" [level=5]
+          - paragraph: A security system designed to fit your lifestyle—whether you’re protecting an apartment, condo, small home, or business.
+          - text: →
+      - generic [ref=e35]:
+        - generic [ref=e36]:
+          - heading "Let's Get Started" [level=2]
+          - paragraph: We are a family-owned technology company dedicated to revolutionizing the way people interact with their homes and workplaces.
+        - link "Contact Us" [ref=e38]:
+          - /url: "#contact"
+      - generic:
+        - paragraph:
+          - strong [ref=e39]: "Service Locations:"
+          - text: San Antonio, Austin, Corpus Christi and surrounding areas
+    - generic [ref=e43]:
+      - generic [ref=e45]:
+        - heading "About DiaSam" [level=2] [ref=e46]
+        - paragraph [ref=e47]: Smart Solutions for Modern Living
+      - generic [ref=e48]:
+        - generic [ref=e50]:
+          - heading "Who We Are" [level=3] [ref=e51]
+          - paragraph [ref=e52]: We are a family-owned technology company dedicated to revolutionizing the way people interact with their homes and workplaces. With a specialization in automation and smart home solutions, we combine cutting-edge technology with personalized service to deliver innovative, efficient, and user-friendly systems that is affordable.
+          - heading "Our Mission" [level=3] [ref=e53]
+          - paragraph [ref=e54]: To make home security and smart living affordable by delivering reliable security and modern technology without the inflated prices of big-name companies. Our goal is to save you money while giving you dependable, energy-efficient solutions tailored to your needs—proving that top-tier technology doesn’t have to come with a premium price tag.
+        - generic [ref=e56]:
+          - generic [ref=e57]:
+            - heading "Meet Our Team" [level=3] [ref=e59]
+            - paragraph [ref=e62]: Leadership & Innovation
+          - generic [ref=e65]:
+            - generic [ref=e67]:
+              - img "Sam G" [ref=e69]
+              - generic [ref=e71]:
+                - heading "Sam G" [level=4] [ref=e72]
+                - generic [ref=e73]: CEO
+            - generic [ref=e75]:
+              - img "Killian S" [ref=e77]
+              - generic [ref=e79]:
+                - heading "Killian S" [level=4] [ref=e80]
+                - generic [ref=e81]: Team Member
+    - generic [ref=e85]:
+      - generic [ref=e87]:
+        - heading "OUR WORKS" [level=2] [ref=e88]
+        - paragraph [ref=e89]: Recent Projects
+      - generic [ref=e90]: Swipe to see more
+      - generic [ref=e98]:
+        - button "" [ref=e99] [cursor=pointer]:
+          - generic [ref=e100]: 
+        - button "" [ref=e106] [cursor=pointer]:
+          - generic [ref=e107]: 
+    - generic [ref=e112]:
+      - generic [ref=e113]:
+        - heading "Questions? How Can we help?" [level=4] [ref=e114]:
+          - text: Questions?
+          - generic [ref=e115]: How Can we help?
+        - generic [ref=e117]:
+          - textbox "Name" [ref=e118]
+          - textbox "Contact No" [ref=e119]
+          - textbox "Email" [ref=e120]
+          - textbox "Type Your Message Here" [ref=e121]
+          - link "Submit Information" [ref=e122]:
+            - /url: javascript:void(0);
+      - generic [ref=e124]:
+        - heading "Office Location" [level=4] [ref=e125]
+        - paragraph [ref=e126]: We are closer than you think, contact us at your convenience with any questions or enquiries. We look forward to serving you!
+        - generic [ref=e127]:
+          - link " View Location" [ref=e128]:
+            - /url: https://www.google.com/maps/search/?api=1&query=123+Park+Avenue,+New+York,+United+States
+            - generic [ref=e129]: 
+            - text: View Location
+          - link " Call Us" [ref=e130]:
+            - /url: tel:+12109714545
+            - generic [ref=e131]: 
+            - text: Call Us
+          - link " Email Us" [ref=e132]:
+            - /url: mailto:info@diasamsolutions.com
+            - generic [ref=e133]: 
+            - text: Email Us
+  - text:   
+```
