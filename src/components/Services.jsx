@@ -15,7 +15,7 @@ const Services = () => {
     };
 
     return (
-        <section className="section pp-scrollable slide2 about" id="about" data-anchor="about" style={{ backgroundImage: "url('https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1920&q=80')", backgroundSize: 'cover', backgroundPosition: 'center', position: 'relative', height: '100vh', display: 'flex', flexDirection: 'column', justifyContent: 'center', overflow: 'hidden' }}>
+        <section className="section pp-scrollable slide2 about" id="about" data-anchor="about" style={{ backgroundImage: "url('https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1920&q=80')", backgroundSize: 'cover', backgroundPosition: 'center', position: 'relative', height: '100vh', display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
             <div className="bg-overlay" style={{ background: 'linear-gradient(135deg, rgba(4, 36, 63, 0.85) 0%, rgba(1, 46, 87, 0.85) 100%)' }}></div>
             <div className="container expand-container">
                 <div className="col-12 px-0 section-heading about-fadeIn wow" data-wow-delay=".5s">

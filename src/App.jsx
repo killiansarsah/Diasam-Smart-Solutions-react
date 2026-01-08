@@ -14,7 +14,7 @@ const App = () => {
             <div id="pagepiling">
                 <Hero />
                 <Services />
-                <section className="section pp-scrollable slide3 team p-0" id="team" data-anchor="team" style={{ backgroundImage: "url('https://images.unsplash.com/photo-1586953208448-b95a79798f07?w=1920&q=80')", backgroundSize: 'cover', backgroundPosition: 'center', height: '100vh', display: 'flex', alignItems: 'center', overflow: 'hidden', position: 'relative' }}>
+                <section className="section pp-scrollable slide3 team p-0" id="team" data-anchor="team" style={{ backgroundImage: "url('https://images.unsplash.com/photo-1586953208448-b95a79798f07?w=1920&q=80')", backgroundSize: 'cover', backgroundPosition: 'center', height: '100vh', display: 'flex', alignItems: 'center', position: 'relative' }}>
                     <div className="bg-overlay bg-brown opacity-8"></div>
                     <div className="container expand-container">
                         {/* Section Heading */}
