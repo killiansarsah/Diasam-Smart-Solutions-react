@@ -615,7 +615,8 @@
     overflow-y: auto;
   }
 
-  .broad.side-nav-active {
+  .broad.side-nav-active,
+  .broad.broad-nav {
     right: 0;
   }
 
