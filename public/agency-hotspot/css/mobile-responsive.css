@@ -12,29 +12,30 @@
   /* Typography */
   h1,
   .h1 {
-    font-size: 24px !important;
+    font-size: clamp(24px, 7vw, 28px) !important;
     line-height: 1.2;
   }
 
   h2,
   .h2 {
-    font-size: 20px !important;
+    font-size: clamp(20px, 6vw, 24px) !important;
     line-height: 1.25;
   }
 
   h3,
   .h3 {
-    font-size: 18px !important;
+    font-size: clamp(18px, 5vw, 22px) !important;
   }
 
   h4,
   .h4 {
-    font-size: 16px !important;
+    font-size: clamp(16px, 4vw, 18px) !important;
   }
 
   p {
     font-size: 14px;
-    line-height: 1.5;
+    line-height: 1.6;
+    margin-bottom: 15px;
   }
 
   /* Container */
@@ -50,13 +51,16 @@
 
   /* Hero Section */
   .slider-area h1 {
-    font-size: 22px !important;
-    margin-bottom: 12px;
+    font-size: clamp(24px, 8vw, 32px) !important;
+    margin-bottom: 15px;
   }
 
   .slider-area p {
-    font-size: 13px !important;
-    margin-bottom: 15px;
+    font-size: 14px !important;
+    margin-bottom: 20px;
+    max-width: 90%;
+    margin-left: auto;
+    margin-right: auto;
   }
 
   .slider-area .btn {
@@ -358,10 +362,17 @@
     padding-right: 0 !important;
   }
 
-  /* Section padding */
+  /* Section padding and header overlap fix */
   section,
   .section {
-    padding: 50px 0 !important;
+    padding: 85px 0 50px 0 !important; /* Increased top padding to account for fixed navbar */
+  }
+
+  /* Remove padding from Hero section to prevent background gaps */
+  #home,
+  #home-banner,
+  .slider-area {
+    padding: 0 !important;
   }
 
   /* Hero section specific */
@@ -461,6 +472,14 @@
     max-width: 85%;
     scroll-snap-align: center;
     margin: 0;
+    padding: 15px; /* Added internal padding */
+    height: auto !important; /* Allow content to dictate height */
+    min-height: 350px;
+  }
+
+  #team-slider .team-card-professional .team-image {
+    max-height: 220px; /* Constrain image height on mobile */
+    overflow: hidden;
   }
 
   /* Portfolio Section */
