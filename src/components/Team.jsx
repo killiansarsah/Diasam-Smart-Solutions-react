@@ -9,13 +9,13 @@ const Team = () => {
             name: "Sam G",
             role: "CEO",
             image: getAssetUrl('agency-hotspot/images/Fafa.jpeg'),
-            imagePosition: "center 30%"
+            imagePosition: "center 50%"
         },
         {
             name: "Killian S",
             role: "Team Member",
             image: getAssetUrl('agency-hotspot/images/killian.jpeg'),
-            imagePosition: "center 40%"
+            imagePosition: "center 50%"
         }
     ];
     
@@ -47,7 +47,7 @@ const Team = () => {
                     <div className="row justify-content-center">
                         {teamMembers.map((member, index) => (
                             <div key={index} className="col-12 col-md-6 mb-4">
-                                <div className="team-card-professional" style={{ background: '#ffffff', borderRadius: '15px', overflow: 'hidden', boxShadow: '0 20px 45px rgba(0,0,0,0.18)', transition: 'all 0.4s ease', position: 'relative', height: '350px', display: 'flex', flexDirection: 'column' }}>
+                                <div className="team-card-professional" style={{ background: '#ffffff', borderRadius: '15px', overflow: 'hidden', boxShadow: '0 20px 45px rgba(0,0,0,0.18)', transition: 'all 0.4s ease', position: 'relative', height: '500px', display: 'flex', flexDirection: 'column' }}>
                                     <div style={{ flex: 1, overflow: 'hidden', position: 'relative' }}>
                                         <img src={member.image} alt={member.name} style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: member.imagePosition }} />
                                     </div>
@@ -64,7 +64,7 @@ const Team = () => {
                 {/* Mobile: Auto-rotating single card */}
                 <div className="d-block d-md-none">
                     <div className="team-carousel-mobile" style={{ position: 'relative', overflow: 'hidden' }}>
-                        <div className="team-card-professional" style={{ background: '#ffffff', borderRadius: '15px', overflow: 'hidden', boxShadow: '0 20px 45px rgba(0,0,0,0.18)', transition: 'all 0.5s ease', position: 'relative', height: '350px', display: 'flex', flexDirection: 'column', margin: '0 auto', maxWidth: '300px' }}>
+                        <div className="team-card-professional" style={{ background: '#ffffff', borderRadius: '15px', overflow: 'hidden', boxShadow: '0 20px 45px rgba(0,0,0,0.18)', transition: 'all 0.5s ease', position: 'relative', height: '550px', display: 'flex', flexDirection: 'column', margin: '0 auto', maxWidth: '300px' }}>
                             <div style={{ flex: 1, overflow: 'hidden', position: 'relative' }}>
                                 <img 
                                     src={teamMembers[currentIndex].image} 
