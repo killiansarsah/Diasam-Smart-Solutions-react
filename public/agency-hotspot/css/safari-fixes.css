@@ -42,11 +42,15 @@ video {
 
 /* Fix backdrop-filter support */
 @supports not (backdrop-filter: blur(10px)) {
-    .service-modal-content,
-    .btn-glass-contact,
-    .contact-form .contact_btn,
-    .feature-item {
-        background: rgba(255, 255, 255, 0.95) !important;
+    @supports not (-webkit-backdrop-filter: blur(10px)) {
+        .service-modal-content,
+        .btn-glass-contact,
+        .contact-form .contact_btn,
+        .feature-item {
+            background: rgba(0, 0, 0, 0.6) !important;
+            backdrop-filter: none !important;
+            -webkit-backdrop-filter: none !important;
+        }
     }
 }
 
@@ -85,12 +89,6 @@ video {
     .section {
         min-height: 100vh;
         min-height: -webkit-fill-available;
-    }
-    
-    /* Fix touch scrolling */
-    .service-modal-container {
-        -webkit-overflow-scrolling: touch;
-        overflow-scrolling: touch;
     }
     
     /* Fix input zoom on iOS */
@@ -207,7 +205,8 @@ img {
 @supports (-webkit-backdrop-filter: blur(10px)) {
     .mobile-nav,
     .btn-glass-contact,
-    .service-modal-content {
+    .service-modal-content,
+    .feature-item {
         -webkit-backdrop-filter: blur(10px);
         backdrop-filter: blur(10px);
     }

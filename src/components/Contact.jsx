@@ -1,8 +1,10 @@
 import React from 'react';
 
+import Footer from './Footer';
+
 const Contact = () => {
     return (
-        <section className="section pp-scrollable slide5 contact-sec" id="contact" data-anchor="contact" style={{ backgroundImage: "url('https://images.unsplash.com/photo-1423666639041-f56000c27a9a?w=1920&q=80')", backgroundSize: 'cover', backgroundPosition: 'center', position: 'relative', height: '100vh', display: 'flex', flexDirection: 'column', justifyContent: 'center', overflow: 'hidden' }}>
+        <section className="section pp-scrollable slide5 contact-sec" id="contact" data-anchor="contact" style={{ backgroundImage: "url('https://images.unsplash.com/photo-1423666639041-f56000c27a9a?w=1920&q=80')", backgroundSize: 'cover', backgroundPosition: 'center', position: 'relative', height: '100vh', display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
             <div style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', background: 'linear-gradient(135deg, rgba(139, 0, 0, 0.45) 0%, rgba(178, 34, 34, 0.45) 100%)', zIndex: 1 }}></div>
             <div className="container expand-container" style={{ position: 'relative', zIndex: 2 }}>
                 <div className="row">
@@ -38,6 +40,9 @@ const Contact = () => {
                         </div>
                     </div>
                 </div>
+            </div>
+            <div style={{ position: 'relative', zIndex: 2, marginTop: 'auto' }}>
+                <Footer />
             </div>
         </section>
     );

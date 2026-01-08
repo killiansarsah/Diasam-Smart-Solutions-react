@@ -155,10 +155,10 @@
 }
 
 /* ===================================
-   Small Phones (376px - 414px)
+   Small Phones (376px - 410px)
    iPhone 14, Pixel, Galaxy S
 ====================================== */
-@media screen and (min-width: 376px) and (max-width: 414px) {
+@media screen and (min-width: 376px) and (max-width: 410px) {
   /* Typography */
   h1,
   .h1 {
@@ -242,10 +242,10 @@
 }
 
 /* ===================================
-   Medium Phones (415px - 576px)
+   Medium Phones (411px - 576px)
    Larger phones, small phablets
 ====================================== */
-@media screen and (min-width: 415px) and (max-width: 576px) {
+@media screen and (min-width: 411px) and (max-width: 576px) {
   /* Typography */
   h1,
   .h1 {

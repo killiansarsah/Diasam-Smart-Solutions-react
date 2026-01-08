@@ -6,7 +6,6 @@ import About from './components/About';
 import Team from './components/Team';
 import Portfolio from './components/Portfolio';
 import Contact from './components/Contact';
-import Footer from './components/Footer';
 
 const App = () => {
     return (
@@ -34,7 +33,6 @@ const App = () => {
                 <Portfolio />
                 <Contact />
             </div>
-            <Footer />
         </div>
     );
 };
