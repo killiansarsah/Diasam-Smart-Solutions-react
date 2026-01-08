@@ -1,0 +1,213 @@
+/* Safari-Specific Responsiveness Fixes */
+
+/* Fix video autoplay and playback issues in Safari */
+video {
+    -webkit-playsinline: true;
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+}
+
+/* Fix background-attachment: fixed issues on iOS Safari */
+@supports (-webkit-touch-callout: none) {
+    .section[style*="background-attachment: fixed"],
+    .portfolio-bg,
+    .section.slide2.about,
+    .section.slide3.team,
+    .contact-sec {
+        background-attachment: scroll !important;
+        -webkit-transform: translateZ(0);
+        transform: translateZ(0);
+    }
+}
+
+/* Fix aspect-ratio support in Safari */
+@supports not (aspect-ratio: 1) {
+    .grid-item {
+        position: relative;
+        width: 100%;
+        padding-bottom: 66.67%; /* 3:2 aspect ratio fallback */
+    }
+    
+    .grid-item img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+}
+
+/* Fix backdrop-filter support */
+@supports not (backdrop-filter: blur(10px)) {
+    @supports not (-webkit-backdrop-filter: blur(10px)) {
+        .service-modal-content,
+        .btn-glass-contact,
+        .contact-form .contact_btn,
+        .feature-item {
+            background: rgba(0, 0, 0, 0.6) !important;
+            backdrop-filter: none !important;
+            -webkit-backdrop-filter: none !important;
+        }
+    }
+}
+
+/* Fix viewport units on iOS Safari */
+@supports (-webkit-touch-callout: none) {
+    .section {
+        min-height: -webkit-fill-available;
+    }
+    
+    .portfolio-bg {
+        height: -webkit-fill-available;
+    }
+}
+
+/* Fix flexbox issues in Safari */
+.works-grid {
+    display: -webkit-grid;
+    display: grid;
+    -webkit-grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(3, 1fr);
+}
+
+/* Fix transform3d performance in Safari */
+.team-card-professional,
+.grid-item,
+.feature-item {
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+}
+
+/* Mobile Safari specific fixes */
+@media (max-width: 767px) {
+    /* Fix 100vh issues on mobile Safari */
+    .section {
+        min-height: 100vh;
+        min-height: -webkit-fill-available;
+    }
+    
+    /* Fix input zoom on iOS */
+    input, textarea, select {
+        font-size: 16px !important;
+    }
+}
+
+/* ===================================
+   Additional iOS Safari Fixes
+====================================== */
+
+/* Dynamic viewport height for iOS 15+ */
+@supports (height: 100dvh) {
+    .slider-area,
+    .about,
+    .team,
+    .portfolio-bg,
+    .contact-sec {
+        min-height: 100dvh;
+    }
+    
+    .side_nav {
+        height: 100dvh;
+    }
+}
+
+/* Fix for safe area insets (notch/home indicator) */
+@supports (padding: env(safe-area-inset-top)) {
+    .mobile-nav {
+        padding-top: env(safe-area-inset-top);
+        padding-left: env(safe-area-inset-left);
+        padding-right: env(safe-area-inset-right);
+    }
+    
+    .broad {
+        padding-bottom: env(safe-area-inset-bottom);
+    }
+    
+    .slider-area,
+    .about,
+    .team,
+    .portfolio-bg,
+    .contact-sec {
+        padding-bottom: env(safe-area-inset-bottom);
+    }
+}
+
+/* Smooth momentum scrolling on iOS */
+.pp-scrollable,
+.service-modal-container,
+.broad,
+#team-slider {
+    -webkit-overflow-scrolling: touch;
+}
+
+/* Fix sticky positioning issues on iOS Safari */
+@supports (-webkit-touch-callout: none) {
+    .mobile-nav {
+        position: -webkit-sticky;
+        position: sticky;
+        top: 0;
+    }
+    
+    /* Prevent rubber-banding at top/bottom */
+    html {
+        overscroll-behavior: none;
+    }
+}
+
+/* Fix for button and input tap highlight */
+a, button, input, textarea, select {
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    -webkit-tap-highlight-color: transparent;
+}
+
+/* Fix for form elements on iOS */
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="password"],
+textarea {
+    -webkit-appearance: none;
+    appearance: none;
+    border-radius: 0;
+}
+
+/* Fix image rendering on high-DPI iOS screens */
+img {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    user-select: none;
+}
+
+/* Fix for landscape orientation on iPhone */
+@media screen and (max-width: 896px) and (orientation: landscape) {
+    @supports (-webkit-touch-callout: none) {
+        .section {
+            min-height: auto;
+            min-height: -webkit-fill-available;
+        }
+    }
+}
+
+/* Fix for Safari grid gap bug */
+@supports (-webkit-touch-callout: none) {
+    .works-grid {
+        grid-gap: var(--grid-gap, 15px);
+        gap: var(--grid-gap, 15px);
+    }
+}
+
+/* Fix backdrop-filter performance on Safari */
+@supports (-webkit-backdrop-filter: blur(10px)) {
+    .mobile-nav,
+    .btn-glass-contact,
+    .service-modal-content,
+    .feature-item {
+        -webkit-backdrop-filter: blur(10px);
+        backdrop-filter: blur(10px);
+    }
+}
