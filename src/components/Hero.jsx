@@ -1,11 +1,12 @@
 import React from 'react';
+import { getAssetUrl } from '../utils/assetUrl';
 
 const Hero = () => {
     return (
         <section className="section pp-scrollable slide1 p-0" id="home-banner" data-anchor="home-banner">
             <div className="slider-area" id="slider-area">
                 <video autoPlay muted loop playsInline>
-                    <source src="/agency-hotspot/images/Hue-Secure-Functional-Video-16x9-low-res-HQ1.mp4" type="video/mp4" />
+                    <source src={getAssetUrl('agency-hotspot/images/Hue-Secure-Functional-Video-16x9-low-res-HQ1.mp4')} type="video/mp4" />
                     Your browser does not support the video tag.
                 </video>
                 <div className="bg-overlay bg-blue opacity-6"></div>
@@ -32,7 +33,7 @@ const Hero = () => {
                                             <use xlinkHref="#shape-4" style={{ overflow: 'visible' }} />
                                         </clipPath>
                                     </g>
-                                    <image data-depth="0.1" clipPath="url(#shape-img)" height="100%" width="100%" xlinkHref="/agency-hotspot/images/slider-img.png" />
+                                    <image data-depth="0.1" clipPath="url(#shape-img)" height="100%" width="100%" xlinkHref={getAssetUrl('agency-hotspot/images/slider-img.png')} />
                                 </svg>
                             </div>
                         </div>
@@ -44,3 +45,4 @@ const Hero = () => {
 };
 
 export default Hero;
+

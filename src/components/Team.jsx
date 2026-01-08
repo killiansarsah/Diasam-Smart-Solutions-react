@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { getAssetUrl } from '../utils/assetUrl';
 
 const Team = () => {
     const [currentIndex, setCurrentIndex] = useState(0);
@@ -7,13 +8,13 @@ const Team = () => {
         {
             name: "Sam G",
             role: "CEO",
-            image: "/agency-hotspot/images/Fafa.jpeg",
+            image: getAssetUrl('agency-hotspot/images/Fafa.jpeg'),
             imagePosition: "30% center"
         },
         {
             name: "Killian S",
             role: "Team Member",
-            image: "/agency-hotspot/images/killian.jpeg",
+            image: getAssetUrl('agency-hotspot/images/killian.jpeg'),
             imagePosition: "center 90%"
         }
     ];

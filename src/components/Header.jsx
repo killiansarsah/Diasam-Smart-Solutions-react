@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { getAssetUrl } from '../utils/assetUrl';
 
 const Header = () => {
   const [isSideNavOpen, setIsSideNavOpen] = useState(false);
@@ -21,7 +22,7 @@ const Header = () => {
               <div className="side_menu">
                 <a className="brand-logo link" href="#home-banner">
                   <img
-                    src="/agency-hotspot/images/diasam_logo.png"
+                    src={getAssetUrl('agency-hotspot/images/diasam_logo.png')}
                     alt="logo"
                     style={{ height: "87%", width: "60%" }}
                   />
@@ -41,7 +42,7 @@ const Header = () => {
                     href="#home-banner"
                   >
                     <img
-                      src="/agency-hotspot/images/logo.png"
+                      src={getAssetUrl('agency-hotspot/images/logo.png')}
                       alt="logo"
                       style={{ height: "80%", width: "80%" }}
                     />
@@ -128,7 +129,7 @@ const Header = () => {
             <nav className="navbar navbar-light cursor-light d-md-none mobile-nav">
               <a className="navbar-brand" href="#home-banner">
                 <img
-                  src="/agency-hotspot/images/diasam_logo.png"
+                  src={getAssetUrl('agency-hotspot/images/diasam_logo.png')}
                   alt="Logo"
                   className="mobile-logo"
                 />
@@ -154,7 +155,7 @@ const Header = () => {
               <nav className="side-nav-menu">
                 <a className="brand-logo" href="#home-banner">
                   <img
-                    src="/agency-hotspot/images/logo.png"
+                    src={getAssetUrl('agency-hotspot/images/logo.png')}
                     alt="Logo"
                     style={{ height: "90%", width: "90%" }}
                   />

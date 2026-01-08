@@ -1,62 +1,63 @@
 import React, { useState } from 'react';
 import ImageModal from './ImageModal';
+import { getAssetUrl } from '../utils/assetUrl';
 
 const images = [
-    '/pic/Daytime.jpg',
-    '/pic/Daytime (2).jpg',
-    '/pic/Daytime (3).jpg',
-    '/pic/Daytime (4).jpg',
-    '/pic/Daytime (5).jpg',
-    '/pic/Daytime (6).jpg',
-    '/pic/Daytime (7).jpg',
-    '/pic/Daytime (8).jpg',
-    '/pic/Daytime (9).jpg',
-    '/pic/Daytime (10).jpg',
-    '/pic/Night1.jpg',
-    '/pic/Night2.jpg',
-    '/pic/Night3.jpg',
-    '/pic/Night4.jpg',
-    '/pic/Night5.jpg',
-    '/pic/Night6.jpg',
-    '/pic/Night7.jpg',
-    '/pic/Night8.jpg',
-    '/pic/Night9.jpg'
+    getAssetUrl('pic/Daytime.jpg'),
+    getAssetUrl('pic/Daytime (2).jpg'),
+    getAssetUrl('pic/Daytime (3).jpg'),
+    getAssetUrl('pic/Daytime (4).jpg'),
+    getAssetUrl('pic/Daytime (5).jpg'),
+    getAssetUrl('pic/Daytime (6).jpg'),
+    getAssetUrl('pic/Daytime (7).jpg'),
+    getAssetUrl('pic/Daytime (8).jpg'),
+    getAssetUrl('pic/Daytime (9).jpg'),
+    getAssetUrl('pic/Daytime (10).jpg'),
+    getAssetUrl('pic/Night1.jpg'),
+    getAssetUrl('pic/Night2.jpg'),
+    getAssetUrl('pic/Night3.jpg'),
+    getAssetUrl('pic/Night4.jpg'),
+    getAssetUrl('pic/Night5.jpg'),
+    getAssetUrl('pic/Night6.jpg'),
+    getAssetUrl('pic/Night7.jpg'),
+    getAssetUrl('pic/Night8.jpg'),
+    getAssetUrl('pic/Night9.jpg')
 ];
 
 const imageSets = [
     [
-        '/pic/Daytime.jpg',
-        '/pic/Daytime (2).jpg',
-        '/pic/Daytime (3).jpg',
-        '/pic/Daytime (4).jpg',
-        '/pic/Daytime (5).jpg',
-        '/pic/Daytime (6).jpg'
+        'pic/Daytime.jpg',
+        'pic/Daytime (2).jpg',
+        'pic/Daytime (3).jpg',
+        'pic/Daytime (4).jpg',
+        'pic/Daytime (5).jpg',
+        'pic/Daytime (6).jpg'
     ],
     [
-        '/pic/Daytime (7).jpg',
-        '/pic/Daytime (8).jpg',
-        '/pic/Daytime (9).jpg',
-        '/pic/Daytime (10).jpg',
-        '/pic/Night1.jpg',
-        '/pic/Night2.jpg'
+        'pic/Daytime (7).jpg',
+        'pic/Daytime (8).jpg',
+        'pic/Daytime (9).jpg',
+        'pic/Daytime (10).jpg',
+        'pic/Night1.jpg',
+        'pic/Night2.jpg'
     ],
     [
-        '/pic/Night3.jpg',
-        '/pic/Night4.jpg',
-        '/pic/Night5.jpg',
-        '/pic/Night6.jpg',
-        '/pic/Night7.jpg',
-        '/pic/Night8.jpg'
+        'pic/Night3.jpg',
+        'pic/Night4.jpg',
+        'pic/Night5.jpg',
+        'pic/Night6.jpg',
+        'pic/Night7.jpg',
+        'pic/Night8.jpg'
     ],
     [
-        '/pic/Night9.jpg',
-        '/pic/Daytime.jpg',
-        '/pic/Daytime (2).jpg',
-        '/pic/Night1.jpg',
-        '/pic/Night2.jpg',
-        '/pic/Daytime (3).jpg'
+        'pic/Night9.jpg',
+        'pic/Daytime.jpg',
+        'pic/Daytime (2).jpg',
+        'pic/Night1.jpg',
+        'pic/Night2.jpg',
+        'pic/Daytime (3).jpg'
     ]
-];
+].map(set => set.map(path => getAssetUrl(path)));
 
 const Portfolio = () => {
     const [currentSet, setCurrentSet] = useState(0);
