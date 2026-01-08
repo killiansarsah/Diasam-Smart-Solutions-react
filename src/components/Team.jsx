@@ -9,13 +9,13 @@ const Team = () => {
             name: "Sam G",
             role: "CEO",
             image: getAssetUrl('agency-hotspot/images/Fafa.jpeg'),
-            imagePosition: "30% center"
+            imagePosition: "center 30%"
         },
         {
             name: "Killian S",
             role: "Team Member",
             image: getAssetUrl('agency-hotspot/images/killian.jpeg'),
-            imagePosition: "center 90%"
+            imagePosition: "center 40%"
         }
     ];
     
