@@ -279,14 +279,26 @@ if($_POST)
 //    $mail->Port       = 587;                                    // TCP port to connect to
 
     //Recipients
-    $mail->setFrom($user_Email,$user_Name);
-    $mail->addAddress($your_email, 'Theme Industry');     // Add a recipient
-    $mail->addReplyTo($your_email, 'Information');
+    // On Hostinger and many servers, it's best to set the "From" address to a domain-specific email 
+    // to avoid being flagged as spam or rejected by the server's mail policy.
+    $mail->setFrom($your_email, 'Diasam Website');
+    $mail->addAddress($your_email, 'DiaSam Smart Solutions');     // Add a recipient
+    
+    // Set Reply-To as the user's email so you can reply directly to them
+    if(isset($user_Email)) {
+        $mail->addReplyTo($user_Email, $user_Name);
+    }
 
 
     // Content
     $mail->isHTML(true);                                  // Set email format to HTML
-    $mail->Subject = 'New Contact Inquiry from your Website';
+    
+    // Use user-provided subject or a default one
+    if(!empty($user_Subject)) {
+        $mail->Subject = 'Website Inquiry: ' . $user_Subject;
+    } else {
+        $mail->Subject = 'New Contact Inquiry from ' . $user_Name;
+    }
     $mail->Body  = "<h4 style='text-align: center;padding: 25px 15px;background-color: #0c6c9e;color: #FFFFFF;font-size:16px;width:90%;border-radius: 10px;'>Hi There! You have a new inquiry from your website.</h4><br><br>";
 
     if(isset($_POST["userEmail"])) {

@@ -104,12 +104,36 @@ const Portfolio = () => {
         <section className="section slide4 portfolio-bg" id="portfolio" data-anchor="portfolio" style={{ backgroundImage: `url('${getAssetUrl('agency-hotspot/images/portfolio-bg.jpg')}')`, backgroundSize: 'cover', backgroundPosition: 'center', position: 'relative', height: '100vh', display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
             <style>
                 {`
+                /* Portfolio Section - Desktop Viewport Fix */
+                .portfolio-bg .container {
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    max-height: 90vh;
+                    padding-top: 10px;
+                    padding-bottom: 10px;
+                }
+                
+                .portfolio-heading {
+                    margin-bottom: 15px !important;
+                }
+                
+                .portfolio-heading h2 {
+                    font-size: clamp(1.5rem, 2.5vw, 2rem);
+                    margin-bottom: 5px;
+                }
+                
+                .portfolio-heading p {
+                    font-size: clamp(0.85rem, 1.2vw, 1rem);
+                    margin-bottom: 0;
+                }
+                
                 .nav-controls {
                     display: flex;
                     align-items: center;
                     justify-content: center;
                     gap: 30px;
-                    margin-top: 40px;
+                    margin-top: 20px;
                     position: relative;
                     z-index: 10;
                 }
@@ -189,7 +213,7 @@ const Portfolio = () => {
                 .works-grid {
                     display: grid;
                     grid-template-columns: repeat(3, 1fr);
-                    gap: 25px;
+                    gap: 20px;
                     margin: 0 auto;
                     max-width: 1200px;
                 }
@@ -208,6 +232,92 @@ const Portfolio = () => {
                     -webkit-backface-visibility: hidden;
                     backface-visibility: hidden;
                     will-change: transform, box-shadow;
+                }
+                
+                /* Desktop Large (1400px+) */
+                @media (min-width: 1400px) {
+                    .works-grid {
+                        gap: 25px;
+                        max-width: 1300px;
+                    }
+                    .portfolio-heading h2 {
+                        font-size: 2.2rem !important;
+                    }
+                }
+                
+                /* Desktop Standard (1200px - 1399px) */
+                @media (min-width: 1200px) and (max-width: 1399px) {
+                    .works-grid {
+                        gap: 20px;
+                        max-width: 1100px;
+                    }
+                }
+                
+                /* Desktop Small / Laptop (992px - 1199px) */
+                @media (min-width: 992px) and (max-width: 1199px) {
+                    .works-grid {
+                        gap: 15px;
+                        max-width: 950px;
+                    }
+                    .portfolio-heading h2 {
+                        font-size: 1.7rem !important;
+                    }
+                }
+                
+                /* Short desktop screens (height constraint) */
+                @media (min-width: 992px) and (max-height: 800px) {
+                    .portfolio-bg .container {
+                        padding-top: 5px !important;
+                        padding-bottom: 5px !important;
+                    }
+                    .portfolio-heading {
+                        margin-bottom: 10px !important;
+                    }
+                    .portfolio-heading h2 {
+                        font-size: 1.5rem !important;
+                        margin-bottom: 3px !important;
+                    }
+                    .portfolio-heading p {
+                        font-size: 0.85rem !important;
+                    }
+                    .works-grid {
+                        gap: 12px;
+                    }
+                    .grid-item {
+                        border-radius: 8px;
+                    }
+                    .nav-controls {
+                        margin-top: 12px;
+                        gap: 20px;
+                    }
+                    .nav-btn-bottom {
+                        width: 40px;
+                        height: 40px;
+                    }
+                    .nav-dots {
+                        padding: 8px 15px;
+                    }
+                }
+                
+                /* Very short desktop screens */
+                @media (min-width: 992px) and (max-height: 700px) {
+                    .portfolio-heading h2 {
+                        font-size: 1.3rem !important;
+                    }
+                    .portfolio-heading p {
+                        font-size: 0.8rem !important;
+                    }
+                    .works-grid {
+                        gap: 10px;
+                    }
+                    .nav-controls {
+                        margin-top: 8px;
+                    }
+                    .nav-btn-bottom {
+                        width: 35px;
+                        height: 35px;
+                    }
+                }
                 }
 
                 .grid-item:hover {
@@ -258,10 +368,10 @@ const Portfolio = () => {
             </style>
             <div style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', backgroundColor: 'rgba(0, 0, 0, 0.4)', backdropFilter: 'blur(3px)', zIndex: 1 }}></div>
             <div className="container" style={{ position: 'relative', zIndex: 2 }}>
-                <div className="row section-heading mb-3 text-center section4left">
+                <div className="row section-heading portfolio-heading text-center section4left">
                     <div className="col-12">
-                        <h2 className="main-font text-white mb-1" style={{ fontSize: '2rem', fontWeight: 600 }}>OUR WORKS</h2>
-                        <p className="text-white" style={{ fontSize: '1rem', marginBottom: 0 }}>Recent Projects</p>
+                        <h2 className="main-font text-white">OUR WORKS</h2>
+                        <p className="text-white">Recent Projects</p>
                     </div>
                 </div>
                 

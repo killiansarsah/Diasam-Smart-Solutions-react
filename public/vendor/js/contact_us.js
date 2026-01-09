@@ -13,7 +13,7 @@ $(".contact_btn").on('click', function () {
     var str = $('#contact-form-data').serializeArray();
 
     $('#contact-form-data input').each(function() {
-        if(!$(this).val()){
+        if(!$(this).val() && $(this).attr('name') !== 'userSubject'){
             // alert('Some fields are empty');
             proceed = "false";
         }
