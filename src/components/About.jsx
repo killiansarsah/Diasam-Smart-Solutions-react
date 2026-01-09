@@ -16,83 +16,87 @@ const About = () => {
             <style jsx="true">{`
                 /* Base styles */
                 .about-text-container {
-                    padding: 20px 25px;
+                    padding: 30px 35px;
                 }
                 .about-title {
-                    font-size: clamp(1.4rem, 2.5vw, 1.8rem);
-                    font-weight: 700;
-                    margin-bottom: 12px;
-                    letter-spacing: 0.8px;
+                    font-size: clamp(1.6rem, 3vw, 2.2rem);
+                    font-weight: 800;
+                    margin-bottom: 15px;
+                    letter-spacing: 1px;
                     color: #ffffff;
-                    text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+                    text-shadow: 0 3px 6px rgba(0,0,0,0.4);
                 }
                 .about-para {
-                    font-size: clamp(1rem, 1.5vw, 1.15rem);
-                    line-height: 1.7;
+                    font-size: clamp(1.1rem, 1.8vw, 1.3rem);
+                    line-height: 1.8;
                     text-align: justify;
-                    margin-bottom: 20px;
-                    color: rgba(255, 255, 255, 0.95);
-                    text-shadow: 0 1px 2px rgba(0,0,0,0.2);
+                    margin-bottom: 25px;
+                    color: rgba(255, 255, 255, 0.98);
+                    text-shadow: 0 2px 4px rgba(0,0,0,0.3);
                 }
                 
                 /* Large Desktop adjustments */
                 @media (min-width: 1600px) {
                     .about-text-container {
-                        padding: 30px 40px;
+                        padding: 40px 50px;
+                    }
+                    .about-title {
+                        font-size: 2.4rem !important;
                     }
                     .about-para {
-                        font-size: 1.3rem !important;
+                        font-size: 1.4rem !important;
+                        line-height: 1.9 !important;
                     }
                 }
 
                 /* Standard Desktop */
                 @media (min-width: 1200px) and (max-width: 1599px) {
                     .about-text-container {
-                        padding: 25px 30px;
+                        padding: 30px 40px;
                     }
                     .about-title {
-                        font-size: 1.7rem !important;
+                        font-size: 2.1rem !important;
                     }
                     .about-para {
-                        font-size: 1.15rem !important;
+                        font-size: 1.25rem !important;
                     }
                 }
                 
                 /* Height-based constraints for compact viewports */
                 @media (min-height: 900px) {
                     .about-para {
-                        margin-bottom: 25px;
+                        margin-bottom: 30px;
                     }
                 }
 
                 @media (max-height: 850px) {
                     .about-text-container {
-                        padding: 15px 20px !important;
+                        padding: 20px 25px !important;
                     }
                     .about-title {
-                        font-size: clamp(1.2rem, 2vw, 1.4rem) !important;
-                        margin-bottom: 8px !important;
+                        font-size: clamp(1.3rem, 2.2vw, 1.6rem) !important;
+                        margin-bottom: 10px !important;
                     }
                     .about-para {
-                        font-size: clamp(0.95rem, 1.2vw, 1.05rem) !important;
-                        line-height: 1.6 !important;
-                        margin-bottom: 12px !important;
+                        font-size: clamp(1rem, 1.4vw, 1.15rem) !important;
+                        line-height: 1.65 !important;
+                        margin-bottom: 15px !important;
                     }
                 }
 
                 /* Very tight height constraints */
                 @media (max-height: 720px) {
                     .about-text-container {
-                        padding: 10px 15px !important;
+                        padding: 12px 20px !important;
                     }
                     .about-title {
-                        font-size: 1.1rem !important;
-                        margin-bottom: 5px !important;
+                        font-size: 1.2rem !important;
+                        margin-bottom: 6px !important;
                     }
                     .about-para {
-                        font-size: 0.88rem !important;
-                        line-height: 1.45 !important;
-                        margin-bottom: 8px !important;
+                        font-size: 0.92rem !important;
+                        line-height: 1.5 !important;
+                        margin-bottom: 10px !important;
                     }
                 }
                 
@@ -100,7 +104,7 @@ const About = () => {
                 @media (max-width: 991px) {
                     .about-text-container {
                         text-align: center;
-                        padding: 20px 15px;
+                        padding: 25px 20px;
                     }
                     .about-para {
                         text-align: center;

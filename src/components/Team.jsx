@@ -53,7 +53,7 @@ const Team = () => {
                                     </div>
                                     <div style={{ padding: '10px 5px', textAlign: 'center', background: '#ffffff' }}>
                                         <h4 className="main-font" style={{ color: '#2c3e50', fontSize: '1rem', fontWeight: 600, marginBottom: '2px' }}>{member.name}</h4>
-                                        <div style={{ display: 'inline-block', background: 'linear-gradient(135deg, #34495e 0%, #2c3e50 100%)', color: '#ffffff', padding: '2px 10px', borderRadius: '15px', fontSize: '0.7rem' }}>{member.role}</div>
+                                        <div className="role-badge" style={{ display: 'inline-block', background: 'linear-gradient(135deg, #34495e 0%, #2c3e50 100%)', color: '#ffffff', padding: '2px 10px', borderRadius: '15px', fontSize: '0.7rem' }}>{member.role}</div>
                                     </div>
                                 </div>
                             </div>
@@ -74,7 +74,7 @@ const Team = () => {
                             </div>
                             <div style={{ padding: '10px', textAlign: 'center', background: '#ffffff' }}>
                                 <h4 className="main-font" style={{ color: '#2c3e50', fontSize: '1.1rem', fontWeight: 600, marginBottom: '4px' }}>{teamMembers[currentIndex].name}</h4>
-                                <div style={{ display: 'inline-block', background: 'linear-gradient(135deg, #34495e 0%, #2c3e50 100%)', color: '#ffffff', padding: '3px 12px', borderRadius: '20px', fontSize: '0.75rem' }}>{teamMembers[currentIndex].role}</div>
+                                <div className="role-badge" style={{ display: 'inline-block', background: 'linear-gradient(135deg, #34495e 0%, #2c3e50 100%)', color: '#ffffff', padding: '3px 12px', borderRadius: '20px', fontSize: '0.75rem' }}>{teamMembers[currentIndex].role}</div>
                             </div>
                         </div>
                         
@@ -104,71 +104,83 @@ const Team = () => {
             <style jsx="true">{`
                 /* Base desktop styling */
                 .team-section-title {
-                    font-size: 1.5rem;
+                    font-size: clamp(1.5rem, 3vw, 2rem);
+                    font-weight: 700;
+                    margin-bottom: 20px;
+                }
+                .team-card-professional h4 {
+                    font-size: clamp(1rem, 1.5vw, 1.25rem) !important;
+                }
+                .team-card-professional .role-badge {
+                    font-size: clamp(0.7rem, 1vw, 0.85rem) !important;
+                    padding: 4px 12px !important;
                 }
                 
                 /* Desktop Large (1400px+) */
                 @media (min-width: 1400px) {
                     .team-section-title {
-                        font-size: 1.75rem !important;
+                        font-size: 2rem !important;
                     }
                     .team-card-professional {
-                        max-height: 420px !important;
+                        max-height: 440px !important;
+                    }
+                    .team-header-box {
+                        margin-bottom: 15px !important;
                     }
                 }
                 
                 /* Desktop Standard (1200px - 1399px) */
                 @media (min-width: 1200px) and (max-width: 1399px) {
                     .team-section-title {
-                        font-size: 1.6rem !important;
+                        font-size: 1.8rem !important;
                     }
                     .team-card-professional {
-                        max-height: 400px !important;
+                        max-height: 420px !important;
                     }
                 }
                 
                 /* Desktop Small / Laptop (992px - 1199px) */
                 @media (min-width: 992px) and (max-width: 1199px) {
                     .team-section-title {
-                        font-size: 1.4rem !important;
+                        font-size: 1.5rem !important;
                     }
                     .team-card-professional {
-                        max-height: 360px !important;
+                        max-height: 380px !important;
                     }
                 }
                 
                 /* Short desktop screens */
-                @media (min-width: 992px) and (max-height: 800px) {
+                @media (min-width: 992px) and (max-height: 850px) {
                     .team-header-box {
-                        margin-bottom: 5px !important;
+                        margin-bottom: 10px !important;
                     }
                     .team-section-title {
-                        font-size: 1.3rem !important;
-                        margin-bottom: 5px !important;
+                        font-size: 1.4rem !important;
                     }
                     .team-card-professional {
                         height: 38vh !important;
-                        min-height: 280px !important;
-                        max-height: 340px !important;
+                        min-height: 300px !important;
+                        max-height: 360px !important;
                     }
                 }
                 
                 /* Very short desktop screens */
-                @media (min-width: 992px) and (max-height: 700px) {
+                @media (min-width: 992px) and (max-height: 720px) {
                     .team-section-title {
-                        font-size: 1.2rem !important;
+                        font-size: 1.25rem !important;
+                        margin-bottom: 5px !important;
                     }
                     .team-card-professional {
                         height: 35vh !important;
                         min-height: 250px !important;
-                        max-height: 300px !important;
+                        max-height: 310px !important;
                     }
                 }
                 
                 /* Tablet and below */
                 @media (max-width: 991px) {
                     .team-section-title {
-                        font-size: 1.3rem !important;
+                        font-size: 1.5rem !important;
                     }
                 }
             `}</style>
