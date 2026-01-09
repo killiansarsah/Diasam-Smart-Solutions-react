@@ -29,7 +29,7 @@ const Team = () => {
     }, [teamMembers.length]);
     
     return (
-        <div className="col-12 col-lg-5">
+        <div className="col-12 col-lg-5 section3right">
             <div className="team-fade h-100 d-flex flex-column justify-content-center">
                 {/* Header - centered on all devices */}
                 <div className="text-center mb-4">

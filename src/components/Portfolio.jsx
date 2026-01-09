@@ -231,14 +231,14 @@ const Portfolio = () => {
             </style>
             <div style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', backgroundColor: 'rgba(0, 0, 0, 0.4)', backdropFilter: 'blur(3px)', zIndex: 1 }}></div>
             <div className="container" style={{ position: 'relative', zIndex: 2 }}>
-                <div className="row section-heading mb-3 text-center">
+                <div className="row section-heading mb-3 text-center section4left">
                     <div className="col-12">
                         <h2 className="main-font text-white mb-1" style={{ fontSize: '2rem', fontWeight: 600 }}>OUR WORKS</h2>
                         <p className="text-white" style={{ fontSize: '1rem', marginBottom: 0 }}>Recent Projects</p>
                     </div>
                 </div>
                 
-                <div className="works-container">
+                <div className="works-container section4right">
                     <div className="works-grid wow" style={{ opacity: isTransitioning ? 0.5 : 1, transition: 'opacity 0.3s ease' }} id="worksGrid">
                         {imageSets[currentSet].map((src, index) => (
                             <div key={index} className="grid-item" onClick={() => openModal(src)}>

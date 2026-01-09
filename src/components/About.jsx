@@ -2,7 +2,7 @@ import React from 'react';
 
 const About = () => {
     return (
-        <div className="col-12 col-lg-7 mb-4 mb-lg-0">
+        <div className="col-12 col-lg-7 mb-4 mb-lg-0 section3left">
             <div className="text-white h-100 d-flex flex-column justify-content-center">
                 <h3 className="main-font mb-3" style={{ fontSize: '1.8rem', fontWeight: 600 }}>Who We Are</h3>
                 <p className="alt-font" style={{ fontSize: '1.15rem', lineHeight: 1.8, textAlign: 'justify', marginBottom: '20px' }}>
