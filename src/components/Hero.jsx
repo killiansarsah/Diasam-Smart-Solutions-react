@@ -5,7 +5,15 @@ const Hero = () => {
     return (
         <section className="section pp-scrollable slide1 p-0" id="home-banner" data-anchor="home-banner">
             <div className="slider-area" id="slider-area">
-                <video autoPlay muted loop playsInline>
+                <video 
+                    autoPlay 
+                    muted 
+                    loop 
+                    playsInline 
+                    webkit-playsinline="true"
+                    preload="auto"
+                    style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+                >
                     <source src={getAssetUrl('agency-hotspot/images/Hue-Secure-Functional-Video-16x9-low-res-HQ1.mp4')} type="video/mp4" />
                     Your browser does not support the video tag.
                 </video>
