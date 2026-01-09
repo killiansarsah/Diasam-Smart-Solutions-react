@@ -1,18 +1,63 @@
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 import { getAssetUrl } from '../utils/assetUrl';
 
 const Hero = () => {
+    const videoRef = useRef(null);
+
+    useEffect(() => {
+        // Force video to play on mobile devices
+        const playVideo = async () => {
+            if (videoRef.current) {
+                try {
+                    // Set video properties explicitly
+                    videoRef.current.muted = true;
+                    videoRef.current.playsInline = true;
+                    videoRef.current.setAttribute('playsinline', '');
+                    videoRef.current.setAttribute('webkit-playsinline', '');
+                    
+                    // Attempt to play
+                    await videoRef.current.play();
+                } catch (error) {
+                    console.log('Video autoplay failed:', error);
+                    // Retry after a short delay
+                    setTimeout(() => {
+                        if (videoRef.current) {
+                            videoRef.current.play().catch(e => console.log('Retry failed:', e));
+                        }
+                    }, 100);
+                }
+            }
+        };
+
+        playVideo();
+
+        // Also try to play on user interaction
+        const handleInteraction = () => {
+            if (videoRef.current && videoRef.current.paused) {
+                videoRef.current.play().catch(e => console.log('Play on interaction failed:', e));
+            }
+        };
+
+        document.addEventListener('touchstart', handleInteraction, { once: true });
+        document.addEventListener('click', handleInteraction, { once: true });
+
+        return () => {
+            document.removeEventListener('touchstart', handleInteraction);
+            document.removeEventListener('click', handleInteraction);
+        };
+    }, []);
+
     return (
         <section className="section pp-scrollable slide1 p-0" id="home-banner" data-anchor="home-banner">
             <div className="slider-area" id="slider-area">
                 <video 
+                    ref={videoRef}
                     autoPlay 
                     muted 
                     loop 
                     playsInline 
-                    webkit-playsinline="true"
                     preload="auto"
-                    style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+                    poster={getAssetUrl('agency-hotspot/images/slider-img.png')}
                 >
                     <source src={getAssetUrl('agency-hotspot/images/Hue-Secure-Functional-Video-16x9-low-res-HQ1.mp4')} type="video/mp4" />
                     Your browser does not support the video tag.
