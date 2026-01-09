@@ -214,75 +214,60 @@ const App = () => {
                     </div>
                     <style jsx="true">{`
                         .section3-main-title {
-                            font-size: 2rem;
-                            font-weight: 700;
-                            letter-spacing: 1px;
+                            font-size: clamp(2rem, 4vw, 3rem);
+                            font-weight: 800;
+                            letter-spacing: 1.5px;
+                            text-shadow: 0 4px 8px rgba(0,0,0,0.3);
                         }
                         .section3-sub-title {
-                            font-size: 1.1rem;
+                            font-size: clamp(1.1rem, 2vw, 1.4rem);
+                            font-weight: 400;
+                            letter-spacing: 1px;
                         }
                         
-                        /* Desktop Large (1400px+) */
-                        @media (min-width: 1400px) {
-                            .section3-main-title {
-                                font-size: 2.5rem !important;
-                            }
-                            .section3-sub-title {
-                                font-size: 1.2rem !important;
+                        /* Standard Desktop scaling */
+                        @media (min-width: 1200px) {
+                            .section-relative-padding {
+                                padding-top: 40px !important;
+                                padding-bottom: 40px !important;
                             }
                         }
-                        
-                        /* Desktop Standard (1200px - 1399px) */
-                        @media (min-width: 1200px) and (max-width: 1399px) {
-                            .section3-main-title {
-                                font-size: 2.2rem !important;
+
+                        /* Short desktop screens */
+                        @media (min-width: 992px) and (max-height: 850px) {
+                            .section-relative-padding {
+                                padding-top: 20px !important;
+                                padding-bottom: 30px !important;
                             }
-                            .section3-sub-title {
-                                font-size: 1.1rem !important;
-                            }
-                        }
-                        
-                        /* Desktop Small / Laptop (992px - 1199px) */
-                        @media (min-width: 992px) and (max-width: 1199px) {
                             .section3-main-title {
-                                font-size: 1.9rem !important;
+                                font-size: 1.8rem !important;
                             }
                             .section3-sub-title {
                                 font-size: 1rem !important;
                             }
                         }
                         
-                        /* Short desktop screens */
-                        @media (min-width: 992px) and (max-height: 800px) {
+                        /* Very short desktop screens */
+                        @media (min-width: 992px) and (max-height: 720px) {
                             .section-relative-padding {
                                 padding-top: 10px !important;
-                                padding-bottom: 30px !important;
+                                padding-bottom: 20px !important;
                             }
                             .section3-main-title {
-                                font-size: 1.6rem !important;
+                                font-size: 1.5rem !important;
                             }
                             .section3-sub-title {
                                 font-size: 0.9rem !important;
                             }
                         }
                         
-                        /* Very short desktop screens */
-                        @media (min-width: 992px) and (max-height: 700px) {
-                            .section3-main-title {
-                                font-size: 1.4rem !important;
-                            }
-                            .section3-sub-title {
-                                font-size: 0.85rem !important;
-                            }
-                        }
-                        
-                        /* Tablet and below */
+                        /* Mobile and Tablet */
                         @media (max-width: 991px) {
                             .section3-main-title {
-                                font-size: 1.6rem !important;
+                                font-size: 1.8rem !important;
                             }
                             .section3-sub-title {
-                                font-size: 0.95rem !important;
+                                font-size: 1rem !important;
                             }
                         }
                     `}</style>

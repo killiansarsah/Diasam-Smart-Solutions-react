@@ -21,36 +21,40 @@ const Counter = () => {
             ))}
             <style jsx="true">{`
                 .stats-row {
-                    padding: 15px 10px;
+                    padding: clamp(10px, 2vh, 25px) clamp(10px, 2vw, 30px);
                     background: rgba(255, 255, 255, 0.05);
                     border-radius: 12px;
                     backdrop-filter: blur(5px);
                     border: 1px solid rgba(255, 255, 255, 0.1);
                     margin: 0 5px;
                 }
+                .stat-icon {
+                    font-size: clamp(1.6rem, 2.5vw, 2.2rem) !important;
+                }
+                .stat-number {
+                    font-size: clamp(1.6rem, 2.5vw, 2.2rem) !important;
+                }
+                .stat-label {
+                    font-size: clamp(0.6rem, 0.8vw, 0.8rem) !important;
+                }
+                
                 @media (max-width: 767px) {
                     .stats-row {
                         padding: 10px 5px;
                         margin: 5px 0 0 0;
                     }
-                    .parallax-box h2 {
-                        font-size: 1.3rem !important;
-                    }
-                    .parallax-box i {
-                        font-size: 1.3rem !important;
-                    }
                 }
                 @media (max-height: 750px) {
                     .stats-row {
                         padding: 8px 10px;
-                        margin-top: 10px !important;
+                        margin-top: 5px !important;
                     }
                     .stat-icon {
-                        font-size: 1.2rem !important;
+                        font-size: 1.3rem !important;
                         margin-bottom: 2px !important;
                     }
                     .stat-number {
-                        font-size: 1.2rem !important;
+                        font-size: 1.3rem !important;
                     }
                     .stat-label {
                         font-size: 0.6rem !important;
