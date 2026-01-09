@@ -8,8 +8,22 @@ import Portfolio from './components/Portfolio';
 import Contact from './components/Contact';
 import Preloader from './components/Preloader';
 import Counter from './components/Counter';
+import ServiceModal from './components/ServiceModal';
+import { useState } from 'react';
 
 const App = () => {
+    const [selectedService, setSelectedService] = useState(null);
+    const [isModalOpen, setIsModalOpen] = useState(false);
+
+    const openModal = (service) => {
+        setSelectedService(service);
+        setIsModalOpen(true);
+    };
+
+    const closeModal = () => {
+        setIsModalOpen(false);
+    };
+
     useEffect(() => {
         // Wait for DOM to be fully ready
         const initializePagePiling = () => {
@@ -36,11 +50,11 @@ const App = () => {
             if (window.$ && window.$.fn.pagepiling) {
                 window.$('#pagepiling').pagepiling({
                     direction: 'vertical',
-                    sectionsColor: ['#171717', '#171717', '#171717', '#171717', '#171717'],
+                    sectionsColor: [],
                     anchors: ['home-banner', 'about', 'team', 'portfolio', 'contact'],
-                    scrollingSpeed: 500,
+                    scrollingSpeed: 1000,
                     menu: '#menu',
-                    easing: 'linear',
+                    easing: 'swing',
                     loopBottom: false,
                     loopTop: false,
                     css3: true,
@@ -158,7 +172,7 @@ const App = () => {
             <Header />
             <div id="pagepiling">
                 <Hero />
-                <Services />
+                <Services openModal={openModal} />
                 <section className="section pp-scrollable slide3 team p-0" id="team" data-anchor="team" style={{ backgroundImage: "url('https://images.unsplash.com/photo-1586953208448-b95a79798f07?w=1920&q=80')", backgroundSize: 'cover', backgroundPosition: 'center', height: '100vh', display: 'flex', alignItems: 'center', position: 'relative' }}>
                     <div className="bg-overlay bg-brown opacity-8"></div>
                     <div className="container expand-container section-relative-padding">
@@ -200,6 +214,12 @@ const App = () => {
                 <Portfolio />
                 <Contact />
             </div>
+            
+            <ServiceModal 
+                isOpen={isModalOpen} 
+                onClose={closeModal} 
+                serviceKey={selectedService} 
+            />
         </div>
     );
 };

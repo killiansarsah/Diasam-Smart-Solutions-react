@@ -1008,6 +1008,39 @@ section{padding: 0;}
     position: relative;
 }
 
+/* ===================================
+   PagePiling Transition Fixes
+   Prevents black flash during section transitions
+====================================== */
+#pagepiling {
+    background-color: #171717;
+}
+
+/* Each section needs a solid background to prevent flash */
+.section.slide1,
+.section.slide2,
+.section.slide3,
+.section.slide4,
+.section.slide5 {
+    background-color: #171717;
+}
+
+/* Ensure video/image backgrounds cover the section completely */
+.slider-area,
+.about,
+.team,
+.portfolio-bg,
+.contact-sec {
+    background-color: #171717;
+}
+
+/* Smoother section transitions */
+.pp-section {
+    will-change: transform;
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+}
+
 .slider-copyright {
     font-family: 'Roboto', sans-serif;
     font-size: 13px;

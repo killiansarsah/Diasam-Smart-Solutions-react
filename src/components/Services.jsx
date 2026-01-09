@@ -1,19 +1,6 @@
-import React, { useState } from 'react';
-import ServiceModal from './ServiceModal';
+import React from 'react';
 
-const Services = () => {
-    const [selectedService, setSelectedService] = useState(null);
-    const [isModalOpen, setIsModalOpen] = useState(false);
-
-    const openModal = (service) => {
-        setSelectedService(service);
-        setIsModalOpen(true);
-    };
-
-    const closeModal = () => {
-        setIsModalOpen(false);
-    };
-
+const Services = ({ openModal }) => {
     return (
         <section className="section pp-scrollable slide2 about" id="about" data-anchor="about" style={{ backgroundImage: "url('https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1920&q=80')", backgroundSize: 'cover', backgroundPosition: 'center', position: 'relative', height: '100vh', display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
             <div className="bg-overlay" style={{ background: 'linear-gradient(135deg, rgba(4, 36, 63, 0.85) 0%, rgba(1, 46, 87, 0.85) 100%)' }}></div>
@@ -72,12 +59,6 @@ const Services = () => {
                     <p className="grey-color" style={{ fontSize: '1.6rem' }}><strong>Service Locations:</strong> San Antonio, Austin, Corpus Christi and surrounding areas</p>
                 </div>
             </div>
-            
-            <ServiceModal 
-                isOpen={isModalOpen} 
-                onClose={closeModal} 
-                serviceKey={selectedService} 
-            />
         </section>
     );
 };
