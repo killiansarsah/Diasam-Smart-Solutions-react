@@ -2,7 +2,7 @@ import React from 'react';
 
 const Services = ({ openModal }) => {
     return (
-        <section className="section pp-scrollable slide2 about" id="about" data-anchor="about" style={{ backgroundImage: "url('https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1920&q=80')", backgroundSize: 'cover', backgroundPosition: 'center', position: 'relative', minHeight: '100vh', display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
+        <section className="section slide2 about" id="about" data-anchor="about" style={{ backgroundImage: "url('https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1920&q=80')", backgroundSize: 'cover', backgroundPosition: 'center', position: 'relative', minHeight: '100vh', display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
             <style>{`
                 /* iPad Mini Landscape (1024x768) - Services Section */
                 @media screen and (max-width: 1024px) and (orientation: landscape) {
