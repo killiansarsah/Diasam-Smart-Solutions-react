@@ -6,6 +6,8 @@ import About from './components/About';
 import Team from './components/Team';
 import Portfolio from './components/Portfolio';
 import Contact from './components/Contact';
+import Preloader from './components/Preloader';
+import Counter from './components/Counter';
 
 const App = () => {
     useEffect(() => {
@@ -152,25 +154,48 @@ const App = () => {
 
     return (
         <div className="App">
+            <Preloader />
             <Header />
             <div id="pagepiling">
                 <Hero />
                 <Services />
                 <section className="section pp-scrollable slide3 team p-0" id="team" data-anchor="team" style={{ backgroundImage: "url('https://images.unsplash.com/photo-1586953208448-b95a79798f07?w=1920&q=80')", backgroundSize: 'cover', backgroundPosition: 'center', height: '100vh', display: 'flex', alignItems: 'center', position: 'relative' }}>
                     <div className="bg-overlay bg-brown opacity-8"></div>
-                    <div className="container expand-container">
+                    <div className="container expand-container section-relative-padding">
                         {/* Section Heading */}
-                        <div className="row mb-4 section-heading text-center">
+                        <div className="row mb-2 section-heading text-center">
                             <div className="col-12 wow" data-wow-delay=".3s">
-                                <h2 className="main-font text-white mb-2" style={{ fontSize: '2.2rem', fontWeight: 700 }}>About DiaSam</h2>
-                                <p className="text-white" style={{ fontSize: '1.1rem', opacity: 0.9 }}>Smart Solutions for Modern Living</p>
+                                <h2 className="main-font text-white mb-1 section3-main-title">About DiaSam</h2>
+                                <p className="text-white section3-sub-title" style={{ opacity: 0.9 }}>Smart Solutions for Modern Living</p>
                             </div>
                         </div>
                         <div className="row align-items-stretch wow" data-wow-delay=".5s">
                             <About />
                             <Team />
                         </div>
+                        <Counter />
                     </div>
+                    <style jsx="true">{`
+                        .section3-main-title {
+                            font-size: 1.8rem;
+                            font-weight: 700;
+                        }
+                        .section3-sub-title {
+                            font-size: 1rem;
+                        }
+                        @media (max-height: 800px) {
+                            .section-relative-padding {
+                                padding-top: 10px !important;
+                                padding-bottom: 30px !important;
+                            }
+                            .section3-main-title {
+                                font-size: 1.5rem !important;
+                            }
+                            .section3-sub-title {
+                                font-size: 0.85rem !important;
+                            }
+                        }
+                    `}</style>
                 </section>
                 <Portfolio />
                 <Contact />

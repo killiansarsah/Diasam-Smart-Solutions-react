@@ -18,12 +18,12 @@ const Services = () => {
         <section className="section pp-scrollable slide2 about" id="about" data-anchor="about" style={{ backgroundImage: "url('https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1920&q=80')", backgroundSize: 'cover', backgroundPosition: 'center', position: 'relative', height: '100vh', display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
             <div className="bg-overlay" style={{ background: 'linear-gradient(135deg, rgba(4, 36, 63, 0.85) 0%, rgba(1, 46, 87, 0.85) 100%)' }}></div>
             <div className="container expand-container">
-                <div className="col-12 px-0 section-heading about-fadeIn wow" data-wow-delay=".5s">
+                <div className="col-12 px-0 section-heading about-fadeIn" style={{ visibility: 'visible' }}>
                     <h2 className="main-font">DiaSam Smart Solution</h2>
                 </div>
                 <div className="row pb-5">
                     {/* Feature Box */}
-                    <div className="col-12 col-md-3 about-zoom1In wow" data-wow-delay=".2s">
+                    <div className="col-12 col-md-3 about-zoom1In">
                         <div className="feature-item text-center text-md-left" onClick={() => openModal('smart-home')} style={{ cursor: 'pointer' }}>
                             <i className="las la-home f-icon"></i>
                             <h5 className="title main-font mt-1">Smart Home</h5>
@@ -31,7 +31,7 @@ const Services = () => {
                         </div>
                     </div>
                     {/* Feature Box */}
-                    <div className="col-12 col-md-3 about-zoom2In wow" data-wow-delay=".4s">
+                    <div className="col-12 col-md-3 about-zoom2In">
                         <div className="feature-item text-center text-md-left" onClick={() => openModal('home-security')} style={{ cursor: 'pointer' }}>
                             <i className="las la-shield-alt f-icon"></i>
                             <h5 className="title main-font mt-1">Home Security</h5>
@@ -39,7 +39,7 @@ const Services = () => {
                         </div>
                     </div>
                     {/* Feature Box */}
-                    <div className="col-12 col-md-3 about-zoom3In wow" data-wow-delay=".6s">
+                    <div className="col-12 col-md-3 about-zoom3In">
                         <div className="feature-item text-center text-md-left" onClick={() => openModal('surveillance')} style={{ cursor: 'pointer' }}>
                             <i className="las la-video f-icon"></i>
                             <h5 className="title main-font mt-1">Surveillance</h5>
@@ -47,7 +47,7 @@ const Services = () => {
                         </div>
                     </div>
                     {/* Feature Box */}
-                    <div className="col-12 col-md-3 about-zoom4In wow" data-wow-delay=".8s">
+                    <div className="col-12 col-md-3 about-zoom4In">
                         <div className="feature-item text-center text-md-left" onClick={() => openModal('protection')} style={{ cursor: 'pointer' }}>
                             <i className="las la-user-shield f-icon"></i>
                             <h5 className="title main-font mt-1">24/7 Protection</h5>
@@ -55,7 +55,7 @@ const Services = () => {
                         </div>
                     </div>
                 </div>
-                <div className="box position-relative about-zoom5In wow" data-wow-delay=".5s">
+                <div className="box position-relative about-zoom5In">
                     <div className="box-overlay"></div>
                     <div className="row align-items-center">
                         <div className="col-12 col-md-7 col-lg-9">
