@@ -397,3 +397,236 @@ img {
         backdrop-filter: blur(10px);
     }
 }
+
+/* ===================================
+   Services/About Section Responsive Fixes
+   For Safari on macOS and iPad Mini
+====================================== */
+
+/* Safari-specific font rendering */
+@supports (-webkit-font-smoothing: antialiased) {
+    .about h2,
+    .about .section-heading h2,
+    .feature-item .title,
+    .feature-item p,
+    .about .box h2,
+    .about .box p,
+    .about-title,
+    .about-para {
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        text-rendering: optimizeLegibility;
+    }
+}
+
+/* Desktop Safari (macOS) - larger screens */
+@media screen and (min-width: 1200px) {
+    .about .section-heading h2 {
+        font-size: clamp(32px, 3vw, 48px) !important;
+    }
+    
+    .feature-item .title {
+        font-size: clamp(18px, 1.5vw, 24px) !important;
+    }
+    
+    .feature-item p {
+        font-size: clamp(14px, 1vw, 16px) !important;
+        line-height: 1.6 !important;
+    }
+    
+    .about .box h2 {
+        font-size: clamp(24px, 2vw, 36px) !important;
+    }
+    
+    .about .box p {
+        font-size: clamp(14px, 1vw, 18px) !important;
+    }
+    
+    /* Who We Are / Our Mission text */
+    .about-title {
+        font-size: clamp(1.2rem, 1.5vw, 1.6rem) !important;
+    }
+    
+    .about-para {
+        font-size: clamp(0.9rem, 1vw, 1.1rem) !important;
+        line-height: 1.6 !important;
+    }
+    
+    /* Service Locations */
+    .about .col-12.px-0.mt-4 p {
+        font-size: clamp(1.2rem, 1.5vw, 1.8rem) !important;
+    }
+}
+
+/* iPad Mini Landscape (1024px width) */
+@media screen and (min-width: 992px) and (max-width: 1199px) {
+    .about .section-heading h2 {
+        font-size: 36px !important;
+    }
+    
+    .feature-item {
+        padding: 20px 15px !important;
+    }
+    
+    .feature-item .f-icon {
+        font-size: 32px !important;
+    }
+    
+    .feature-item .title {
+        font-size: 18px !important;
+        margin-top: 10px !important;
+    }
+    
+    .feature-item p {
+        font-size: 14px !important;
+        line-height: 1.5 !important;
+        margin-top: 12px !important;
+    }
+    
+    .about .box {
+        padding: 25px !important;
+    }
+    
+    .about .box h2 {
+        font-size: 26px !important;
+    }
+    
+    .about .box p {
+        font-size: 15px !important;
+    }
+    
+    /* Who We Are / Our Mission text */
+    .about-title {
+        font-size: 1.3rem !important;
+    }
+    
+    .about-para {
+        font-size: 0.95rem !important;
+        line-height: 1.5 !important;
+    }
+    
+    /* Service Locations */
+    .about .col-12.px-0.mt-4 p {
+        font-size: 1.4rem !important;
+    }
+}
+
+/* iPad Mini Portrait (768px width) */
+@media screen and (min-width: 768px) and (max-width: 991px) {
+    .about .section-heading {
+        margin-bottom: 20px !important;
+    }
+    
+    .about .section-heading h2 {
+        font-size: 30px !important;
+        line-height: 1.3 !important;
+    }
+    
+    /* Feature items - make them larger and more readable */
+    .feature-item {
+        padding: 18px 14px !important;
+        min-height: auto !important;
+    }
+    
+    .feature-item .f-icon {
+        font-size: 30px !important;
+        height: 44px !important;
+        width: 44px !important;
+        line-height: 44px !important;
+    }
+    
+    .feature-item .title {
+        font-size: 17px !important;
+        margin-top: 10px !important;
+        margin-bottom: 8px !important;
+    }
+    
+    .feature-item p {
+        font-size: 13px !important;
+        line-height: 1.45 !important;
+        margin-top: 8px !important;
+    }
+    
+    /* CTA Box */
+    .about .box {
+        padding: 20px 18px !important;
+        margin-top: 20px !important;
+    }
+    
+    .about .box h2 {
+        font-size: 22px !important;
+        margin-bottom: 12px !important;
+    }
+    
+    .about .box p {
+        font-size: 14px !important;
+        line-height: 1.5 !important;
+        margin-bottom: 15px !important;
+    }
+    
+    .about .box .btn {
+        font-size: 13px !important;
+        padding: 10px 25px !important;
+    }
+    
+    /* Who We Are / Our Mission text */
+    .about-text-container {
+        padding: 15px !important;
+    }
+    
+    .about-title {
+        font-size: 1.2rem !important;
+        margin-bottom: 8px !important;
+    }
+    
+    .about-para {
+        font-size: 0.88rem !important;
+        line-height: 1.45 !important;
+        margin-bottom: 12px !important;
+    }
+    
+    /* Service Locations - reduce if too large */
+    .about .col-12.px-0.mt-4 p {
+        font-size: 1.2rem !important;
+    }
+    
+    /* Reduce padding/margin for tight viewport */
+    .about .row.pb-5 {
+        padding-bottom: 15px !important;
+        margin-bottom: 10px !important;
+    }
+}
+
+/* Safari-specific fixes using feature detection */
+@supports (-webkit-touch-callout: none) {
+    /* iPad Safari */
+    @media screen and (min-width: 768px) and (max-width: 1024px) {
+        .feature-item p {
+            font-size: 14px !important;
+            -webkit-text-size-adjust: 100%;
+        }
+        
+        .about .box p {
+            font-size: 14px !important;
+            -webkit-text-size-adjust: 100%;
+        }
+        
+        .about-para {
+            font-size: 0.9rem !important;
+            -webkit-text-size-adjust: 100%;
+        }
+    }
+}
+
+/* macOS Safari specific using high-DPI detection */
+@media screen and (-webkit-min-device-pixel-ratio: 2) and (min-width: 1200px) {
+    /* Retina displays - ensure text is crisp */
+    .feature-item .title,
+    .feature-item p,
+    .about .box h2,
+    .about .box p,
+    .about-title,
+    .about-para {
+        -webkit-font-smoothing: subpixel-antialiased;
+    }
+}
