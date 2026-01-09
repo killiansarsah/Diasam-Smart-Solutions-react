@@ -833,8 +833,9 @@
   .broad .side-nav-menu {
     display: flex !important;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
+    gap: 10px;
     visibility: visible !important;
     opacity: 1 !important;
     position: relative;
