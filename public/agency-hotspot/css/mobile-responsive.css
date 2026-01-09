@@ -775,10 +775,12 @@
     list-style: none;
     padding: 0;
     margin: 0;
+    text-align: center;
   }
 
   .broad .nav-item {
     margin-bottom: 15px;
+    text-align: center;
   }
 
   .broad .nav-link {
@@ -789,11 +791,12 @@
     padding: 10px 0;
     border-bottom: 1px solid rgba(0, 0, 0, 0.1);
     transition: all 0.3s ease;
+    text-align: center;
   }
 
   .broad .nav-link:hover {
     color: #4a9eff;
-    padding-left: 10px;
+    padding-left: 0;
   }
 
   .broad .social-icons {
@@ -828,6 +831,8 @@
   .broad .side-nav-menu {
     display: flex !important;
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
     visibility: visible !important;
     opacity: 1 !important;
     position: relative;
@@ -846,9 +851,11 @@
     visibility: visible !important;
     list-style: none;
     padding: 0;
-    margin: 0;
+    margin: 0 auto;
     flex-grow: 0;
     flex-shrink: 0;
+    width: 100%;
+    max-width: 280px;
   }
 
   /* Touch-friendly elements */
