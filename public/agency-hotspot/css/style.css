@@ -2677,3 +2677,139 @@ svg.slider-shape{
         padding: 3rem 0;
     }
 }
+
+/* ===================================
+   Contact Section - Responsive Enhancements
+====================================== */
+
+/* Base styles for contact form */
+.contact-form-inner {
+    width: 100%;
+    max-width: 500px;
+}
+
+/* Contact heading responsive typography */
+.contact-heading {
+    font-size: clamp(28px, 5vw, 48px);
+    line-height: 1.2;
+    margin-bottom: 30px;
+}
+
+/* Glass-style contact buttons - Base definition */
+.btn-glass-contact {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 14px 28px;
+    font-size: 15px;
+    font-weight: 500;
+    color: #ffffff;
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 50px;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    width: 100%;
+    max-width: 280px;
+}
+
+.btn-glass-contact:hover {
+    background: rgba(255, 255, 255, 0.25);
+    border-color: rgba(255, 255, 255, 0.5);
+    color: #ffffff;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+}
+
+.btn-glass-contact i {
+    font-size: 16px;
+}
+
+/* Contact buttons container */
+.contact-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+/* Contact details spacing fix */
+.contact-sec .contact-details {
+    padding-top: 0;
+    margin-left: 0;
+    width: 100%;
+}
+
+/* Tablet breakpoint (768px - 991px) */
+@media screen and (min-width: 768px) and (max-width: 991px) {
+    .contact-sec .contact-heading {
+        font-size: 32px;
+        text-align: left !important;
+    }
+    
+    .contact-form-inner {
+        max-width: 100%;
+    }
+    
+    .contact-sec .contact-details {
+        padding-left: 20px;
+    }
+    
+    .contact-sec .contact-details .heading {
+        font-size: 26px;
+    }
+    
+    .btn-glass-contact {
+        padding: 12px 24px;
+        font-size: 14px;
+        max-width: 240px;
+    }
+}
+
+/* Desktop (992px+) */
+@media screen and (min-width: 992px) {
+    .contact-form-inner {
+        max-width: 450px;
+    }
+    
+    .contact-sec .contact-details {
+        padding-left: 30px;
+    }
+    
+    .btn-glass-contact {
+        max-width: 260px;
+    }
+}
+
+/* Mobile adjustments */
+@media screen and (max-width: 767px) {
+    .contact-heading {
+        font-size: 26px !important;
+        text-align: center !important;
+        margin-bottom: 25px;
+    }
+    
+    .contact-form-inner {
+        max-width: 100%;
+    }
+    
+    .contact-sec .contact-details {
+        text-align: center;
+        margin-top: 30px;
+    }
+    
+    .contact-sec .contact-details .heading {
+        font-size: 24px;
+    }
+    
+    .contact-buttons {
+        align-items: center;
+    }
+    
+    .btn-glass-contact {
+        max-width: 280px;
+        width: 100%;
+    }
+}

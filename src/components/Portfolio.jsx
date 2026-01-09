@@ -116,6 +116,7 @@ const Portfolio = () => {
 
                 .nav-btn-bottom {
                     background: rgba(255, 255, 255, 0.1);
+                    -webkit-backdrop-filter: blur(10px);
                     backdrop-filter: blur(10px);
                     border: 1px solid rgba(255, 255, 255, 0.2);
                     color: white;
@@ -126,19 +127,26 @@ const Portfolio = () => {
                     align-items: center;
                     justify-content: center;
                     cursor: pointer;
+                    -webkit-transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
                     transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
                     box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+                    -webkit-transform: translate3d(0, 0, 0);
+                    transform: translate3d(0, 0, 0);
+                    -webkit-backface-visibility: hidden;
+                    backface-visibility: hidden;
                 }
 
                 .nav-btn-bottom:hover {
                     background: rgba(255, 255, 255, 0.25);
-                    transform: scale(1.15) translateY(-2px);
+                    -webkit-transform: scale3d(1.15, 1.15, 1) translate3d(0, -2px, 0);
+                    transform: scale3d(1.15, 1.15, 1) translate3d(0, -2px, 0);
                     border-color: rgba(255, 255, 255, 0.5);
                     box-shadow: 0 8px 25px rgba(255, 255, 255, 0.2);
                 }
 
                 .nav-btn-bottom:active {
-                    transform: scale(0.95);
+                    -webkit-transform: scale3d(0.95, 0.95, 1);
+                    transform: scale3d(0.95, 0.95, 1);
                 }
 
                 .nav-btn-bottom i {
@@ -151,6 +159,7 @@ const Portfolio = () => {
                     background: rgba(0, 0, 0, 0.2);
                     padding: 10px 20px;
                     border-radius: 30px;
+                    -webkit-backdrop-filter: blur(5px);
                     backdrop-filter: blur(5px);
                 }
 
@@ -160,12 +169,16 @@ const Portfolio = () => {
                     background: rgba(255, 255, 255, 0.3);
                     border-radius: 50%;
                     cursor: pointer;
-                    transition: all 0.3s ease;
+                    -webkit-transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+                    transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+                    -webkit-transform: translate3d(0, 0, 0);
+                    transform: translate3d(0, 0, 0);
                 }
 
                 .dot.active {
                     background: #ffffff;
-                    transform: scale(1.4);
+                    -webkit-transform: scale3d(1.4, 1.4, 1);
+                    transform: scale3d(1.4, 1.4, 1);
                     box-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
                 }
 
@@ -186,13 +199,20 @@ const Portfolio = () => {
                     border-radius: 12px;
                     overflow: hidden;
                     box-shadow: 0 10px 30px rgba(0,0,0,0.3);
-                    transition: all 0.4s ease;
+                    -webkit-transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+                    transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
                     border: 1px solid rgba(255,255,255,0.1);
                     cursor: pointer;
+                    -webkit-transform: translate3d(0, 0, 0);
+                    transform: translate3d(0, 0, 0);
+                    -webkit-backface-visibility: hidden;
+                    backface-visibility: hidden;
+                    will-change: transform, box-shadow;
                 }
 
                 .grid-item:hover {
-                    transform: translateY(-8px) scale(1.02);
+                    -webkit-transform: translate3d(0, -8px, 0) scale3d(1.02, 1.02, 1);
+                    transform: translate3d(0, -8px, 0) scale3d(1.02, 1.02, 1);
                     box-shadow: 0 20px 40px rgba(0,0,0,0.4);
                     border-color: rgba(255,255,255,0.3);
                 }
@@ -201,11 +221,18 @@ const Portfolio = () => {
                     width: 100%;
                     height: 100%;
                     object-fit: cover;
-                    transition: transform 0.6s ease;
+                    -webkit-transform: translate3d(0, 0, 0) scale3d(1, 1, 1);
+                    transform: translate3d(0, 0, 0) scale3d(1, 1, 1);
+                    -webkit-transition: -webkit-transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+                    transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+                    -webkit-backface-visibility: hidden;
+                    backface-visibility: hidden;
+                    will-change: transform;
                 }
 
                 .grid-item:hover img {
-                    transform: scale(1.1);
+                    -webkit-transform: translate3d(0, 0, 0) scale3d(1.1, 1.1, 1);
+                    transform: translate3d(0, 0, 0) scale3d(1.1, 1.1, 1);
                 }
 
                 @media (max-width: 991px) {

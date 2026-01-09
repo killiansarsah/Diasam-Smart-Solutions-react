@@ -83,6 +83,181 @@ video {
     backface-visibility: hidden;
 }
 
+/* ===================================
+   Portfolio/Our Works Safari Zoom Fixes
+====================================== */
+
+/* Force hardware acceleration and prevent zoom glitches */
+.portfolio-bg {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+    -webkit-perspective: 1000px;
+    perspective: 1000px;
+}
+
+/* Grid item base state with GPU acceleration */
+.grid-item {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    -webkit-perspective: 1000px;
+    perspective: 1000px;
+    will-change: transform;
+    -webkit-font-smoothing: antialiased;
+}
+
+/* Safari-optimized hover transition */
+.grid-item:hover {
+    -webkit-transform: translate3d(0, -8px, 0) scale3d(1.02, 1.02, 1);
+    transform: translate3d(0, -8px, 0) scale3d(1.02, 1.02, 1);
+}
+
+/* Grid item image zoom - Safari optimized */
+.grid-item img {
+    -webkit-transform: translate3d(0, 0, 0) scale3d(1, 1, 1);
+    transform: translate3d(0, 0, 0) scale3d(1, 1, 1);
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    -webkit-transition: -webkit-transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    will-change: transform;
+}
+
+.grid-item:hover img {
+    -webkit-transform: translate3d(0, 0, 0) scale3d(1.1, 1.1, 1);
+    transform: translate3d(0, 0, 0) scale3d(1.1, 1.1, 1);
+}
+
+/* Works container GPU acceleration */
+.works-container,
+.works-grid {
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+}
+
+/* Navigation buttons Safari fix */
+.nav-btn-bottom {
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+}
+
+.nav-btn-bottom:hover {
+    -webkit-transform: scale3d(1.15, 1.15, 1) translate3d(0, -2px, 0);
+    transform: scale3d(1.15, 1.15, 1) translate3d(0, -2px, 0);
+}
+
+/* Active dot animation fix for Safari */
+.dot {
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+}
+
+.dot.active {
+    -webkit-transform: scale3d(1.4, 1.4, 1);
+    transform: scale3d(1.4, 1.4, 1);
+}
+
+/* Safari-specific backdrop-filter optimization for Portfolio */
+@supports (-webkit-backdrop-filter: blur(10px)) {
+    .nav-btn-bottom,
+    .nav-dots {
+        -webkit-backdrop-filter: blur(10px);
+        backdrop-filter: blur(10px);
+        -webkit-transform: translateZ(0);
+        transform: translateZ(0);
+    }
+}
+
+/* Fallback for older Safari without backdrop-filter */
+@supports not (-webkit-backdrop-filter: blur(10px)) {
+    .nav-btn-bottom {
+        background: rgba(255, 255, 255, 0.2) !important;
+    }
+    
+    .nav-dots {
+        background: rgba(0, 0, 0, 0.4) !important;
+    }
+}
+
+/* Image Modal Safari Fixes */
+.image-modal {
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+}
+
+.modal-image-container {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+    -webkit-perspective: 1000px;
+    perspective: 1000px;
+}
+
+.modal-image {
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+}
+
+/* Safari zoom animation fix for modal */
+@-webkit-keyframes zoomIn {
+    from { 
+        -webkit-transform: scale3d(0.8, 0.8, 1); 
+        transform: scale3d(0.8, 0.8, 1);
+        opacity: 0; 
+    }
+    to { 
+        -webkit-transform: scale3d(1, 1, 1); 
+        transform: scale3d(1, 1, 1);
+        opacity: 1; 
+    }
+}
+
+@keyframes zoomIn {
+    from { 
+        -webkit-transform: scale3d(0.8, 0.8, 1); 
+        transform: scale3d(0.8, 0.8, 1);
+        opacity: 0; 
+    }
+    to { 
+        -webkit-transform: scale3d(1, 1, 1); 
+        transform: scale3d(1, 1, 1);
+        opacity: 1; 
+    }
+}
+
+.modal-nav-btn {
+    -webkit-transform: translate3d(0, -50%, 0);
+    transform: translate3d(0, -50%, 0);
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+}
+
+.modal-nav-btn:hover {
+    -webkit-transform: translate3d(0, -50%, 0) scale3d(1.1, 1.1, 1);
+    transform: translate3d(0, -50%, 0) scale3d(1.1, 1.1, 1);
+}
+
+/* Close button Safari rotation fix */
+.modal-close {
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+}
+
+.modal-close:hover {
+    -webkit-transform: rotate(90deg) scale3d(1.1, 1.1, 1);
+    transform: rotate(90deg) scale3d(1.1, 1.1, 1);
+}
+
+/* ===================================
+   End Portfolio Safari Fixes
+====================================== */
+
 /* Mobile Safari specific fixes */
 @media (max-width: 767px) {
     /* Fix 100vh issues on mobile Safari */
@@ -94,6 +269,17 @@ video {
     /* Fix input zoom on iOS */
     input, textarea, select {
         font-size: 16px !important;
+    }
+    
+    /* Reduce transform complexity on mobile Safari */
+    .grid-item:hover {
+        -webkit-transform: translate3d(0, -4px, 0);
+        transform: translate3d(0, -4px, 0);
+    }
+    
+    .grid-item:hover img {
+        -webkit-transform: scale3d(1.05, 1.05, 1);
+        transform: scale3d(1.05, 1.05, 1);
     }
 }
 
