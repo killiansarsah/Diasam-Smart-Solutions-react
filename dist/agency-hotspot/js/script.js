@@ -56,6 +56,11 @@ $(window).on("load", function () {
         });
     }
     else{
+        // PagePiling initialization is now handled by React (App.jsx useEffect)
+        // This prevents the "element not found" error on deployed sites
+        console.log('PagePiling will be initialized by React component...');
+        
+        /* DISABLED - Now initialized in React App.jsx
         console.log('Initializing pagepiling...');
         
         // Make sure the element exists before initializing
@@ -218,6 +223,8 @@ $(window).on("load", function () {
         });
         
         console.log('PagePiling initialized successfully!');
+        */
+        // End of disabled PagePiling initialization
     }
 
 /* ===================================
