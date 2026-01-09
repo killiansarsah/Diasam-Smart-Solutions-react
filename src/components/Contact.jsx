@@ -216,7 +216,10 @@ const Contact = () => {
                                 <input type="email" name="userEmail" placeholder="Email" className="form-control" />
                                 <input type="text" name="userSubject" placeholder="Subject" className="form-control" />
                                 <textarea className="form-control" name="userMessage" rows="4" placeholder="Type Your Message Here"></textarea>
-                                <button type="button" className="btn btn-medium btn-rounded btn-white rounded-pill w-100 contact_btn main-font">Submit Information</button>
+                                <button type="button" className="btn btn-medium btn-rounded btn-white rounded-pill w-100 contact_btn main-font">
+                                    <i className="fas fa-spinner fa-spin d-none mr-2"></i>
+                                    Submit Information
+                                </button>
                             </div>
                         </form>
                     </div>

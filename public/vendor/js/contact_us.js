@@ -1,5 +1,5 @@
 //contact us form
-$(".contact_btn").on('click', function () {
+$(document).on('click', '.contact_btn', function () {
     //disable submit button on click
     // $(".contact_btn").attr("disabled", "disabled");
     // $(".contact_btn b").text('Sending');
@@ -22,19 +22,10 @@ $(".contact_btn").on('click', function () {
     //everything looks good! proceed...
     if (proceed === "true") {
 
-        var pathArray = window.location.pathname.split('/');
-        var secondLevelLocation = pathArray[3];
-
-        var accessURL;
-        if(secondLevelLocation){
-            accessURL="../vendor/contact-mailer.php";
-        }else{
-            accessURL="vendor/contact-mailer.php";
-        }
+        var accessURL = "/vendor/contact-mailer.php";
         //data to be sent to server
         $.ajax({
             type: 'POST',
-            // url: 'vendor/contact-mailer.php',
             url: accessURL,
             data: str,
             dataType: 'json',
@@ -104,7 +95,7 @@ $(".contact_btn").on('click', function () {
 
 //modal window form
 
-$(".modal_contact_btn").on('click', function () {
+$(document).on('click', '.modal_contact_btn', function () {
     //disable submit button on click
     // $(".modal_contact_btn").attr("disabled", "disabled");
     // $(".modal_contact_btn b").text('Sending');
@@ -124,19 +115,10 @@ $(".modal_contact_btn").on('click', function () {
 
     //everything looks good! proceed...
     if (proceed === "true") {
-        var pathArray = window.location.pathname.split('/');
-        var secondLevelLocation = pathArray[3];
-
-        var accessURL;
-        if(secondLevelLocation){
-            accessURL="../vendor/contact-mailer.php";
-        }else{
-            accessURL="vendor/contact-mailer.php";
-        }
+        var accessURL = "/vendor/contact-mailer.php";
         //data to be sent to server
         $.ajax({
             type : 'POST',
-            // url : 'vendor/contact-mailer.php',
             url : accessURL,
             data : str,
             dataType: 'json',
