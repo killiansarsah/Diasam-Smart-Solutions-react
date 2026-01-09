@@ -48,7 +48,7 @@ const Hero = () => {
     }, []);
 
     return (
-        <section className="section pp-scrollable slide1 p-0" id="home-banner" data-anchor="home-banner">
+        <section className="section slide1 p-0" id="home-banner" data-anchor="home-banner">
             <div className="slider-area" id="slider-area">
                 <video 
                     ref={videoRef}

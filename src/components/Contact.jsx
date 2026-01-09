@@ -5,7 +5,7 @@ import Footer from './Footer';
 const Contact = () => {
     return (
         <section 
-            className="section pp-scrollable slide5 contact-sec" 
+            className="section slide5 contact-sec" 
             id="contact" 
             data-anchor="contact" 
             style={{ 
