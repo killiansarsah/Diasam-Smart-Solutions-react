@@ -36,17 +36,40 @@ const App = () => {
 
             console.log('Initializing PagePiling...');
 
-            // Check if we're on mobile/tablet
-            const isMobile = window.innerWidth < 768;
+            // Check if we're on mobile/tablet (including iPad Mini)
+            // iPad Mini: 768x1024 (portrait) / 1024x768 (landscape)
+            // Disable PagePiling for screens <= 1024px width (covers iPad Mini landscape)
+            const screenWidth = window.innerWidth;
+            const screenHeight = window.innerHeight;
+            const isMobileOrTablet = screenWidth <= 1024;
             
-            if (isMobile) {
-                console.log('Mobile detected - using normal scroll');
-                // For mobile, just use normal scrolling
+            // Also detect iPad specifically using user agent as backup
+            const isIPad = /iPad|Macintosh/i.test(navigator.userAgent) && 'ontouchend' in document;
+            
+            if (isMobileOrTablet || isIPad) {
+                console.log('Mobile/Tablet detected (width: ' + screenWidth + ', height: ' + screenHeight + ') - using normal scroll');
+                // For mobile/tablet, use normal scrolling
                 document.body.style.overflow = 'auto';
+                document.documentElement.style.overflow = 'auto';
+                
+                // Remove PagePiling-specific styles that prevent scrolling
+                const sections = document.querySelectorAll('.section');
+                sections.forEach(section => {
+                    section.style.position = 'relative';
+                    section.style.height = 'auto';
+                    section.style.minHeight = '100vh';
+                });
+                
+                // Make pagepiling container scrollable
+                if (pagePilingElement) {
+                    pagePilingElement.style.overflow = 'visible';
+                    pagePilingElement.style.height = 'auto';
+                }
+                
                 return;
             }
 
-            // Initialize PagePiling for desktop
+            // Initialize PagePiling for desktop only (> 1024px)
             if (window.$ && window.$.fn.pagepiling) {
                 window.$('#pagepiling').pagepiling({
                     direction: 'vertical',

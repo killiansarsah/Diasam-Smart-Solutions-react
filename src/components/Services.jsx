@@ -2,13 +2,83 @@ import React from 'react';
 
 const Services = ({ openModal }) => {
     return (
-        <section className="section slide2 about" id="about" data-anchor="about" style={{ backgroundImage: "url('https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1920&q=80')", backgroundSize: 'cover', backgroundPosition: 'center', position: 'relative', height: '100vh', display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
+        <>
+            <style>{`
+                /* iPad Mini Landscape (1024x768) - Services Section */
+                @media screen and (max-width: 1024px) and (orientation: landscape) {
+                    .about {
+                        height: auto !important;
+                        min-height: 100vh;
+                        overflow: visible !important;
+                    }
+                    .services-container {
+                        padding-top: 15px !important;
+                        padding-bottom: 15px !important;
+                    }
+                    .services-title {
+                        font-size: clamp(22px, 4vw, 32px) !important;
+                        margin-bottom: 10px !important;
+                    }
+                    .services-row {
+                        padding-bottom: 10px !important;
+                    }
+                    .services-row .feature-item {
+                        padding: 10px 8px !important;
+                    }
+                    .services-row .feature-item .f-icon {
+                        font-size: 28px !important;
+                    }
+                    .services-row .feature-item .title {
+                        font-size: 13px !important;
+                        margin-top: 5px !important;
+                    }
+                    .services-row .feature-item p {
+                        font-size: 10px !important;
+                        line-height: 1.3 !important;
+                        margin-top: 5px !important;
+                    }
+                    .get-started-box {
+                        padding: 15px !important;
+                        margin-top: 10px !important;
+                    }
+                    .get-started-title {
+                        font-size: 20px !important;
+                    }
+                    .get-started-desc {
+                        font-size: 12px !important;
+                        padding: 5px 0 !important;
+                    }
+                    .service-locations {
+                        margin-top: 10px !important;
+                    }
+                    .service-locations-text {
+                        font-size: 12px !important;
+                    }
+                }
+                
+                /* Very short landscape screens */
+                @media screen and (orientation: landscape) and (max-height: 700px) {
+                    .services-row .feature-item p {
+                        font-size: 9px !important;
+                    }
+                    .get-started-box {
+                        padding: 10px 12px !important;
+                    }
+                    .get-started-title {
+                        font-size: 18px !important;
+                    }
+                    .get-started-desc {
+                        font-size: 11px !important;
+                    }
+                }
+            `}</style>
+            <section className="section slide2 about" id="about" data-anchor="about" style={{ backgroundImage: "url('https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1920&q=80')", backgroundSize: 'cover', backgroundPosition: 'center', position: 'relative', minHeight: '100vh', display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
             <div className="bg-overlay" style={{ background: 'linear-gradient(135deg, rgba(4, 36, 63, 0.85) 0%, rgba(1, 46, 87, 0.85) 100%)' }}></div>
-            <div className="container expand-container">
+            <div className="container expand-container services-container">
                 <div className="col-12 px-0 section-heading about-fadeIn" style={{ visibility: 'visible' }}>
-                    <h2 className="main-font">DiaSam Smart Solution</h2>
+                    <h2 className="main-font services-title">DiaSam Smart Solution</h2>
                 </div>
-                <div className="row pb-5">
+                <div className="row services-row">
                     {/* Feature Box */}
                     <div className="col-12 col-md-3 about-zoom1In">
                         <div className="feature-item text-center text-md-left" onClick={() => openModal('smart-home')} style={{ cursor: 'pointer' }}>
@@ -42,12 +112,12 @@ const Services = ({ openModal }) => {
                         </div>
                     </div>
                 </div>
-                <div className="box position-relative about-zoom5In">
+                <div className="box position-relative about-zoom5In get-started-box">
                     <div className="box-overlay"></div>
                     <div className="row align-items-center">
                         <div className="col-12 col-md-7 col-lg-9">
-                            <h2 className="main-font">Let's Get Started</h2>
-                            <p className="py-4 py-md-0">We are a family-owned technology company dedicated to revolutionizing the way people interact with their homes and workplaces. </p>
+                            <h2 className="main-font get-started-title">Let's Get Started</h2>
+                            <p className="py-4 py-md-0 get-started-desc">We are a family-owned technology company dedicated to revolutionizing the way people interact with their homes and workplaces. </p>
                         </div>
                         <div className="col-12 col-md-5 col-lg-3 text-center">
                             <a href="#contact" className="btn btn-medium btn-rounded btn-trans text-capitalize">Contact Us</a>
@@ -55,11 +125,12 @@ const Services = ({ openModal }) => {
                     </div>
                 </div>
                 
-                <div className="col-12 px-0 mt-4 text-center">
-                    <p className="grey-color" style={{ fontSize: '1.6rem' }}><strong>Service Locations:</strong> San Antonio, Austin, Corpus Christi and surrounding areas</p>
+                <div className="col-12 px-0 mt-4 text-center service-locations">
+                    <p className="grey-color service-locations-text"><strong>Service Locations:</strong> San Antonio, Austin, Corpus Christi and surrounding areas</p>
                 </div>
             </div>
         </section>
+        </>
     );
 };
 
