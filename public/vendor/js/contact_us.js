@@ -22,7 +22,7 @@ $(document).on('click', '.contact_btn', function () {
     //everything looks good! proceed...
     if (proceed === "true") {
 
-        var accessURL = "/vendor/contact-mailer.php";
+        var accessURL = "vendor/contact-mailer.php";
         //data to be sent to server
         $.ajax({
             type: 'POST',
@@ -115,7 +115,7 @@ $(document).on('click', '.modal_contact_btn', function () {
 
     //everything looks good! proceed...
     if (proceed === "true") {
-        var accessURL = "/vendor/contact-mailer.php";
+        var accessURL = "vendor/contact-mailer.php";
         //data to be sent to server
         $.ajax({
             type : 'POST',
