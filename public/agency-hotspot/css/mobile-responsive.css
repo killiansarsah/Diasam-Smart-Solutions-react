@@ -732,8 +732,10 @@
     box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
     z-index: 10000;
     transition: right 0.3s ease;
-    padding: 60px 30px 30px;
-    overflow-y: auto;
+    padding: 50px 25px 20px;
+    overflow-y: hidden;
+    display: flex;
+    flex-direction: column;
   }
 
   .broad.side-nav-active,
@@ -779,16 +781,16 @@
   }
 
   .broad .nav-item {
-    margin-bottom: 15px;
+    margin-bottom: 8px;
     text-align: center;
   }
 
   .broad .nav-link {
     color: #333;
-    font-size: 18px;
+    font-size: 17px;
     text-decoration: none;
     display: block;
-    padding: 10px 0;
+    padding: 8px 0;
     border-bottom: 1px solid rgba(0, 0, 0, 0.1);
     transition: all 0.3s ease;
     text-align: center;
@@ -800,17 +802,17 @@
   }
 
   .broad .social-icons {
-    margin-top: 40px;
-    padding-top: 20px;
+    margin-top: 20px;
+    padding-top: 15px;
     border-top: 1px solid rgba(0, 0, 0, 0.1);
     display: flex;
-    gap: 15px;
+    gap: 12px;
     justify-content: center;
   }
 
   .broad .social-icons a {
     color: #333;
-    font-size: 18px;
+    font-size: 16px;
     transition: color 0.3s ease;
   }
 
@@ -819,11 +821,11 @@
   }
 
   .broad .rites-res {
-    margin-top: 25px;
-    padding-top: 15px;
+    margin-top: 15px;
+    padding-top: 10px;
     color: rgba(0, 0, 0, 0.6);
-    font-size: 12px;
-    line-height: 1.5;
+    font-size: 11px;
+    line-height: 1.4;
     text-align: center;
   }
 
@@ -831,13 +833,14 @@
   .broad .side-nav-menu {
     display: flex !important;
     flex-direction: column;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
     visibility: visible !important;
     opacity: 1 !important;
     position: relative;
     width: 100%;
     height: 100%;
+    padding: 10px 0;
   }
 
   .broad .side-nav-menu .brand-logo {
