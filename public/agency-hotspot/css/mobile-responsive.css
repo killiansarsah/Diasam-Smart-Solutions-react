@@ -583,69 +583,141 @@
   }
 
   .my_nav_tog {
-    width: 48px;
-    height: 48px;
+    width: 50px;
+    height: 50px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     gap: 5px;
     cursor: pointer;
-    background: linear-gradient(135deg, #0891B2 0%, #0E7490 100%);
-    border-radius: 12px;
-    padding: 11px;
-    box-shadow: 0 4px 12px rgba(8, 145, 178, 0.25);
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    background: linear-gradient(135deg, rgba(1, 46, 87, 0.95) 0%, rgba(4, 36, 63, 0.95) 100%);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-radius: 14px;
+    padding: 12px;
+    box-shadow: 0 8px 24px rgba(1, 46, 87, 0.4), 0 2px 8px rgba(0, 0, 0, 0.15);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     position: relative;
     overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.15);
   }
 
+  /* Shimmer effect */
   .my_nav_tog::before {
     content: '';
     position: absolute;
-    top: 0;
-    left: -100%;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
-    transition: left 0.5s;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(
+      45deg,
+      transparent 30%,
+      rgba(255, 255, 255, 0.15) 50%,
+      transparent 70%
+    );
+    transform: rotate(45deg);
+    animation: shimmer 3s infinite;
   }
 
-  .my_nav_tog:hover::before {
-    left: 100%;
+  @keyframes shimmer {
+    0% {
+      transform: translateX(-100%) translateY(-100%) rotate(45deg);
+    }
+    100% {
+      transform: translateX(100%) translateY(100%) rotate(45deg);
+    }
+  }
+
+  .my_nav_tog::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: 14px;
+    padding: 1px;
+    background: linear-gradient(135deg, rgba(100, 200, 255, 0.3), rgba(50, 150, 255, 0.3));
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    mask-composite: exclude;
+    opacity: 0;
+    transition: opacity 0.4s;
+  }
+
+  .my_nav_tog:hover::after {
+    opacity: 1;
   }
 
   .my_nav_tog:hover {
-    transform: translateY(-2px) scale(1.05);
-    box-shadow: 0 6px 20px rgba(8, 145, 178, 0.35);
-    background: linear-gradient(135deg, #06B6D4 0%, #0891B2 100%);
+    transform: translateY(-3px) scale(1.08);
+    box-shadow: 
+      0 12px 32px rgba(1, 46, 87, 0.5),
+      0 4px 12px rgba(0, 0, 0, 0.2),
+      0 0 20px rgba(100, 200, 255, 0.3);
+    background: linear-gradient(135deg, rgba(1, 46, 87, 1) 0%, rgba(4, 36, 63, 1) 100%);
+    border-color: rgba(255, 255, 255, 0.25);
   }
 
   .my_nav_tog:active {
-    transform: translateY(0) scale(1);
-    box-shadow: 0 2px 8px rgba(8, 145, 178, 0.3);
+    transform: translateY(-1px) scale(1.02);
+    box-shadow: 
+      0 6px 16px rgba(1, 46, 87, 0.4),
+      0 2px 6px rgba(0, 0, 0, 0.15);
   }
 
   .my_nav_tog span {
     display: block;
-    width: 24px;
+    width: 26px;
     height: 3px;
-    background: #ffffff;
+    background: linear-gradient(90deg, rgba(255, 255, 255, 0.95), rgba(255, 255, 255, 1));
     border-radius: 3px;
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    position: relative;
+    z-index: 1;
   }
 
   .my_nav_tog:hover span {
-    width: 26px;
+    width: 28px;
+    background: linear-gradient(90deg, rgba(255, 255, 255, 1), rgba(200, 230, 255, 1));
+    box-shadow: 
+      0 2px 6px rgba(0, 0, 0, 0.3),
+      0 0 6px rgba(255, 255, 255, 0.3);
+  }
+
+  .my_nav_tog span:nth-child(1) {
+    animation: float1 2s ease-in-out infinite;
   }
 
   .my_nav_tog span:nth-child(2) {
-    width: 20px;
+    width: 22px;
+    animation: float2 2s ease-in-out infinite;
+    animation-delay: 0.2s;
+  }
+
+  .my_nav_tog span:nth-child(3) {
+    animation: float3 2s ease-in-out infinite;
+    animation-delay: 0.4s;
   }
 
   .my_nav_tog:hover span:nth-child(2) {
-    width: 26px;
+    width: 28px;
+  }
+
+  @keyframes float1 {
+    0%, 100% { transform: translateX(0); }
+    50% { transform: translateX(1px); }
+  }
+
+  @keyframes float2 {
+    0%, 100% { transform: translateX(0); }
+    50% { transform: translateX(-1px); }
+  }
+
+  @keyframes float3 {
+    0%, 100% { transform: translateX(0); }
+    50% { transform: translateX(0.5px); }
   }
 
   /* Side nav when open on mobile */
