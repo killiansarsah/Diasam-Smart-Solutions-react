@@ -14,55 +14,129 @@ const About = () => {
                 </p>
             </div>
             <style jsx="true">{`
+                /* Base styles */
+                .about-text-container {
+                    padding: 15px 20px;
+                }
                 .about-title {
-                    font-size: clamp(1.2rem, 2vw, 1.5rem);
+                    font-size: 1.4rem;
                     font-weight: 600;
-                    margin-bottom: 8px;
+                    margin-bottom: 10px;
+                    letter-spacing: 0.5px;
                 }
                 .about-para {
-                    font-size: clamp(0.9rem, 1.2vw, 1.05rem);
-                    line-height: 1.55;
+                    font-size: 1rem;
+                    line-height: 1.6;
                     text-align: justify;
-                    margin-bottom: 12px;
+                    margin-bottom: 15px;
                 }
-                .about-text-container {
-                    padding: 10px;
-                }
-                @media (max-height: 750px) {
-                    .about-title {
-                        font-size: 1.1rem !important;
-                        margin-bottom: 5px !important;
-                    }
-                    .about-para {
-                        font-size: 0.85rem !important;
-                        line-height: 1.4 !important;
-                        margin-bottom: 8px !important;
-                    }
-                }
-                @media (max-width: 991px) {
+                
+                /* Desktop Large (1400px+) */
+                @media (min-width: 1400px) {
                     .about-text-container {
-                        text-align: center;
+                        padding: 20px 30px;
+                    }
+                    .about-title {
+                        font-size: 1.75rem !important;
+                        margin-bottom: 15px !important;
                     }
                     .about-para {
-                        text-align: center;
+                        font-size: 1.1rem !important;
+                        line-height: 1.7 !important;
+                        margin-bottom: 20px !important;
                     }
                 }
-                @media (min-width: 768px) and (max-width: 991px) {
+                
+                /* Desktop Standard (1200px - 1399px) */
+                @media (min-width: 1200px) and (max-width: 1399px) {
+                    .about-text-container {
+                        padding: 15px 25px;
+                    }
+                    .about-title {
+                        font-size: 1.5rem !important;
+                        margin-bottom: 12px !important;
+                    }
+                    .about-para {
+                        font-size: 1rem !important;
+                        line-height: 1.65 !important;
+                        margin-bottom: 18px !important;
+                    }
+                }
+                
+                /* Desktop Small / Laptop (992px - 1199px) */
+                @media (min-width: 992px) and (max-width: 1199px) {
+                    .about-text-container {
+                        padding: 12px 18px;
+                    }
+                    .about-title {
+                        font-size: 1.3rem !important;
+                        margin-bottom: 10px !important;
+                    }
+                    .about-para {
+                        font-size: 0.95rem !important;
+                        line-height: 1.55 !important;
+                        margin-bottom: 14px !important;
+                    }
+                }
+                
+                /* Short desktop screens (height constraint) */
+                @media (min-width: 992px) and (max-height: 800px) {
+                    .about-text-container {
+                        padding: 8px 15px !important;
+                    }
                     .about-title {
                         font-size: 1.2rem !important;
+                        margin-bottom: 8px !important;
                     }
                     .about-para {
                         font-size: 0.9rem !important;
                         line-height: 1.5 !important;
+                        margin-bottom: 10px !important;
                     }
                 }
-                @media (min-width: 1200px) {
+                
+                /* Very short desktop screens */
+                @media (min-width: 992px) and (max-height: 700px) {
                     .about-title {
-                        font-size: 1.5rem !important;
+                        font-size: 1.1rem !important;
+                        margin-bottom: 6px !important;
                     }
                     .about-para {
-                        font-size: 1rem !important;
-                        line-height: 1.6 !important;
+                        font-size: 0.85rem !important;
+                        line-height: 1.45 !important;
+                        margin-bottom: 8px !important;
+                    }
+                }
+                
+                /* Tablet (768px - 991px) */
+                @media (min-width: 768px) and (max-width: 991px) {
+                    .about-text-container {
+                        text-align: center;
+                        padding: 15px;
+                    }
+                    .about-title {
+                        font-size: 1.25rem !important;
+                    }
+                    .about-para {
+                        text-align: center;
+                        font-size: 0.95rem !important;
+                        line-height: 1.55 !important;
+                    }
+                }
+                
+                /* Mobile (below 768px) */
+                @media (max-width: 767px) {
+                    .about-text-container {
+                        text-align: center;
+                        padding: 10px;
+                    }
+                    .about-title {
+                        font-size: 1.15rem !important;
+                    }
+                    .about-para {
+                        text-align: center;
+                        font-size: 0.9rem !important;
+                        line-height: 1.5 !important;
                     }
                 }
             `}</style>

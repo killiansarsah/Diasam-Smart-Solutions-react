@@ -214,22 +214,75 @@ const App = () => {
                     </div>
                     <style jsx="true">{`
                         .section3-main-title {
-                            font-size: 1.8rem;
+                            font-size: 2rem;
                             font-weight: 700;
+                            letter-spacing: 1px;
                         }
                         .section3-sub-title {
-                            font-size: 1rem;
+                            font-size: 1.1rem;
                         }
-                        @media (max-height: 800px) {
+                        
+                        /* Desktop Large (1400px+) */
+                        @media (min-width: 1400px) {
+                            .section3-main-title {
+                                font-size: 2.5rem !important;
+                            }
+                            .section3-sub-title {
+                                font-size: 1.2rem !important;
+                            }
+                        }
+                        
+                        /* Desktop Standard (1200px - 1399px) */
+                        @media (min-width: 1200px) and (max-width: 1399px) {
+                            .section3-main-title {
+                                font-size: 2.2rem !important;
+                            }
+                            .section3-sub-title {
+                                font-size: 1.1rem !important;
+                            }
+                        }
+                        
+                        /* Desktop Small / Laptop (992px - 1199px) */
+                        @media (min-width: 992px) and (max-width: 1199px) {
+                            .section3-main-title {
+                                font-size: 1.9rem !important;
+                            }
+                            .section3-sub-title {
+                                font-size: 1rem !important;
+                            }
+                        }
+                        
+                        /* Short desktop screens */
+                        @media (min-width: 992px) and (max-height: 800px) {
                             .section-relative-padding {
                                 padding-top: 10px !important;
                                 padding-bottom: 30px !important;
                             }
                             .section3-main-title {
-                                font-size: 1.5rem !important;
+                                font-size: 1.6rem !important;
+                            }
+                            .section3-sub-title {
+                                font-size: 0.9rem !important;
+                            }
+                        }
+                        
+                        /* Very short desktop screens */
+                        @media (min-width: 992px) and (max-height: 700px) {
+                            .section3-main-title {
+                                font-size: 1.4rem !important;
                             }
                             .section3-sub-title {
                                 font-size: 0.85rem !important;
+                            }
+                        }
+                        
+                        /* Tablet and below */
+                        @media (max-width: 991px) {
+                            .section3-main-title {
+                                font-size: 1.6rem !important;
+                            }
+                            .section3-sub-title {
+                                font-size: 0.95rem !important;
                             }
                         }
                     `}</style>

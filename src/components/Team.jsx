@@ -34,7 +34,7 @@ const Team = () => {
                 {/* Header - centered on all devices */}
                 <div className="text-center mb-2 team-header-box">
                     <div style={{ display: 'inline-block', position: 'relative' }}>
-                        <h3 className="main-font text-white mb-2" style={{ fontSize: '1.4rem', fontWeight: 600, letterSpacing: '1px', textShadow: '2px 2px 4px rgba(0,0,0,0.3)' }}>Meet Our Team</h3>
+                        <h3 className="main-font text-white mb-2 team-section-title" style={{ fontWeight: 600, letterSpacing: '1px', textShadow: '2px 2px 4px rgba(0,0,0,0.3)' }}>Meet Our Team</h3>
                         <div style={{ width: '50px', height: '2px', background: 'linear-gradient(135deg, #ffffff 0%, rgba(255,255,255,0.6) 100%)', margin: '0 auto', position: 'relative' }}>
                             <div style={{ position: 'absolute', left: '50%', top: '50%', transform: 'translate(-50%, -50%)', width: '5px', height: '5px', background: '#ffffff', borderRadius: '50%' }}></div>
                         </div>
@@ -102,17 +102,73 @@ const Team = () => {
                 </div>
             </div>
             <style jsx="true">{`
-                @media (max-height: 700px) {
+                /* Base desktop styling */
+                .team-section-title {
+                    font-size: 1.5rem;
+                }
+                
+                /* Desktop Large (1400px+) */
+                @media (min-width: 1400px) {
+                    .team-section-title {
+                        font-size: 1.75rem !important;
+                    }
+                    .team-card-professional {
+                        max-height: 420px !important;
+                    }
+                }
+                
+                /* Desktop Standard (1200px - 1399px) */
+                @media (min-width: 1200px) and (max-width: 1399px) {
+                    .team-section-title {
+                        font-size: 1.6rem !important;
+                    }
+                    .team-card-professional {
+                        max-height: 400px !important;
+                    }
+                }
+                
+                /* Desktop Small / Laptop (992px - 1199px) */
+                @media (min-width: 992px) and (max-width: 1199px) {
+                    .team-section-title {
+                        font-size: 1.4rem !important;
+                    }
+                    .team-card-professional {
+                        max-height: 360px !important;
+                    }
+                }
+                
+                /* Short desktop screens */
+                @media (min-width: 992px) and (max-height: 800px) {
                     .team-header-box {
                         margin-bottom: 5px !important;
                     }
-                    .team-header-box h3 {
-                        font-size: 1.2rem !important;
+                    .team-section-title {
+                        font-size: 1.3rem !important;
                         margin-bottom: 5px !important;
+                    }
+                    .team-card-professional {
+                        height: 38vh !important;
+                        min-height: 280px !important;
+                        max-height: 340px !important;
+                    }
+                }
+                
+                /* Very short desktop screens */
+                @media (min-width: 992px) and (max-height: 700px) {
+                    .team-section-title {
+                        font-size: 1.2rem !important;
                     }
                     .team-card-professional {
                         height: 35vh !important;
                         min-height: 250px !important;
+                        max-height: 300px !important;
+                    }
+                }
+                
+                /* Tablet and below */
+                @media (max-width: 991px) {
+                    .team-section-title {
+                        font-size: 1.3rem !important;
                     }
                 }
             `}</style>
